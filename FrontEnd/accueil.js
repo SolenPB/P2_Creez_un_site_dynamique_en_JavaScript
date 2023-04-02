@@ -9,15 +9,15 @@ for(let i = 0; i < photos.length; i++) {
     const travailElement = document.querySelector(".gallery");
     const photoElement = document.createElement("figure");
 
-    const imageElement = document.createElement("img");
-    imageElement.src = figure.image;
+    const imageUrlElement = document.createElement("img");
+    imageUrlElement.src = figure.imageUrl;
 
-    const nomElement = document.createElement("figcaption");
-    nomElement.innerText = figure.nom;
+    const titleElement = document.createElement("figcaption");
+    titleElement.innerText = figure.title;
 
 
     sectionPortfolio.appendChild(photoElement)
-    photoElement.appendChild(imageElement);
-    photoElement.appendChild(nomElement);
+    photoElement.appendChild(imageUrlElement);
+    photoElement.appendChild(titleElement);
 
 };
