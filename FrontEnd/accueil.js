@@ -20,10 +20,3 @@ for(let i = 0; i < photos.length; i++) {
     photoElement.appendChild(titleElement);
 
 };
-
-const boutonObjets = document.querySelector(".objets");
-boutonObjets.addEventListener("click", function() {
-    const photosFiltrees = photos.filter(function (photos) {
-        return photos.objets
-    });
-});
