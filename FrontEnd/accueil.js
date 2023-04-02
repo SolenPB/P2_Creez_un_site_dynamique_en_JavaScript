@@ -1,0 +1,1 @@
+const figure = photo[i];
