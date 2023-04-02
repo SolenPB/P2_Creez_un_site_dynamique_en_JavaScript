@@ -20,3 +20,9 @@ for(let i = 0; i < photos.length; i++) {
     photoElement.appendChild(titleElement);
 
 };
+
+const reponseType = await fetch("http://localhost:5678/api/categories/");
+const categorie = await reponseType.json();
+
+console.log(categorie);
+
