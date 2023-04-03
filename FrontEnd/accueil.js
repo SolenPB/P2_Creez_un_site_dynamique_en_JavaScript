@@ -21,15 +21,21 @@ for(let i = 0; i < photos.length; i++) {
 
 };
 
-const reponseType = await fetch("http://localhost:5678/api/categories/");
-const categorie = await reponseType.json();
+const reponseCategorie = await fetch("http://localhost:5678/api/categories/");
+const categorie = await reponseCategorie.json();
 
 console.log(categorie);
-
 
 for (let objet of categorie) {
     console.log(objet.name);
 };
+
+let boutonObjets = document.querySelector("#btn-objets");
+boutonObjets.addEventListener("click", function() {
+
+});
+
+
 /*Recherche du noeud HTML à écouter*/
 /*Ajout de l'évènement d'écoute*/
 /*Callback de l'évènement*/
