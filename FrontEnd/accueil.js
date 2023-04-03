@@ -30,7 +30,7 @@ for (let objet of categorie) {
     console.log(objet.name);
 };
 
-let boutonObjets = document.querySelector("#btn-objets");
+const boutonObjets = document.querySelector("#btn-objets");
 boutonObjets.addEventListener("click", function(){
     for(let objet of categorie){
         if(objet.name == "Objets"){
