@@ -26,17 +26,9 @@ const categorie = await reponseType.json();
 
 console.log(categorie);
 
-const boutonObjets = document.querySelector(".btn-objets");
-boutonObjets.addEventListener("click", async function getCategories(properties) {
-    let type = [];
-
-    for(let name of properties){
-        let type = fetch(`http://localhost:5678/api/categories/${name}`).then(reponse => {
-            if(name != "objets") {
-                return null; 
-            }else{
-                return reponse.json();
-            };
-        });
-    };
-});
+for (let name of categorie) {
+    console.log(name);
+};
+/*Recherche du noeud HTML à écouter*/
+/*Ajout de l'évènement d'écoute*/
+/*Callback de l'évènement*/
