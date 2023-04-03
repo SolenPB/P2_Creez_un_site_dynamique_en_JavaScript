@@ -1,40 +1,43 @@
 const reponse = await fetch("http://localhost:5678/api/works/");
-const photos = await reponse.json();
+const productsArray = await reponse.json();
 
-console.log(photos);
+console.log(productsArray);
 
-for(let i = 0; i < photos.length; i++) {
-    const figure = photos[i];
+function CreateCard (chat) {
     const travailElement = document.querySelector(".gallery");
     const photoElement = document.createElement("figure");
 
     const imageUrlElement = document.createElement("img");
-    imageUrlElement.src = figure.imageUrl;
+    imageUrlElement.src = chat.imageUrl;
 
     const titleElement = document.createElement("figcaption");
-    titleElement.innerText = figure.title;
+    titleElement.innerText = chat.title;
 
 
-    travailElement.appendChild(photoElement)
+    travailElement.appendChild(photoElement);
     photoElement.appendChild(imageUrlElement);
     photoElement.appendChild(titleElement);
 
 };
 
-const reponseCategorie = await fetch("http://localhost:5678/api/categories/");
-const categorie = await reponseCategorie.json();
+for(let product of productsArray) {
+    CreateCard(product);
+}
 
-console.log(categorie);
+const reponseFilters = await fetch("http://localhost:5678/api/categories/");
+const filters = await reponseFilters.json();
 
-for (let objet of categorie) {
-    console.log(objet.name);
+console.log(filters);
+
+for (let filter of filters) {
+    console.log(filter.name);
 };
 
-const boutonObjets = document.querySelector("#btn-objets");
+const boutonObjets = document.getElementById("btn-objets");
 boutonObjets.addEventListener("click", function(){
-    for(let objet of categorie){
-        if(objet.name == "Objets"){
-            return console.log (objet.name);
+    for(let filter of filters){
+        if(filter.name == "Objets"){
+            console.log (filter.name);
         };
     };
 });
