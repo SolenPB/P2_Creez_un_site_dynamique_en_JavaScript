@@ -26,8 +26,9 @@ const categorie = await reponseType.json();
 
 console.log(categorie);
 
-for (let name of categorie) {
-    console.log(name);
+
+for (let objet of categorie) {
+    console.log(objet.name);
 };
 /*Recherche du noeud HTML à écouter*/
 /*Ajout de l'évènement d'écoute*/
