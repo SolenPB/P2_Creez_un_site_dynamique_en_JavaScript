@@ -25,3 +25,18 @@ const reponseType = await fetch("http://localhost:5678/api/categories/");
 const categorie = await reponseType.json();
 
 console.log(categorie);
+
+const boutonObjets = document.querySelector(".btn-objets");
+boutonObjets.addEventListener("click", async function getCategories(properties) {
+    let type = [];
+
+    for(let name of properties){
+        let type = fetch(`http://localhost:5678/api/categories/${name}`).then(reponse => {
+            if(name != "objets") {
+                return null; 
+            }else{
+                return reponse.json();
+            };
+        });
+    };
+});
