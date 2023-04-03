@@ -31,11 +31,10 @@ for (let objet of categorie) {
 };
 
 let boutonObjets = document.querySelector("#btn-objets");
-boutonObjets.addEventListener("click", function() {
-
+boutonObjets.addEventListener("click", function(){
+    for(let objet of categorie){
+        if(objet.name == "Objets"){
+            return console.log (objet.name);
+        };
+    };
 });
-
-
-/*Recherche du noeud HTML à écouter*/
-/*Ajout de l'évènement d'écoute*/
-/*Callback de l'évènement*/
