@@ -1,26 +1,26 @@
+//Récupération des données sur API works
+
 const reponse = await fetch("http://localhost:5678/api/works/");
 const productsArray = await reponse.json();
 
+//Fonction 
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
 }
 
-
-
-
-
-
 console.log(productsArray);
 
-function CreateCard (chat) {
+//Fonction pour créer les cartes présentant les travaux
+
+function CreateCard (card) {
     const travailElement = document.querySelector(".gallery");
     const photoElement = document.createElement("figure");
 
     const imageUrlElement = document.createElement("img");
-    imageUrlElement.src = chat.imageUrl;
+    imageUrlElement.src = card.imageUrl;
 
     const titleElement = document.createElement("figcaption");
-    titleElement.innerText = chat.title;
+    titleElement.innerText = card.title;
 
 
     travailElement.appendChild(photoElement);
@@ -28,6 +28,8 @@ function CreateCard (chat) {
     photoElement.appendChild(titleElement);
 
 };
+
+// Condition créée pour aider au filtrage des catégories
 
 if (localStorage.getItem("filtre")){
     let readFiltre = localStorage.getItem("filtre");
@@ -41,6 +43,7 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
+// Récupération des informations sur les catégories des travaux 
 
 const filters = await fetch("http://localhost:5678/api/categories/")
 .then(filters => filters.json());
@@ -48,17 +51,48 @@ const filters = await fetch("http://localhost:5678/api/categories/")
 console.log(filters);
 let filtre = "";
 
+//Fonctionnalité du bouton "Tous"
+
 const boutonTous = document.getElementById("btn-tous");
 boutonTous.addEventListener("click", function() {
     localStorage.removeItem("filtre");
     location.reload();
 });
 
+//Fonctionnalité du bouton "Objets"
+
 const boutonObjets = document.getElementById("btn-objets");
 boutonObjets.addEventListener("click", function(){
     const type = filters.map(filter => filter.name);
         for( let i = filters.length -1; i >= 0; i--){
             if(filters[i].name == "Objets"){
+                filtre = type.splice(i,1);
+                SaveFilter(filtre);
+                location.reload();
+            };
+        };
+});
+
+//Fonctionnalité du bouton "Appartements"
+
+const boutonAppart = document.getElementById("btn-appart");
+boutonAppart.addEventListener("click", function () {
+    const type = filters.map(filter => filter.name);
+        for( let i = filters.length -1; i >= 0; i--){
+            if(filters[i].name == "Appartements"){
+                filtre = type.splice(i,1);
+                SaveFilter(filtre);
+                location.reload();
+            };
+        };
+});
+
+
+const boutonRestaurants = document.getElementById("btn-restaurants");
+boutonRestaurants.addEventListener("click", function () {
+    const type = filters.map(filter => filter.name);
+        for( let i = filters.length -1; i >= 0; i--){
+            if(filters[i].name == "Hôtel & restaurants"){
                 filtre = type.splice(i,1);
                 SaveFilter(filtre);
                 location.reload();
