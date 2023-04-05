@@ -87,12 +87,13 @@ boutonAppart.addEventListener("click", function () {
         };
 });
 
+//Fonctionnalité du bouton "Hôtels & restaurants"
 
 const boutonRestaurants = document.getElementById("btn-restaurants");
 boutonRestaurants.addEventListener("click", function () {
     const type = filters.map(filter => filter.name);
         for( let i = filters.length -1; i >= 0; i--){
-            if(filters[i].name == "Hôtel & restaurants"){
+            if(filters[i].name == "Hotels & restaurants"){
                 filtre = type.splice(i,1);
                 SaveFilter(filtre);
                 location.reload();
