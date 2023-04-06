@@ -3,7 +3,7 @@
 const reponse = await fetch("http://localhost:5678/api/works/");
 const productsArray = await reponse.json();
 
-//Fonction 
+//Fonction pour faire appel aux filtres
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
 }
@@ -100,3 +100,5 @@ boutonRestaurants.addEventListener("click", function () {
             };
         };
 });
+
+
