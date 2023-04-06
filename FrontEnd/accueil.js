@@ -3,6 +3,14 @@
 const reponse = await fetch("http://localhost:5678/api/works/");
 const productsArray = await reponse.json();
 
+// Récupération des informations sur les catégories des travaux 
+
+const filters = await fetch("http://localhost:5678/api/categories/")
+.then(filters => filters.json());
+
+console.log(filters);
+let filtre = "";
+
 //Fonction pour faire appel aux filtres
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
@@ -43,13 +51,7 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
-// Récupération des informations sur les catégories des travaux 
 
-const filters = await fetch("http://localhost:5678/api/categories/")
-.then(filters => filters.json());
-
-console.log(filters);
-let filtre = "";
 
 //Fonctionnalité du bouton "Tous"
 
