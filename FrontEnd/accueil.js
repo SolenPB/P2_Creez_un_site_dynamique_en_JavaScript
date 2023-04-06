@@ -18,13 +18,6 @@ function SaveFilter(chat){
 
 console.log(productsArray);
 
-//Récupération des informations utilisateurs
-
-const user = await fetch("http://localhost:5678/api/users/login")
-.then(user => user.json());
-
-console.log(user);
-
 //Fonction pour créer les cartes présentant les travaux
 
 function CreateCard (card) {
@@ -109,3 +102,8 @@ boutonRestaurants.addEventListener("click", function () {
             };
         };
 });
+
+//Fonctionnalité authentification 
+
+const boutonConnecter = document.getElementById("btn-connecter");
+boutonConnecter.addEventListener("click");
