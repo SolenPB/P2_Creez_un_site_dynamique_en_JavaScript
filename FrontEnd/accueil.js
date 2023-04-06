@@ -106,4 +106,6 @@ boutonRestaurants.addEventListener("click", function () {
 //Fonctionnalité authentification 
 
 const boutonConnecter = document.getElementById("btn-connecter");
-boutonConnecter.addEventListener("click");
+boutonConnecter.addEventListener("click", function() {
+    
+});
