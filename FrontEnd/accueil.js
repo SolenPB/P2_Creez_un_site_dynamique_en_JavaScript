@@ -20,7 +20,7 @@ console.log(productsArray);
 
 //Récupération des informations utilisateurs
 
-const user = await fetch("http://localhost:5678/api/user/")
+const user = await fetch("http://localhost:5678/api/users/login")
 .then(user => user.json());
 
 console.log(user);
@@ -109,12 +109,3 @@ boutonRestaurants.addEventListener("click", function () {
             };
         };
 });
-
-//Fonctionnalité de l'authentification
-
-const authentification = document.getElementById("login");
-authentification.addEventListener("submit", function() {
-    const login = fetch('./routes/user.route.js/')
-        .then(login => login.json());
-});
-
