@@ -23,6 +23,8 @@ console.log(productsArray);
 const user = await fetch("http://localhost:5678/api/user/")
 .then(user => user.json());
 
+console.log(user);
+
 //Fonction pour créer les cartes présentant les travaux
 
 function CreateCard (card) {
@@ -110,8 +112,9 @@ boutonRestaurants.addEventListener("click", function () {
 
 //Fonctionnalité de l'authentification
 
-const authentification = document.getElementById("email");
+const authentification = document.getElementById("login");
 authentification.addEventListener("submit", function() {
-    const email = fetch('./controllers/user.controller.js/')
-        .then(email => email.json());
+    const login = fetch('./routes/user.route.js/')
+        .then(login => login.json());
 });
+
