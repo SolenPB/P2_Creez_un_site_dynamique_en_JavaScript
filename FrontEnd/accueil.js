@@ -18,6 +18,11 @@ function SaveFilter(chat){
 
 console.log(productsArray);
 
+//Récupération des informations utilisateurs
+
+const user = await fetch("http://localhost:5678/api/user/")
+.then(user => user.json());
+
 //Fonction pour créer les cartes présentant les travaux
 
 function CreateCard (card) {
@@ -94,7 +99,7 @@ boutonAppart.addEventListener("click", function () {
 const boutonRestaurants = document.getElementById("btn-restaurants");
 boutonRestaurants.addEventListener("click", function () {
     const type = filters.map(filter => filter.name);
-        for( let i = filters.length -1; i >= 0; i--){
+        for(let i = filters.length -1; i >= 0; i--){
             if(filters[i].name == "Hotels & restaurants"){
                 filtre = type.splice(i,1);
                 SaveFilter(filtre);
@@ -103,4 +108,10 @@ boutonRestaurants.addEventListener("click", function () {
         };
 });
 
+//Fonctionnalité de l'authentification
 
+const authentification = document.getElementById("email");
+authentification.addEventListener("submit", function() {
+    const email = fetch('./controllers/user.controller.js/')
+        .then(email => email.json());
+});
