@@ -107,5 +107,18 @@ boutonRestaurants.addEventListener("click", function () {
 
 const boutonConnecter = document.getElementById("btn-connecter");
 boutonConnecter.addEventListener("click", function() {
+    let response = fetch('http://localhost:5678/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          'Token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4',
+        },
+        body: JSON.stringify(user)
+      });
+
+    let result = response.json();
+      alert(result.message);
     
 });
+
+  
