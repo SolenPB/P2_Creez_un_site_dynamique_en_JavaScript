@@ -18,8 +18,11 @@
         method:'POST',
         headers:{'Content-type': 'application/json'},
         body:chargeUtile
-    });
-
-    window.localStorage.setItem("token", jetonAuth);
-
+    })
+    .then(res => {return res.json()})
+    .then(responseAuth => {
+        localStorage.setItem("token", responseAuth.token);
+        window.location.href='./index.html';
+    })
+    .catch(err => console.log(err));
 });
