@@ -2,6 +2,7 @@
     const boutonConnecter = document.getElementById("btn-connecter");
     boutonConnecter.addEventListener("click", function(event) {
     event.preventDefault();
+    
     //Création de la charge utile
 
     const identification = {
@@ -9,6 +10,7 @@
         password: document.getElementById("password").value,
     };
     console.log(identification);
+
     //Création de la charge utile au format JSON
     const chargeUtile = JSON.stringify(identification);
 
