@@ -7,6 +7,7 @@ const modeEdition = document.querySelector ("p");
 modeEdition.style.paddingLeft = "200px";
 modeEdition.style.fontSize = "20px"
 modeEdition.style.fontFamily = "syne";
+
 //Récupération des données sur API works
 
 const reponse = await fetch("http://localhost:5678/api/works/");
