@@ -53,11 +53,17 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
-
-
 //Fonctionnalité du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
+/*boutonTous.style.fontFamily = "syne";
+boutonTous.style.fontWeight = "700";
+boutonTous.style.color = "white";
+boutonTous.style.backgroundColor = "#1D6154";
+boutonTous.style.margin = "2em";
+boutonTous.style.width = "180px";
+boutonTous.style.textAlign = "center";
+boutonTous.style.borderRadius = "60px";*/
 boutonTous.addEventListener("click", function() {
     localStorage.removeItem("filtre");
     location.reload();
@@ -66,6 +72,14 @@ boutonTous.addEventListener("click", function() {
 //Fonctionnalité du bouton "Objets"
 
 const boutonObjets = document.getElementById("btn-objets");
+/*boutonObjets.style.fontFamily = "syne";
+boutonObjets.style.fontWeight = "700";
+boutonObjets.style.color = "#1D6154";
+boutonObjets.style.backgroundColor = "white";
+boutonObjets.style.margin = "2em";
+boutonObjets.style.width = "180px";
+boutonObjets.style.textAlign = "center";
+boutonObjets.style.borderRadius = "60px";*/
 boutonObjets.addEventListener("click", function(){
     const type = filters.map(filter => filter.name);
         for( let i = filters.length -1; i >= 0; i--){
