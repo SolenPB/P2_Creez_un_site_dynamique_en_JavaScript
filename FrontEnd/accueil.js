@@ -63,9 +63,11 @@ for(let i = 0; i < styleBoutons.length; i++){
     styleBoutons[i].style.color = "#1D6154";
     styleBoutons[i].style.backgroundColor = "white";
     styleBoutons[i].style.margin = "2em", "auto";
+    styleBoutons[i].style.padding = "1em";
     styleBoutons[i].style.width = "180px";
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.borderRadius = "60px";
+    styleBoutons[i].style.border = "solid", "#1D6154", "5px";
 }
 
 //Fonctionnalité et mise en forme du bouton "Tous"
@@ -73,6 +75,7 @@ for(let i = 0; i < styleBoutons.length; i++){
 const boutonTous = document.getElementById("btn-tous");
 boutonTous.style.color = "white";
 boutonTous.style.backgroundColor = "#1D6154";
+boutonTous.style.border ="none";
 
 boutonTous.addEventListener("click", function() {
     localStorage.removeItem("filtre");
