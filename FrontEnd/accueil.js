@@ -1,3 +1,4 @@
+const edition = document.getElementById("edition");
 
 //Récupération des données sur API works
 
