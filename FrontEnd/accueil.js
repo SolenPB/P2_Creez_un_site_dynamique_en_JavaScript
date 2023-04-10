@@ -53,6 +53,11 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
+//Mise en forme des boutons de filtre
+
+const styleBoutons = document.querySelectorAll("button");
+console.log(styleBoutons);
+
 //Fonctionnalité du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
