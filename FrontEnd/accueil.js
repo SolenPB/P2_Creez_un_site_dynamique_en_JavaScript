@@ -1,5 +1,12 @@
 const edition = document.getElementById("edition");
+edition.style.height = "60px";
+edition.style.backgroundColor = "black";
+edition.style.color = "white";
 
+const modeEdition = document.querySelector ("p");
+modeEdition.style.paddingLeft = "200px";
+modeEdition.style.fontSize = "20px"
+modeEdition.style.fontFamily = "syne";
 //Récupération des données sur API works
 
 const reponse = await fetch("http://localhost:5678/api/works/");
