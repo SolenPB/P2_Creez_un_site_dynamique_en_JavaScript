@@ -6,7 +6,10 @@ edition.style.fontFamily = "work sans";
 edition.style.display = "flex";
 
 const editionMod = document.getElementById("mode");
-
+editionMod.style.width = "100%";
+editionMod.style.display = "flex";
+editionMod.style.justifyContent = "center";
+editionMod.style.alignItems = "center";
 
 //Récupération des données sur API works
 
