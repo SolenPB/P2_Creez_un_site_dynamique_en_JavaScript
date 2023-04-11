@@ -11,6 +11,7 @@ editionMod.style.display = "flex";
 editionMod.style.justifyContent = "center";
 editionMod.style.alignItems = "center";
 
+
 //Récupération des données sur API works
 
 const reponse = await fetch("http://localhost:5678/api/works/");
