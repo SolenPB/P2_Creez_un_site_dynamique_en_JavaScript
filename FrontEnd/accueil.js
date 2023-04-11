@@ -34,7 +34,7 @@ const editionText = document.querySelector(".icontitle");
 editionText.style.fontSize = "16px";
 editionText.style.margin = "none";
 
-//Fonction pour faire appel aux filtres
+//Fonction pour sauvegarder les filtres
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
 }
