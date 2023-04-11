@@ -1,3 +1,5 @@
+//Intégration de l'encadré édition présent après login
+
 const edition = document.getElementById("edition");
 edition.style.height = "60px";
 edition.style.backgroundColor = "black";
@@ -11,6 +13,12 @@ editionMod.style.display = "flex";
 editionMod.style.justifyContent = "center";
 editionMod.style.alignItems = "center";
 
+const editionIcon = document.querySelector(".editSquare");
+editionIcon.style.paddingRight = "10px";
+editionIcon.style.fontSize = "16px";
+
+const editionText = document.querySelector(".icontitle");
+editionText.style.fontSize = "16px";
 
 //Récupération des données sur API works
 
