@@ -2,11 +2,7 @@ const edition = document.getElementById("edition");
 edition.style.height = "60px";
 edition.style.backgroundColor = "black";
 edition.style.color = "white";
-
-const modeEdition = document.querySelector ("p");
-modeEdition.style.paddingLeft = "200px";
-modeEdition.style.fontSize = "20px"
-modeEdition.style.fontFamily = "syne";
+edition.style.fontFamily = "work sans";
 
 //Récupération des données sur API works
 
@@ -132,3 +128,11 @@ boutonRestaurants.addEventListener("click", function () {
         };
 });
 
+//Intégration du bouton de publication des changements
+
+const boutonChangement = document.getElementById("change");
+boutonChangement.style.fontFamily = "work sans";
+boutonChangement.style.width = "216px";
+boutonChangement.style.color = "black";
+boutonChangement.style.border = "2px";
+boutonChangement.style.justifyContent = "center";
