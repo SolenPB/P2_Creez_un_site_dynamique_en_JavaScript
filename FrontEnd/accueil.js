@@ -174,5 +174,8 @@ modifGallery.style.justifyContent = "center";
 const modGallery = document.querySelector("#modGallery");
 modGallery.style.display = "flex";
 modGallery.style.width = "150px";
-modGallery.style.margin= "10px", "0", "0","15px";
+modGallery.style.margin = "10px", "0", "0","15px";
+
+const modifTitle = document.querySelector(".icontitleproject");
+modifTitle.style.marginLeft = "5px";
 
