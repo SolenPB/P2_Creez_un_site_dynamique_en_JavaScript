@@ -3,6 +3,10 @@ edition.style.height = "60px";
 edition.style.backgroundColor = "black";
 edition.style.color = "white";
 edition.style.fontFamily = "work sans";
+edition.style.display = "flex";
+
+const editionMod = document.getElementById("mode");
+
 
 //Récupération des données sur API works
 
