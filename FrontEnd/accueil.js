@@ -152,3 +152,9 @@ boutonChangement.style.width = "216px";
 boutonChangement.style.color = "black";
 boutonChangement.style.border = "2px";
 boutonChangement.style.justifyContent = "center";
+
+//Intégration de la modification du titre de la page d'accueil
+
+const modifGallery = document.querySelector("#titleGallery");
+modifGallery.style.display = "flex";
+modifGallery.style.justifyContent = "center";

@@ -14,7 +14,7 @@
     //Création de la charge utile au format JSON
     const chargeUtile = JSON.stringify(identification);
 
-    //Appel de la fonction fetch avec les infos nécessaires
+    //Appel de la fonction fetch avec les infos nécessaires puis redirection vers la page d'accueil à modifier
 
     fetch("http://localhost:5678/api/users/login", {
         method:'POST',

@@ -23,8 +23,8 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="connexion.html"><li>login</li></a>
-			<a href="connexion.html"><li>logout</li></a>
+			<a href="connexion.html" id="login"><li>login</li></a>
+			<a href="connexion.html" id="logout"><li>logout</li></a>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -33,7 +33,7 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
-			<i class="fa-regular fa-pen-to-square square">Modifier</i>
+			<i class="fa-regular fa-pen-to-square editSquare"></i><p class="icontitle">Modifier</p>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -43,8 +43,9 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets<i class="fa-regular fa-pen-to-square squareprojets">Modifier</i></h2>
-		
+		<div id="titleGallery">
+			<h2>Mes Projets</h2><i class="fa-regular fa-pen-to-square editSquare"></i><p class="icontitle">Modifier</p>
+		</div>
 
 		<div id="btn-style">
 			<button id="btn-tous">Tous</button>
