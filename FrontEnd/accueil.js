@@ -19,6 +19,7 @@ editionIcon.style.fontSize = "16px";
 
 const editionText = document.querySelector(".icontitle");
 editionText.style.fontSize = "16px";
+editionText.style.margin = "none";
 
 //Récupération des données sur API works
 
@@ -153,8 +154,25 @@ boutonChangement.style.color = "black";
 boutonChangement.style.border = "2px";
 boutonChangement.style.justifyContent = "center";
 
+//Intégration de la modification de l'image de la page d'accueil
+
+const modImage = document.querySelector("#modImage");
+modImage.style.height = "40px";
+modImage.style.display = "flex";
+modImage.style.alignItems ="center";
+modImage.style.marginLeft= "55px";
+
+const titleImage = document.querySelector(".icontitleimage");
+titleImage.style.margin = "5px";
+
 //Intégration de la modification du titre de la page d'accueil
 
 const modifGallery = document.querySelector("#titleGallery");
 modifGallery.style.display = "flex";
 modifGallery.style.justifyContent = "center";
+
+const modGallery = document.querySelector("#modGallery");
+modGallery.style.display = "flex";
+modGallery.style.width = "150px";
+modGallery.style.margin= "10px", "0", "0","15px";
+
