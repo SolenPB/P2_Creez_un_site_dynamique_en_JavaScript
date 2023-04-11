@@ -34,12 +34,13 @@ const editionText = document.querySelector(".icontitle");
 editionText.style.fontSize = "16px";
 editionText.style.margin = "none";
 
+//Condition pour l'apparition des boutons de modification en cas de login
+
+
 //Fonction pour sauvegarder les filtres
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
 }
-
-console.log(productsArray);
 
 //Fonction pour créer les cartes présentant les travaux
 
