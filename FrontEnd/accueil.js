@@ -36,7 +36,6 @@ editionText.style.margin = "none";
 
 //Condition pour l'apparition des boutons de modification en cas de login
 
-
 //Fonction pour sauvegarder les filtres
 function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
