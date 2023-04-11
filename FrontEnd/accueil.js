@@ -1,3 +1,16 @@
+//Récupération des données sur API works
+
+const reponse = await fetch("http://localhost:5678/api/works/");
+const productsArray = await reponse.json();
+
+// Récupération des informations sur les catégories des travaux 
+
+const filters = await fetch("http://localhost:5678/api/categories/")
+.then(filters => filters.json());
+
+console.log(filters);
+let filtre = "";
+
 //Intégration de l'encadré édition présent après login
 
 const edition = document.getElementById("edition");
@@ -20,19 +33,6 @@ editionIcon.style.fontSize = "16px";
 const editionText = document.querySelector(".icontitle");
 editionText.style.fontSize = "16px";
 editionText.style.margin = "none";
-
-//Récupération des données sur API works
-
-const reponse = await fetch("http://localhost:5678/api/works/");
-const productsArray = await reponse.json();
-
-// Récupération des informations sur les catégories des travaux 
-
-const filters = await fetch("http://localhost:5678/api/categories/")
-.then(filters => filters.json());
-
-console.log(filters);
-let filtre = "";
 
 //Fonction pour faire appel aux filtres
 function SaveFilter(chat){
