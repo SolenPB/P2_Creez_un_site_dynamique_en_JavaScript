@@ -11,6 +11,16 @@ const filters = await fetch("http://localhost:5678/api/categories/")
 console.log(filters);
 let filtre = "";
 
+//Coloration des liens 
+
+const linksIn = document.getElementById("login");
+linksIn.style.color = "black";
+linksIn.style.textDecoration = "none";
+
+const linksOut = document.getElementById("logout");
+linksOut.style.color = "black";
+linksOut.style.textDecoration = "none";
+
 //Intégration de l'encadré édition présent après login
 
 const edition = document.getElementById("edition");

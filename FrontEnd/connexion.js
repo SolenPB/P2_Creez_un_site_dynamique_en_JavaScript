@@ -28,3 +28,13 @@
     })
     .catch(err => console.log(err));
 });
+
+//Mise en forme des liens 
+
+const projects = document.getElementById("projects");
+projects.style.color = "black";
+projects.style.textDecoration = "none";
+
+const forgetPass = document.getElementById("forget");
+forgetPass.style.color = "black";
+forgetPass.style.textDecoration = "none";
