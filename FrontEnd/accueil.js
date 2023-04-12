@@ -203,5 +203,6 @@ if(userLoggedIn == null){
 } else {
     let btnfilters = document.getElementById("btn-style");
     btnfilters.style.display = "none";
+    linksIn.style.display = "none";
 };
 
