@@ -84,16 +84,6 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
-//Condition d'apparition des outils de modification
-let userLoggedIn = localStorage.getItem("token");
-let userLoggedOut = localStorage.removeItem("token");
-console.log(userLoggedIn);
-
-if(userLoggedIn == null){
-    edition.style.display = "none";
-    linksOut.style.display = "none";
-};
-
 //Mise en forme des boutons de filtre
 
 const styleBoutons = document.querySelectorAll("button");
@@ -198,4 +188,15 @@ modGallery.style.margin = "10px", "0", "0","15px";
 
 const modifTitle = document.querySelector(".icontitleproject");
 modifTitle.style.marginLeft = "5px";
+
+//Condition d'apparition des outils de modification
+
+let userLoggedIn = localStorage.getItem("token");
+let userLoggedOut = localStorage.removeItem("token");
+console.log(userLoggedIn);
+
+if(userLoggedIn == null){
+    edition.style.display = "none";
+    linksOut.style.display = "none";
+};
 
