@@ -11,12 +11,6 @@ const filters = await fetch("http://localhost:5678/api/categories/")
 console.log(filters);
 let filtre = "";
 
-//Récupération des informations de connexion
-const noModification = "";
-
-
-// Condition d'apparition des zones de modification
-
 //Mise en forme des liens 
 
 const linksIn = document.getElementById("login");
@@ -94,6 +88,11 @@ if (localStorage.getItem("filtre")){
 let userLoggedIn = localStorage.getItem("token");
 let userLoggedOut = localStorage.removeItem("token");
 console.log(userLoggedIn);
+
+if(userLoggedIn == null){
+    edition.style.display = "none";
+    linksOut.style.display = "none";
+};
 
 //Mise en forme des boutons de filtre
 
