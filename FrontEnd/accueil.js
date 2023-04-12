@@ -84,6 +84,9 @@ if (localStorage.getItem("filtre")){
     CreateCard(product);
 }};
 
+//Condition d'apparition des outils de modification
+
+
 //Mise en forme des boutons de filtre
 
 const styleBoutons = document.querySelectorAll("button");
