@@ -11,6 +11,11 @@ const filters = await fetch("http://localhost:5678/api/categories/")
 console.log(filters);
 let filtre = "";
 
+//Récupération des informations de connexion
+
+const responseAuth = await fetch("http///localhost:5678/api/users/login/")
+.then(responseAuth => responseAuth.json());
+
 //Mise en forme des liens 
 
 const linksIn = document.getElementById("login");
@@ -85,7 +90,7 @@ if (localStorage.getItem("filtre")){
 }};
 
 //Condition d'apparition des outils de modification
-
+let userLoggedIn = localStorage.getItem("token");
 
 //Mise en forme des boutons de filtre
 
