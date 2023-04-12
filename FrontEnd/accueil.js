@@ -11,7 +11,7 @@ const filters = await fetch("http://localhost:5678/api/categories/")
 console.log(filters);
 let filtre = "";
 
-//Coloration des liens 
+//Mise en forme des liens 
 
 const linksIn = document.getElementById("login");
 linksIn.style.color = "black";
