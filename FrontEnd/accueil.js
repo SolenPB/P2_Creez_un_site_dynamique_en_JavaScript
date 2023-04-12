@@ -12,11 +12,10 @@ console.log(filters);
 let filtre = "";
 
 //Récupération des informations de connexion
-const noModification = localStorage.getItem("token");
-console.log(noModification);
+const noModification = "";
+
 
 // Condition d'apparition des zones de modification
-
 
 //Mise en forme des liens 
 
@@ -93,6 +92,8 @@ if (localStorage.getItem("filtre")){
 
 //Condition d'apparition des outils de modification
 let userLoggedIn = localStorage.getItem("token");
+let userLoggedOut = localStorage.removeItem("token");
+console.log(userLoggedIn);
 
 //Mise en forme des boutons de filtre
 
