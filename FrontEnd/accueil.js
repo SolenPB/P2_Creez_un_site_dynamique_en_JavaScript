@@ -206,6 +206,7 @@ console.log(userLoggedIn);
 if(userLoggedIn == null){
     edition.style.display = "none";
     linksOut.style.display = "none";
+    modTitle.style.display ="none";
     modImage.style.display = "none";
     modGallery.style.display ="none";
 } else {
