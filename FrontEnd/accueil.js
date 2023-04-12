@@ -12,9 +12,11 @@ console.log(filters);
 let filtre = "";
 
 //Récupération des informations de connexion
+const noModification = localStorage.getItem("token");
+console.log(noModification);
 
-const responseAuth = await fetch("http///localhost:5678/api/users/login/")
-.then(responseAuth => responseAuth.json());
+// Condition d'apparition des zones de modification
+
 
 //Mise en forme des liens 
 
