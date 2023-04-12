@@ -164,6 +164,14 @@ boutonChangement.style.color = "black";
 boutonChangement.style.border = "2px";
 boutonChangement.style.justifyContent = "center";
 
+//Intégration de la modification du titre de la page d'accueil
+
+const modTitle = document.querySelector("#modTitle");
+modTitle.style.display = "flex";
+
+const titleDesign = document.querySelector(".titledesign");
+titleDesign.style.marginLeft ="5px";
+
 //Intégration de la modification de l'image de la page d'accueil
 
 const modImage = document.querySelector("#modImage");
