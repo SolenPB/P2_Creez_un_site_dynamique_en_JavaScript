@@ -11,6 +11,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="accueil.js"></script>
+	<script src="app.js"></script>
 </head>
 <body>
 	<div id="edition">
@@ -48,7 +49,7 @@
 	<section id="portfolio">
 		<div id="titleGallery">
 			<h2>Mes Projets</h2>
-			<a href="#modal1"><div id="modGallery"><i class="fa-regular fa-pen-to-square editSquare"></i><p class="icontitleproject">Modifier</p></div></a>
+			<a href="#modal1" class="js-modal"><div id="modGallery"><i class="fa-regular fa-pen-to-square editSquare"></i><p class="icontitleproject">Modifier</p></div></a>
 		</div>
 
 
@@ -64,7 +65,7 @@
 		</div>
 	</section>
 
-	<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal">
+	<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" /*style="display:none;"*/>
 		<div class="modal-wrapper">
 			<h3 id="titlemodal">Galerie photo</h3>
 			<p>Exemple test pour intégration de la modale</p>

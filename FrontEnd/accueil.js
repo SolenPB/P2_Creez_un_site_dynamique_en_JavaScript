@@ -197,6 +197,7 @@ modGallery.style.margin = "10px", "0", "0","15px";
 const modifTitle = document.querySelector(".icontitleproject");
 modifTitle.style.marginLeft = "5px";
 
+const modal = document.querySelector(".modal");
 //Condition d'apparition des outils de modification
 
 let userLoggedIn = localStorage.getItem("token");
