@@ -9,3 +9,6 @@ const openModal = function(e) {
 document.querySelectorAll('.js-modal').forEach(a => {
     a.addEventListener('click', openModal)
 });
+
+const styleMod = document.querySelector(".modal");
+console.log(styleMod);
