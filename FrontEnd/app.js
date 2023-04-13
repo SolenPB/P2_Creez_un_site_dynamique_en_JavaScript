@@ -6,9 +6,16 @@ const openModal = function(e) {
     target.setAttribute('aria-modal', 'true')
 };
 
-document.querySelectorAll('.js-modal').forEach(a => {
+document.getElementsByClassName('js-modal');/*.forEach(a => {
     a.addEventListener('click', openModal)
-});
+});*/
 
-const styleMod = document.querySelector(".modal");
-console.log(styleMod);
+//Mise en forme de la modale
+
+const modal = document.getElementsByClassName("modal");
+console.log(modal);
+
+//Mise en forme de modal-wrapper
+
+const styleModal = document.getElementsByClassName("modal-wrapper");
+console.log(styleModal);

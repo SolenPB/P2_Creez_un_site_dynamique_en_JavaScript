@@ -210,6 +210,7 @@ if(userLoggedIn == null){
     modTitle.style.display ="none";
     modImage.style.display = "none";
     modGallery.style.display ="none";
+    /*modal.style.display = "none";*/
 } else {
     let btnfilters = document.getElementById("btn-style");
     btnfilters.style.display = "none";
