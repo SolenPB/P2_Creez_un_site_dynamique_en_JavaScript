@@ -1,12 +1,9 @@
-const openModal = function(e) {
-    e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute('href'))
-    target.style.display = null
-    target.removeAttribute('aria-hidden')
-    target.setAttribute('aria-modal', 'true')
-};
+const linkModal = document.getElementById('js-modal');
+linkModal.addEventListener("click", function(event) {
+    console.log(0);
+    event.preventDefault();
+    const modal = document.getElementById('modal1');
+modal.style.display = null;
+});
 
-document.getElementsByClassName('js-modal');/*.forEach(a => {
-    a.addEventListener('click', openModal)
-});*/
 
