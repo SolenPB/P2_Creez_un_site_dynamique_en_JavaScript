@@ -157,8 +157,12 @@ function CreateCard (card) {
 
 const boutonChangement = document.getElementById("change");
 boutonChangement.style.fontFamily = "work sans";
+boutonChangement.style.fontWeight = "700";
 boutonChangement.style.width = "216px";
 boutonChangement.style.color = "black";
+boutonChangement.style.margin = "2em", "auto";
+boutonChangement.style.padding = "1em";
+boutonChangement.style.borderRadius = "60px";
 boutonChangement.style.border = "2px";
 boutonChangement.style.justifyContent = "center";
 

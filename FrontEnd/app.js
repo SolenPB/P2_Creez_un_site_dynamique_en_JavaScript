@@ -21,22 +21,21 @@ const closeModal = document.getElementById("closemodal");
     modal.removeAttribute('aria-modal');
 });
 
-function CreateCard(smallCard){
-    const workElement = document.getElementById("modal1");
-    const photoElement = document.createElement("figure");
-    const imageUrlElement = document.createElement("img");
-    imageUrlElement.src = card.imageUrl;
-
-    workElement.appendChild(photoElement);
-    photoElement.appendChild(imageUrlElement);
-};
-
 //Style des éléments du modal-wrapper
 const titleModal = document.getElementById("titlemodal");
-console.log(titleModal);
+titleModal.style.height = "30px";
 titleModal.style.fontFamily = "work sans";
-titleModal.style.color = "red";
+titleModal.style.fontWeight = "400";
+titleModal.style.color = "black";
+titleModal.style.marginRight = "228px";
+
 
 const buttonCloseModal = document.getElementById("closemodal");
-console.log(buttonCloseModal);
-buttonCloseModal.style.border = "red";
+buttonCloseModal.style.height = "24px";
+buttonCloseModal.style.fontSize = "24px"
+buttonCloseModal.style.backgroundColor = "white";
+buttonCloseModal.style.border = "none";
+
+const galleryModal = document.getElementById("gallery-modal");
+const photoModal = document.createElement("figure");
+
