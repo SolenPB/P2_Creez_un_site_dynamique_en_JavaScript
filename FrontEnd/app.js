@@ -7,7 +7,7 @@ linkModal.addEventListener("click", function(event) {
         modal.style.display = null;
         modal.removeAttribute('aria-hidden');
         modal.setAttribute('aria-modal', 'true');
-});
+});    
 
 const closeModal = document.getElementById("js-closemodal");
 closeModal.addEventListener("click", function(event){
