@@ -46,8 +46,8 @@ editionText.style.margin = "none";
 
 
 //Fonction pour sauvegarder les filtres
-function SaveFilter(chat){
-    localStorage.setItem("filtre", chat);
+function SaveFilter(cat){
+    localStorage.setItem("filtre", cat);
 }
 
 // Condition créée pour aider au filtrage des catégories
