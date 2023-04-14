@@ -199,7 +199,7 @@ footer nav ul {
 	box-sizing: border-box;
 }
 
-.modal-wrapper {
+#modal-wrapper {
 	overflow: auto;
 	display: flex;
 	width: 630px;

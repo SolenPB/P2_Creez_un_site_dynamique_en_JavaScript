@@ -1,7 +1,7 @@
 const modal = document.getElementById('modal1');
 
-const linkModal = document.getElementById('js-modal');
-linkModal.addEventListener("click", function(event) {
+const openModal = document.getElementById('js-modal');
+openModal.addEventListener("click", function(event) {
     console.log("Ça marche !");
     event.preventDefault();
         modal.style.display = null;
@@ -9,11 +9,11 @@ linkModal.addEventListener("click", function(event) {
         modal.setAttribute('aria-modal', 'true');
 });    
 
-const closeModal = document.getElementById("js-closemodal");
-closeModal.addEventListener("click", function(event){
-    console.log("Va faire tout noir !");
+const closeModal = modal.addEventListener('click', function (event) {
     event.preventDefault();
-        modal.style.display = "none";
-        modal.setAttribute('aria-hidden', 'true');
-        modal.removeAttribute('aria-modal');
+    modal.style.display = "none";
+    modal.setAttribute('aria-hidden', 'true');
+    modal.removeAttribute('aria-modal');
+    const stopPropagation = event.stopPropagation();
 });
+
