@@ -201,6 +201,7 @@ footer nav ul {
 
 .modal-wrapper {
 	overflow: auto;
+	display: flex;
 	width: 630px;
 	height: 730px;
 	max-width: calc(100vw - 20px);
