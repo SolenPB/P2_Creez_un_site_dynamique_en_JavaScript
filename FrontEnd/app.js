@@ -8,12 +8,10 @@ openModal.addEventListener("click", function(event) {
         modal.setAttribute('aria-modal', 'true');
 });    
 
-const closeModal = modal.addEventListener('click', function (event) {
+const closeModal = document.getElementById("closemodal"); 
+    closeModal.addEventListener('click', function (event) {
     event.preventDefault();
     modal.style.display = "none";
     modal.setAttribute('aria-hidden', 'true');
     modal.removeAttribute('aria-modal');
 });
-
-const modalWrapper = document.getElementById('modal-wrapper');
-modalWrapper.removeEventListener("click", closeModal, false);
