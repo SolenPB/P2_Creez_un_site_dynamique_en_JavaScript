@@ -1,6 +1,22 @@
+function CreateSmallCard(smallCard){
+    const galleryModal = document.getElementById("gallery-modal");
+    const photoModal = document.createElement("figure");
+    const imageUrlModal = document.createElement("img");
+    imageUrlModal.src = smallCard.imageUrl;
 
-const works = fetch("http://localhost:5678/api/works/")
-.then (works => works.json());
+    const titleImgModal = document.createElement("figcaption");
+
+    galleryModal.appendChild(photoModal);
+    galleryModal.appendChild(imageUrlModal);
+    imageUrlModal.appendChild(titleImgModal);
+};    
+
+fetch("http://localhost:5678/api/works/")
+.then (res => res.json())
+.then(worksArray => {
+    for(let works of worksArray){
+    CreateSmallCard(works);
+}}); 
 
 const modal = document.getElementById('modal1');
 
@@ -29,13 +45,9 @@ titleModal.style.fontWeight = "400";
 titleModal.style.color = "black";
 titleModal.style.marginRight = "228px";
 
-
 const buttonCloseModal = document.getElementById("closemodal");
 buttonCloseModal.style.height = "24px";
 buttonCloseModal.style.fontSize = "24px"
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
-
-const galleryModal = document.getElementById("gallery-modal");
-const photoModal = document.createElement("figure");
 
