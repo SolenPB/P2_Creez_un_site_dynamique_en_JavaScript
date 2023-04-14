@@ -1,10 +1,5 @@
 const modal = document.getElementById('modal1');
-    modal.addEventListener("click", function (event){
-        modal.style.display = "none";
-        modal.setAttribute('aria-hidden', 'true');
-        modal.removeAttribute('aria-modal');
-    });
-  
+
 const linkModal = document.getElementById('js-modal');
 linkModal.addEventListener("click", function(event) {
     console.log("Ça marche !");
