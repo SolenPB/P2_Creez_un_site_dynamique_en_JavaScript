@@ -14,6 +14,7 @@ const closeModal = modal.addEventListener('click', function (event) {
     modal.style.display = "none";
     modal.setAttribute('aria-hidden', 'true');
     modal.removeAttribute('aria-modal');
-    const stopPropagation = event.stopPropagation();
 });
 
+const modalWrapper = document.getElementById('modal-wrapper');
+modalWrapper.removeEventListener("click", closeModal, false);
