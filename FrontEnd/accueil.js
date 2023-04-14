@@ -66,9 +66,8 @@ if (localStorage.getItem("filtre")){
 
 //Mise en forme des boutons de filtre
 
-const styleBoutons = document.querySelectorAll("button");
-
-for(let i = 0; i < styleBoutons.length; i++){
+const styleBoutons = document.getElementsByClassName("btn-style");
+ for(let i = 0; i < styleBoutons.length; i++){
     styleBoutons[i].style.fontFamily = "syne";
     styleBoutons[i].style.fontWeight = "700";
     styleBoutons[i].style.color = "#1D6154";
@@ -79,7 +78,7 @@ for(let i = 0; i < styleBoutons.length; i++){
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.borderRadius = "60px";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
-}
+ };
 
 //Fonctionnalité et mise en forme du bouton "Tous"
 
@@ -196,8 +195,6 @@ modGallery.style.margin = "10px", "0", "0","15px";
 const modifTitle = document.querySelector(".icontitleproject");
 modifTitle.style.marginLeft = "5px";
 
-const modal = document.querySelector(".modal");
-
 //Condition d'apparition des outils de modification
 
 let userLoggedIn = localStorage.getItem("token");
@@ -211,8 +208,7 @@ if(userLoggedIn == null){
     modImage.style.display = "none";
     modGallery.style.display ="none";
 } else {
-    let btnfilters = document.getElementById("btn-style");
+    let btnfilters = document.getElementById("ens-btn");
     btnfilters.style.display = "none";
     linksIn.style.display = "none";
 };
-
