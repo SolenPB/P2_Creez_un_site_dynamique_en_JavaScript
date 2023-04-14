@@ -51,3 +51,11 @@ buttonCloseModal.style.fontSize = "24px"
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
 
+const styleModalGallery = document.getElementById("gallery-modal");
+styleModalGallery.style.display = "grid";
+
+let worksGallery = document.getElementsByTagName("img");
+console.log(worksGallery);
+for (let i = 13; i < worksGallery.length; i++){
+    worksGallery.style.width = "300px";
+};      
