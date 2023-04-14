@@ -50,25 +50,6 @@ function SaveFilter(chat){
     localStorage.setItem("filtre", chat);
 }
 
-//Fonction pour créer les cartes présentant les travaux
-
-function CreateCard (card) {
-    const travailElement = document.querySelector(".gallery");
-    const photoElement = document.createElement("figure");
-
-    const imageUrlElement = document.createElement("img");
-    imageUrlElement.src = card.imageUrl;
-
-    const titleElement = document.createElement("figcaption");
-    titleElement.innerText = card.title;
-
-
-    travailElement.appendChild(photoElement);
-    photoElement.appendChild(imageUrlElement);
-    photoElement.appendChild(titleElement);
-
-};
-
 // Condition créée pour aider au filtrage des catégories
 
 if (localStorage.getItem("filtre")){
@@ -153,6 +134,25 @@ boutonRestaurants.addEventListener("click", function () {
             };
         };
 });
+
+//Fonction pour créer les cartes présentant les travaux
+
+function CreateCard (card) {
+    const travailElement = document.querySelector(".gallery");
+    const photoElement = document.createElement("figure");
+
+    const imageUrlElement = document.createElement("img");
+    imageUrlElement.src = card.imageUrl;
+
+    const titleElement = document.createElement("figcaption");
+    titleElement.innerText = card.title;
+
+
+    travailElement.appendChild(photoElement);
+    photoElement.appendChild(imageUrlElement);
+    photoElement.appendChild(titleElement);
+
+};
 
 //Intégration du bouton de publication des changements
 
