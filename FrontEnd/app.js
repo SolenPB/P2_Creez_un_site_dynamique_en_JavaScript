@@ -9,7 +9,7 @@ linkModal.addEventListener("click", function(event) {
         modal.setAttribute('aria-modal', 'true');
 });
 
-const closeModal = document.getElementById("closemodal");
+const closeModal = document.getElementById("js-closemodal");
 closeModal.addEventListener("click", function(event){
     console.log("Va faire tout noir !");
     event.preventDefault();
