@@ -106,7 +106,7 @@ changePhoto.style.margin = "2em", "auto";
 changePhoto.style.marginLeft = "120px";
 changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
-changePhoto.style.justifyContent = "center";
+/*changePhoto.style.justifyContent = "center";*/
 changePhoto.style.borderRadius = "60px";
 
 const deleteGallery = document.getElementById("delete-gallery");
