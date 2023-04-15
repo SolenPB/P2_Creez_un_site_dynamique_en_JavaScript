@@ -31,6 +31,13 @@ function CreateSmallCard(smallCard){
     const photoModal = document.createElement("figure");
     photoModal.style.width = "85px";
     photoModal.style.marginRight = "8px";
+    const movePicture = document.createElement("i");
+    movePicture.setAttribute("class", "fa-regular fa-trash-can");
+    movePicture.style.backgroundColor = "black";
+    movePicture.style.color = "white";
+    movePicture.style.fontSize = "20px";
+    movePicture.style.justifyContent = "flex-start";
+    movePicture.zIndex = "2";
     const pictureModal = document.createElement("div");
     pictureModal.setAttribute("id", "picture");
     const imageUrlModal = document.createElement("img");
@@ -44,6 +51,7 @@ function CreateSmallCard(smallCard){
     photoModal.appendChild(pictureModal);
     pictureModal.appendChild(imageUrlModal);
     pictureModal.appendChild(titleImgModal);
+    imageUrlModal.appendChild(movePicture);
 };    
 
 //Style des éléments du modal-wrapper
@@ -74,6 +82,8 @@ const changeModal = document.getElementById("change-modal");
 changeModal.style.display = "flex";
 changeModal.style.flexDirection = "column";
 changeModal.style.justifyContent = "center";
+changeModal.style.width = ""
+changeModal.style.borderTop = "solid", "black", "2px";
 
 const changePhoto = document.getElementById("change-photo");
 changePhoto.style.fontFamily ="syne";
