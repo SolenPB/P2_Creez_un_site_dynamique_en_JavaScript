@@ -29,11 +29,14 @@ const closeModal = document.getElementById("closemodal");
 function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
+    photoModal.style.width = "85px";
+    photoModal.style.marginRight = "8px";
     const pictureModal = document.createElement("div");
-    pictureModal.setAttribute("class", "picture");
+    pictureModal.setAttribute("id", "picture");
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
-
+    imageUrlModal.style.width = "85px";
+    imageUrlModal.style.height = "128px";
     const titleImgModal = document.createElement("figcaption");
 
     galleryModal.appendChild(photoModal);
@@ -49,20 +52,22 @@ titleModal.style.height = "30px";
 titleModal.style.fontFamily = "work sans";
 titleModal.style.fontWeight = "400";
 titleModal.style.color = "black";
-titleModal.style.marginRight = "228px";
+
 
 const buttonCloseModal = document.getElementById("closemodal");
+buttonCloseModal.style.marginLeft = "580px";
 buttonCloseModal.style.height = "24px";
 buttonCloseModal.style.fontSize = "24px"
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
 
 const styleModalGallery = document.getElementById("gallery-modal");
-styleModalGallery.style.display = "grid";
+styleModalGallery.style.marginTop = "40px";
+styleModalGallery.style.paddingLeft = "65px";
+styleModalGallery.style.width = "530px";
+styleModalGallery.style.height = "450px" 
+styleModalGallery.style.display = "flex";
+styleModalGallery.style.flexDirection = "row";
+styleModalGallery.style.flexWrap = "wrap";
 
-let worksGallery = document.getElementsByClassName("picture");
-console.log(worksGallery);
-
-for (let i = 13; i < worksGallery.length; i++){
-    worksGallery.style.width = "300px";
-};      
+//Intégration du bouton d'ajout et de suppression de photos
