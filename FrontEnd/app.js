@@ -69,5 +69,3 @@ styleModalGallery.style.height = "450px"
 styleModalGallery.style.display = "flex";
 styleModalGallery.style.flexDirection = "row";
 styleModalGallery.style.flexWrap = "wrap";
-
-//Intégration du bouton d'ajout et de suppression de photos
