@@ -54,7 +54,6 @@ titleModal.style.fontFamily = "work sans";
 titleModal.style.fontWeight = "400";
 titleModal.style.color = "black";
 
-
 const buttonCloseModal = document.getElementById("closemodal");
 buttonCloseModal.style.marginLeft = "580px";
 buttonCloseModal.style.height = "24px";
