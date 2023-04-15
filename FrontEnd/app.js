@@ -35,7 +35,7 @@ function CreateSmallCard(smallCard){
 
     const pictureModal = document.createElement("div");
     pictureModal.setAttribute("id", "picture");
-    pictureModal.style.height = "100%";
+    pictureModal.style.height = "120px";
 
     const movePicture = document.createElement("i");
     movePicture.setAttribute("class", "fa-regular fa-trash-can");
@@ -46,6 +46,8 @@ function CreateSmallCard(smallCard){
     movePicture.style.width = "17px";
     movePicture.style.justifyContent = "center";
     movePicture.style.position = "relative";
+    movePicture.style.top = "10px";
+    movePicture.style.left = "60px";
 
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
@@ -101,6 +103,7 @@ changePhoto.style.fontWeight = "700";
 changePhoto.style.color = "white";
 changePhoto.style.backgroundColor = "#1D6154";
 changePhoto.style.margin = "2em", "auto";
+changePhoto.style.marginLeft = "120px";
 changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
 changePhoto.style.justifyContent = "center";
