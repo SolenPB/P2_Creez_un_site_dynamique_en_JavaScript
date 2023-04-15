@@ -38,11 +38,12 @@ function CreateSmallCard(smallCard){
     imageUrlModal.style.width = "85px";
     imageUrlModal.style.height = "128px";
     const titleImgModal = document.createElement("figcaption");
-
+    titleImgModal.textContent = "Editer";
+        
     galleryModal.appendChild(photoModal);
     photoModal.appendChild(pictureModal);
     pictureModal.appendChild(imageUrlModal);
-    imageUrlModal.appendChild(titleImgModal);
+    pictureModal.appendChild(titleImgModal);
 };    
 
 //Style des éléments du modal-wrapper
@@ -70,6 +71,11 @@ styleModalGallery.style.display = "flex";
 styleModalGallery.style.flexDirection = "row";
 styleModalGallery.style.flexWrap = "wrap";
 
+const changeModal = document.getElementById("change-modal");
+changeModal.style.display = "flex";
+changeModal.style.flexDirection = "column";
+changeModal.style.justifyContent = "center";
+
 const changePhoto = document.getElementById("change-photo");
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
@@ -80,4 +86,10 @@ changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
 changePhoto.style.justifyContent = "center";
 changePhoto.style.borderRadius = "60px";
-changePhoto.style.border = "solid", "#1D6154", "2px";
+
+
+const deleteGallery = document.getElementById("delete-gallery");
+deleteGallery.style.display = "flex";
+deleteGallery.style.justifyContent = "center";
+deleteGallery.style.color = "black";
+deleteGallery.style.textDecoration = "none";
