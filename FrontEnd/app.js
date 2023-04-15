@@ -69,3 +69,15 @@ styleModalGallery.style.height = "450px"
 styleModalGallery.style.display = "flex";
 styleModalGallery.style.flexDirection = "row";
 styleModalGallery.style.flexWrap = "wrap";
+
+const changePhoto = document.getElementById("change-photo");
+changePhoto.style.fontFamily ="syne";
+changePhoto.style.fontWeight = "700";
+changePhoto.style.color = "white";
+changePhoto.style.backgroundColor = "#1D6154";
+changePhoto.style.margin = "2em", "auto";
+changePhoto.style.padding = "1em";
+changePhoto.style.width = "180px";
+changePhoto.style.justifyContent = "center";
+changePhoto.style.borderRadius = "60px";
+changePhoto.style.border = "solid", "#1D6154", "2px";
