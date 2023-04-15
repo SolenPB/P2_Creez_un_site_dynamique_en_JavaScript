@@ -30,28 +30,38 @@ function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
     photoModal.style.width = "85px";
+    photoModal.style.height = "140px"
     photoModal.style.marginRight = "8px";
-    const movePicture = document.createElement("i");
-    movePicture.setAttribute("class", "fa-regular fa-trash-can");
-    movePicture.style.backgroundColor = "black";
-    movePicture.style.color = "white";
-    movePicture.style.fontSize = "20px";
-    movePicture.style.justifyContent = "flex-start";
-    movePicture.zIndex = "2";
+
     const pictureModal = document.createElement("div");
     pictureModal.setAttribute("id", "picture");
+    pictureModal.style.height = "100%";
+
+    const movePicture = document.createElement("i");
+    movePicture.setAttribute("class", "fa-regular fa-trash-can");
+    movePicture.style.display = "flex";
+    movePicture.style.backgroundColor = "black";
+    movePicture.style.color = "white";
+    movePicture.style.fontSize = "15px";
+    movePicture.style.width = "17px";
+    movePicture.style.justifyContent = "center";
+    movePicture.style.position = "relative";
+
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
     imageUrlModal.style.width = "85px";
-    imageUrlModal.style.height = "128px";
+    imageUrlModal.style.height = "120px";
+    imageUrlModal.style.position = "absolute";
     const titleImgModal = document.createElement("figcaption");
     titleImgModal.textContent = "Editer";
+    titleImgModal.style.position = "relative";
+
         
     galleryModal.appendChild(photoModal);
     photoModal.appendChild(pictureModal);
     pictureModal.appendChild(imageUrlModal);
-    pictureModal.appendChild(titleImgModal);
-    imageUrlModal.appendChild(movePicture);
+    photoModal.appendChild(titleImgModal);
+    pictureModal.appendChild(movePicture);
 };    
 
 //Style des éléments du modal-wrapper
@@ -82,8 +92,8 @@ const changeModal = document.getElementById("change-modal");
 changeModal.style.display = "flex";
 changeModal.style.flexDirection = "column";
 changeModal.style.justifyContent = "center";
-changeModal.style.width = ""
-changeModal.style.borderTop = "solid", "black", "2px";
+changeModal.style.width = "420px";
+changeModal.style.borderTop = "solid", "black", "1px";
 
 const changePhoto = document.getElementById("change-photo");
 changePhoto.style.fontFamily ="syne";
