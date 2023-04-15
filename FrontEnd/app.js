@@ -29,7 +29,8 @@ const closeModal = document.getElementById("closemodal");
 function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
-    const pictureModal = document.createElement("div")
+    const pictureModal = document.createElement("div");
+    pictureModal.setAttribute("class", "picture");
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
 
@@ -59,7 +60,7 @@ buttonCloseModal.style.border = "none";
 const styleModalGallery = document.getElementById("gallery-modal");
 styleModalGallery.style.display = "grid";
 
-let worksGallery = document.getElementsByTagName("img");
+let worksGallery = document.getElementsByClassName("picture");
 console.log(worksGallery);
 
 for (let i = 13; i < worksGallery.length; i++){
