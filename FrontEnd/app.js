@@ -87,9 +87,11 @@ changePhoto.style.width = "180px";
 changePhoto.style.justifyContent = "center";
 changePhoto.style.borderRadius = "60px";
 
-
 const deleteGallery = document.getElementById("delete-gallery");
 deleteGallery.style.display = "flex";
 deleteGallery.style.justifyContent = "center";
 deleteGallery.style.color = "black";
 deleteGallery.style.textDecoration = "none";
+
+//Intégration de la modale d'ajout de photo
+
