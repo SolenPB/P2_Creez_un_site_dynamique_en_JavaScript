@@ -95,7 +95,7 @@ changeModal.style.display = "flex";
 changeModal.style.flexDirection = "column";
 changeModal.style.justifyContent = "center";
 changeModal.style.width = "420px";
-changeModal.style.borderTop = "solid", "black", "1px";
+changeModal.style.borderTop = "solid", "black";
 
 const changePhoto = document.getElementById("change-photo");
 changePhoto.style.fontFamily ="syne";
