@@ -104,7 +104,8 @@ buttonCloseModal.style.fontSize = "24px"
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
 
-const buttonPreModal = document
+const buttonPreModal = document.getElementById("premodal");
+
 const styleModalGallery = document.getElementById("gallery-modal");
 styleModalGallery.style.marginTop = "40px";
 styleModalGallery.style.paddingLeft = "65px";
