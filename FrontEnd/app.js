@@ -56,7 +56,9 @@ function CreateSmallCard(smallCard){
     movePicture.style.backgroundColor = "black";
     movePicture.style.color = "white";
     movePicture.style.position = "relative";
-    movePicture.style.width = "15px";
+    movePicture.style.width = "17px";
+    movePicture.style.bottom = "5px";
+    movePicture.style.left = "35px";
 
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
