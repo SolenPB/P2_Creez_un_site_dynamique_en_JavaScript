@@ -51,10 +51,9 @@ function CreateSmallCard(smallCard){
     deletePicture.style.paddingTop = "2px";
     deletePicture.style.paddingRight = "2px";
 
-
     const movePicture = document.createElement("i");
     movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
-    movePicture.style.display = "flex";
+    movePicture.style.display = "none";
     movePicture.style.justifyContent = "center";
     movePicture.style.alignItems = "center";
     movePicture.style.backgroundColor = "black";
@@ -70,6 +69,12 @@ function CreateSmallCard(smallCard){
     imageUrlModal.style.width = "85px";
     imageUrlModal.style.height = "120px";
     imageUrlModal.style.position = "absolute";
+    imageUrlModal.addEventListener("mouseover", function (event){
+        movePicture.style.display = "flex";
+        mouseout(function(){
+            movePicture.style.display = "none";
+        });
+    });
 
     const titleImgModal = document.createElement("figcaption");
     titleImgModal.textContent = "Editer";
@@ -81,6 +86,7 @@ function CreateSmallCard(smallCard){
     photoModal.appendChild(titleImgModal);
     pictureModal.appendChild(deletePicture);
     pictureModal.appendChild(movePicture);
+
 };    
 
 //Style des éléments du modal-wrapper
