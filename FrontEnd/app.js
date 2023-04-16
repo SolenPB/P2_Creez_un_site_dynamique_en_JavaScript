@@ -37,32 +37,42 @@ function CreateSmallCard(smallCard){
     pictureModal.setAttribute("id", "picture");
     pictureModal.style.height = "120px";
 
+    const deletePicture = document.createElement("i");
+    deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+    deletePicture.style.display = "flex";
+    deletePicture.style.backgroundColor = "black";
+    deletePicture.style.color = "white";
+    deletePicture.style.fontSize = "15px";
+    deletePicture.style.width = "17px";
+    deletePicture.style.justifyContent = "center";
+    deletePicture.style.position = "relative";
+    deletePicture.style.top = "10px";
+    deletePicture.style.left = "60px";
+
     const movePicture = document.createElement("i");
-    movePicture.setAttribute("class", "fa-regular fa-trash-can");
+    movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
     movePicture.style.display = "flex";
+    movePicture.style.justifyContent = "center";
     movePicture.style.backgroundColor = "black";
     movePicture.style.color = "white";
-    movePicture.style.fontSize = "15px";
-    movePicture.style.width = "17px";
-    movePicture.style.justifyContent = "center";
     movePicture.style.position = "relative";
-    movePicture.style.top = "10px";
-    movePicture.style.left = "60px";
+    movePicture.style.width = "15px";
 
     const imageUrlModal = document.createElement("img");
     imageUrlModal.src = smallCard.imageUrl;
     imageUrlModal.style.width = "85px";
     imageUrlModal.style.height = "120px";
     imageUrlModal.style.position = "absolute";
+
     const titleImgModal = document.createElement("figcaption");
     titleImgModal.textContent = "Editer";
     titleImgModal.style.position = "relative";
 
-        
     galleryModal.appendChild(photoModal);
     photoModal.appendChild(pictureModal);
     pictureModal.appendChild(imageUrlModal);
     photoModal.appendChild(titleImgModal);
+    pictureModal.appendChild(deletePicture);
     pictureModal.appendChild(movePicture);
 };    
 
