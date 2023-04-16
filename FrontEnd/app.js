@@ -71,9 +71,9 @@ function CreateSmallCard(smallCard){
     imageUrlModal.style.position = "absolute";
     imageUrlModal.addEventListener("mouseover", function (event){
         movePicture.style.display = "flex";
-        mouseout(function(){
+        /*mouseout(function(){
             movePicture.style.display = "none";
-        });
+        }); A CORRIGER */
     });
 
     const titleImgModal = document.createElement("figcaption");
