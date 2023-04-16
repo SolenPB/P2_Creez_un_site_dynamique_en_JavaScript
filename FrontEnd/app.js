@@ -104,6 +104,7 @@ buttonCloseModal.style.fontSize = "24px"
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
 
+const buttonPreModal = document
 const styleModalGallery = document.getElementById("gallery-modal");
 styleModalGallery.style.marginTop = "40px";
 styleModalGallery.style.paddingLeft = "65px";
@@ -130,6 +131,9 @@ changePhoto.style.marginLeft = "120px";
 changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
 changePhoto.style.borderRadius = "60px";
+changePhoto.addEventListener = ("click", function (event){
+
+});
 
 const deleteGallery = document.getElementById("delete-gallery");
 deleteGallery.style.display = "flex";
