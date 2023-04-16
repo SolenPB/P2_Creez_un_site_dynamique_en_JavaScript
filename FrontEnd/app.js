@@ -42,22 +42,27 @@ function CreateSmallCard(smallCard){
     deletePicture.style.display = "flex";
     deletePicture.style.backgroundColor = "black";
     deletePicture.style.color = "white";
-    deletePicture.style.fontSize = "15px";
     deletePicture.style.width = "17px";
+    deletePicture.style.height = "17px";
     deletePicture.style.justifyContent = "center";
     deletePicture.style.position = "relative";
     deletePicture.style.top = "10px";
     deletePicture.style.left = "60px";
+    deletePicture.style.paddingTop = "2px";
+    deletePicture.style.paddingRight = "2px";
+
 
     const movePicture = document.createElement("i");
     movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
     movePicture.style.display = "flex";
     movePicture.style.justifyContent = "center";
+    movePicture.style.alignItems = "center";
     movePicture.style.backgroundColor = "black";
     movePicture.style.color = "white";
     movePicture.style.position = "relative";
     movePicture.style.width = "17px";
-    movePicture.style.bottom = "5px";
+    movePicture.style.height = "17px";
+    movePicture.style.bottom = "8px";
     movePicture.style.left = "35px";
 
     const imageUrlModal = document.createElement("img");
