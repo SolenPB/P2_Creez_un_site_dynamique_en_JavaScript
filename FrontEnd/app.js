@@ -133,7 +133,7 @@ changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
 changePhoto.style.borderRadius = "60px";
 changePhoto.addEventListener = ("click", function (event){
-
+    
 });
 
 const deleteGallery = document.getElementById("delete-gallery");
@@ -141,6 +141,10 @@ deleteGallery.style.display = "flex";
 deleteGallery.style.justifyContent = "center";
 deleteGallery.style.color = "black";
 deleteGallery.style.textDecoration = "none";
+
+const validPhoto = document.getElementById("validation");
+FormData = new FormData(validation);
+
 
 //Intégration de la modale d'ajout de photo
 
