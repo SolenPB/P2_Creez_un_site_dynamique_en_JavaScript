@@ -156,6 +156,8 @@ changeModal.style.marginBottom = "30px";
 const changePhoto = document.getElementById("change-photo");
 changePhoto.addEventListener("click", function(event){
     const galleryModal = document.getElementById("gallery-modal");
+    const modalWrapper = document.getElementById("modal-wrapper");
+    modalWrapper.style.height = "670px";
     titleModal.style.display = "none";
     galleryModal.style.display = "none";
     changePhoto.style.display = "none";
@@ -189,6 +191,7 @@ const preModalTitle = document.getElementById("premodaltitle");
 preModalTitle.style.fontFamily = "work sans";
 preModalTitle.style.fontWeight = "400";
 preModalTitle.style.color = "black";
+preModalTitle.style.marginTop = "15px";
 
 const buttonValidation = document.getElementById("btn-validation");
 buttonValidation.style.fontFamily ="syne";
