@@ -190,19 +190,6 @@ preModalTitle.style.fontFamily = "work sans";
 preModalTitle.style.fontWeight = "400";
 preModalTitle.style.color = "black";
 
-const validation = document.getElementById("btn-validation");
-validation.style.fontFamily ="syne";
-validation.style.fontWeight = "700";
-validation.style.color = "white";
-validation.style.border = "none";
-validation.style.backgroundColor = "#1D6154";
-validation.style.justifyContent = "center";
-validation.style.margin = "2em", "auto";
-validation.style.marginLeft = "120px";
-validation.style.padding = "1em";
-validation.style.width = "180px";
-validation.style.borderRadius = "60px";
-
 const formPhoto = document.getElementById("formphoto");
 const addPhoto = document.createElement("div");
 addPhoto.setAttribute("id","newphoto");
@@ -251,5 +238,19 @@ addForm.appendChild(titleInput);
 addForm.appendChild(titlePhoto);
 addForm.appendChild(catTitle);
 addForm.appendChild(catPhoto);
+
+const validation = document.getElementById("btn-validation");
+validation.style.fontFamily ="syne";
+validation.style.fontWeight = "700";
+validation.style.color = "white";
+validation.style.border = "none";
+validation.style.backgroundColor = "#A7A7A7";
+validation.style.justifyContent = "center";
+validation.style.margin = "2em", "auto";
+validation.style.marginLeft = "120px";
+validation.style.padding = "1em";
+validation.style.width = "180px";
+validation.style.borderRadius = "60px";
+
 
 
