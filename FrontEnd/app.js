@@ -14,6 +14,9 @@ openModal.addEventListener("click", function(event) {
         modal.style.display = null;
         modal.removeAttribute('aria-hidden');
         modal.setAttribute('aria-modal', 'true');
+        buttonPreModal.style.visibility = "hidden";
+        preModalTitle.style.display = "none";
+        validation.style.visibility = "hide";
 });    
 
 const closeModal = document.getElementById("closemodal"); 
@@ -97,14 +100,35 @@ titleModal.style.fontFamily = "work sans";
 titleModal.style.fontWeight = "400";
 titleModal.style.color = "black";
 
+const buttonsModal = document.getElementById("btns-modal");
+buttonsModal.style.width = "600px";
+buttonsModal.style.display = "flex";
+buttonsModal.style.justifyContent = "space-between";
+buttonsModal.style.alignItems = "center";
+buttonsModal.style.marginTop = "15px";
+
 const buttonCloseModal = document.getElementById("closemodal");
-buttonCloseModal.style.marginLeft = "580px";
+buttonCloseModal.style.display = "flex";
 buttonCloseModal.style.height = "24px";
-buttonCloseModal.style.fontSize = "24px"
+buttonCloseModal.style.fontSize = "24px";
 buttonCloseModal.style.backgroundColor = "white";
 buttonCloseModal.style.border = "none";
+buttonCloseModal.style.paddingBottom = "5px";
 
 const buttonPreModal = document.getElementById("premodal");
+buttonPreModal.style.border = "none";
+buttonPreModal.style.backgroundColor = "white";
+buttonPreModal.style.fontSize = "24px";
+buttonPreModal.style.padding = "0";
+buttonPreModal.addEventListener("click", function(event){
+    const galleryModal = document.getElementById("gallery-modal");
+    titleModal.style.display = "flex";
+    galleryModal.style.display = "flex";
+    changePhoto.style.display = "flex";
+    deleteGallery.style.display = "flex";
+    buttonPreModal.style.visibility = "hidden";
+    preModalTitle.style.display = "none";
+});
 
 const styleModalGallery = document.getElementById("gallery-modal");
 styleModalGallery.style.marginTop = "40px";
@@ -123,18 +147,25 @@ changeModal.style.width = "420px";
 changeModal.style.borderTop = "solid", "black";
 
 const changePhoto = document.getElementById("change-photo");
+changePhoto.addEventListener("click", function(event){
+    const galleryModal = document.getElementById("gallery-modal");
+    titleModal.style.display = "none";
+    galleryModal.style.display = "none";
+    changePhoto.style.display = "none";
+    deleteGallery.style.display = "none";
+    buttonPreModal.style.visibility = "visible";
+    preModalTitle.style.display = "flex";
+});
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
 changePhoto.style.color = "white";
 changePhoto.style.backgroundColor = "#1D6154";
+changePhoto.style.justifyContent = "center";
 changePhoto.style.margin = "2em", "auto";
 changePhoto.style.marginLeft = "120px";
 changePhoto.style.padding = "1em";
 changePhoto.style.width = "180px";
 changePhoto.style.borderRadius = "60px";
-changePhoto.addEventListener = ("click", function (event){
-    
-});
 
 const deleteGallery = document.getElementById("delete-gallery");
 deleteGallery.style.display = "flex";
@@ -142,9 +173,11 @@ deleteGallery.style.justifyContent = "center";
 deleteGallery.style.color = "black";
 deleteGallery.style.textDecoration = "none";
 
-const validPhoto = document.getElementById("validation");
-FormData = new FormData(validation);
-
-
 //Intégration de la modale d'ajout de photo
 
+const preModalTitle = document.getElementById("premodaltitle");
+preModalTitle.style.fontFamily = "work sans";
+preModalTitle.style.fontWeight = "400";
+preModalTitle.style.color = "black";
+
+const validation = document.getElementById("validation");
