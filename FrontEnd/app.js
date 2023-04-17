@@ -18,6 +18,7 @@ openModal.addEventListener("click", function(event) {
         preModalTitle.style.display = "none";
         validation.style.display = "none";
         addPhoto.style.display = "none";
+        addForm.style.display = "none";
 
 });    
 
@@ -131,6 +132,7 @@ buttonPreModal.addEventListener("click", function(event){
     buttonPreModal.style.visibility = "hidden";
     preModalTitle.style.display = "none";
     addPhoto.style.display = "none";
+    addForm.style.display = "none";
     validation.style.display = "none";
 });
 
@@ -160,8 +162,8 @@ changePhoto.addEventListener("click", function(event){
     buttonPreModal.style.visibility = "visible";
     preModalTitle.style.display = "flex";
     addPhoto.style.display = "flex";
-    validation.style.display = "flex";
     addForm.style.display = "flex";
+    validation.style.display = "flex";
 });
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
@@ -208,20 +210,45 @@ addPhoto.style.height = "169px";
 addPhoto.style.backgroundColor = "#E8F1F7";
 addPhoto.style.marginTop = "36px";
 
-const addForm = document.createElement("form");
-addForm.setAttribute("action", "#", "method", "post", "id", "postphoto");
-addForm.style.height = "50px";
+const infoPhoto = document.createElement("div");
+infoPhoto.setAttribute("id", "infophoto");
+infoPhoto.style.flexDirection = "column";
+infoPhoto.style.marginTop = "40px";
+infoPhoto.style.marginBottom = "47px";
 
-/*A AJOUTER DANS LES CONDITIONS D'APPARITION DE LA SECONDE MODALE*/
-/*CREER UNE DIV INFOPHOTO*/
+const addForm = document.createElement("form");
+addForm.setAttribute("action", "#");
+addForm.setAttribute("method", "post");
+addForm.setAttribute("id", "");
+addForm.style.flexDirection = "column";
 
 const titleInput = document.createElement("label");
 titleInput.setAttribute("for","titre-photo");
 titleInput.textContent = "Titre";
+titleInput.style.marginBottom = "10px";
 const titlePhoto = document.createElement("input");
-titlePhoto.setAttribute("type", "text", "name", "title", "id", "titlePhoto");
+titlePhoto.setAttribute ("type", "text");
+titlePhoto.setAttribute("name","title");
+titlePhoto.setAttribute("id", "titlephoto");
+titlePhoto.style.height = "50px";
+titlePhoto.style.marginBottom = "20px";
+
+const catTitle = document.createElement("label");
+catTitle.setAttribute("for", "categorie");
+catTitle.textContent = "Catégorie";
+catTitle.style.marginBottom = "10px";
+const catPhoto = document.createElement("input");
+catPhoto.setAttribute("type", "text");
+catPhoto.setAttribute("name", "cat");
+catPhoto.setAttribute("id", "catphoto");
+catPhoto.style.height = "50px";
 
 formPhoto.appendChild(addPhoto);
-formPhoto.appendChild(addForm);
-titleInput.appendChild(titlePhoto);
+formPhoto.appendChild(infoPhoto);
+infoPhoto.appendChild(addForm);
+addForm.appendChild(titleInput);
+addForm.appendChild(titlePhoto);
+addForm.appendChild(catTitle);
+addForm.appendChild(catPhoto);
+
 
