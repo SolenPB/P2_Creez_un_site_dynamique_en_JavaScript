@@ -191,7 +191,7 @@ const preModalTitle = document.getElementById("premodaltitle");
 preModalTitle.style.fontFamily = "work sans";
 preModalTitle.style.fontWeight = "400";
 preModalTitle.style.color = "black";
-preModalTitle.style.marginTop = "15px";
+preModalTitle.style.marginTop = "10px";
 
 const buttonValidation = document.getElementById("btn-validation");
 buttonValidation.style.fontFamily ="syne";
@@ -263,6 +263,10 @@ titlePhoto.setAttribute("name","title");
 titlePhoto.setAttribute("id", "titlephoto");
 titlePhoto.style.height = "50px";
 titlePhoto.style.marginBottom = "20px";
+titlePhoto.style.border = "none";
+titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+
+/*CHANGER INPUT CATPHOTO EN SELECT - VOIR MDN SELECT A LIST*/
 
 const catTitle = document.createElement("label");
 catTitle.setAttribute("for", "categorie");
@@ -273,6 +277,8 @@ catPhoto.setAttribute("type", "text");
 catPhoto.setAttribute("name", "cat");
 catPhoto.setAttribute("id", "catphoto");
 catPhoto.style.height = "50px";
+catPhoto.style.border = "none";
+catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
 
 formPhoto.appendChild(addPhoto);
 addPhoto.appendChild(iconPhoto);
