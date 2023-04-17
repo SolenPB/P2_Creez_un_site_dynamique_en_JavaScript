@@ -16,7 +16,9 @@ openModal.addEventListener("click", function(event) {
         modal.setAttribute('aria-modal', 'true');
         buttonPreModal.style.visibility = "hidden";
         preModalTitle.style.display = "none";
-        validation.style.visibility = "hide";
+        validation.style.display = "none";
+        addPhoto.style.display = "none";
+
 });    
 
 const closeModal = document.getElementById("closemodal"); 
@@ -128,6 +130,8 @@ buttonPreModal.addEventListener("click", function(event){
     deleteGallery.style.display = "flex";
     buttonPreModal.style.visibility = "hidden";
     preModalTitle.style.display = "none";
+    addPhoto.style.display = "none";
+    validation.style.display = "none";
 });
 
 const styleModalGallery = document.getElementById("gallery-modal");
@@ -155,6 +159,9 @@ changePhoto.addEventListener("click", function(event){
     deleteGallery.style.display = "none";
     buttonPreModal.style.visibility = "visible";
     preModalTitle.style.display = "flex";
+    addPhoto.style.display = "flex";
+    validation.style.display = "flex";
+    addForm.style.display = "flex";
 });
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
@@ -180,4 +187,41 @@ preModalTitle.style.fontFamily = "work sans";
 preModalTitle.style.fontWeight = "400";
 preModalTitle.style.color = "black";
 
-const validation = document.getElementById("validation");
+const validation = document.getElementById("btn-validation");
+validation.style.fontFamily ="syne";
+validation.style.fontWeight = "700";
+validation.style.color = "white";
+validation.style.border = "none";
+validation.style.backgroundColor = "#1D6154";
+validation.style.justifyContent = "center";
+validation.style.margin = "2em", "auto";
+validation.style.marginLeft = "120px";
+validation.style.padding = "1em";
+validation.style.width = "180px";
+validation.style.borderRadius = "60px";
+
+const formPhoto = document.getElementById("formphoto");
+const addPhoto = document.createElement("div");
+addPhoto.setAttribute("id","newphoto");
+addPhoto.style.width = "420px";
+addPhoto.style.height = "169px";
+addPhoto.style.backgroundColor = "#E8F1F7";
+addPhoto.style.marginTop = "36px";
+
+const addForm = document.createElement("form");
+addForm.setAttribute("action", "#", "method", "post", "id", "postphoto");
+addForm.style.height = "50px";
+
+/*A AJOUTER DANS LES CONDITIONS D'APPARITION DE LA SECONDE MODALE*/
+/*CREER UNE DIV INFOPHOTO*/
+
+const titleInput = document.createElement("label");
+titleInput.setAttribute("for","titre-photo");
+titleInput.textContent = "Titre";
+const titlePhoto = document.createElement("input");
+titlePhoto.setAttribute("type", "text", "name", "title", "id", "titlePhoto");
+
+formPhoto.appendChild(addPhoto);
+formPhoto.appendChild(addForm);
+titleInput.appendChild(titlePhoto);
+
