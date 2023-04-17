@@ -151,6 +151,7 @@ changeModal.style.flexDirection = "column";
 changeModal.style.justifyContent = "center";
 changeModal.style.width = "420px";
 changeModal.style.borderTop = "solid", "black";
+changeModal.style.marginBottom = "30px";
 
 const changePhoto = document.getElementById("change-photo");
 changePhoto.addEventListener("click", function(event){
