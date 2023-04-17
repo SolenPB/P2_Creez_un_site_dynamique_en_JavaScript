@@ -205,9 +205,38 @@ const formPhoto = document.getElementById("formphoto");
 const addPhoto = document.createElement("div");
 addPhoto.setAttribute("id","newphoto");
 addPhoto.style.width = "420px";
-addPhoto.style.height = "169px";
+addPhoto.style.height = "180px";
+addPhoto.style.alignItems = "center";
+addPhoto.style.flexDirection = "column";
 addPhoto.style.backgroundColor = "#E8F1F7";
+addPhoto.style.borderRadius = "5px";
 addPhoto.style.marginTop = "36px";
+
+const iconPhoto = document.createElement("i");
+iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
+iconPhoto.style.width = "58px";
+iconPhoto.style.height = "46px";
+iconPhoto.style.fontSize = "58px";
+iconPhoto.style.justifyContent = "center";
+iconPhoto.style.color = "#B9C5CC";
+iconPhoto.style.marginTop = "30px";
+
+const buttonAddPhoto = document.createElement("button");
+buttonAddPhoto.setAttribute("id", "add-photo");
+buttonAddPhoto.textContent = "+ Ajouter photo";
+buttonAddPhoto.style.fontFamily ="syne";
+buttonAddPhoto.style.fontWeight = "700";
+buttonAddPhoto.style.color = "#306685";
+buttonAddPhoto.style.border = "none";
+buttonAddPhoto.style.backgroundColor = "#A7A7A7";
+buttonAddPhoto.style.justifyContent = "center";
+buttonAddPhoto.style.padding = "1em";
+buttonAddPhoto.style.width = "180px";
+buttonAddPhoto.style.borderRadius = "60px";
+buttonAddPhoto.style.marginTop = "28px";
+
+const formatImage = document.createElement("p");
+formatImage.textContent = "jps, png : 4mo max";
 
 const infoPhoto = document.createElement("div");
 infoPhoto.setAttribute("id", "infophoto");
@@ -243,6 +272,9 @@ catPhoto.setAttribute("id", "catphoto");
 catPhoto.style.height = "50px";
 
 formPhoto.appendChild(addPhoto);
+addPhoto.appendChild(iconPhoto);
+addPhoto.appendChild(buttonAddPhoto);
+addPhoto.appendChild(formatImage);
 formPhoto.appendChild(infoPhoto);
 infoPhoto.appendChild(addForm);
 addForm.appendChild(titleInput);
