@@ -125,6 +125,8 @@ buttonPreModal.style.fontSize = "24px";
 buttonPreModal.style.padding = "0";
 buttonPreModal.addEventListener("click", function(event){
     const galleryModal = document.getElementById("gallery-modal");
+    const modalWrapper = document.getElementById("modal-wrapper");
+    modalWrapper.style.height = "730px";
     titleModal.style.display = "flex";
     galleryModal.style.display = "flex";
     changePhoto.style.display = "flex";
@@ -239,7 +241,7 @@ buttonAddPhoto.style.borderRadius = "60px";
 buttonAddPhoto.style.marginTop = "28px";
 
 const formatImage = document.createElement("p");
-formatImage.textContent = "jps, png : 4mo max";
+formatImage.textContent = "jpg, png : 4mo max";
 
 const infoPhoto = document.createElement("div");
 infoPhoto.setAttribute("id", "infophoto");
