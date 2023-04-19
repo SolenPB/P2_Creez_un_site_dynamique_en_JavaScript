@@ -206,42 +206,75 @@ buttonValidation.style.padding = "1em";
 buttonValidation.style.width = "180px";
 buttonValidation.style.borderRadius = "60px";
 
+//Formulaire d'ajout de nouvelles photos 
+
 const formPhoto = document.getElementById("formphoto");
 const addPhoto = document.createElement("div");
 addPhoto.setAttribute("id","newphoto");
 addPhoto.style.width = "420px";
 addPhoto.style.height = "180px";
+addPhoto.style.justifyContent = "center";
 addPhoto.style.alignItems = "center";
 addPhoto.style.flexDirection = "column";
 addPhoto.style.backgroundColor = "#E8F1F7";
 addPhoto.style.borderRadius = "5px";
 addPhoto.style.marginTop = "36px";
 
+let photo = document.createElement("img");
+photo.setAttribute("id", "newPhoto");
+let previewPicture = function (e){
+    const [picture] = e.files;
+
+     if(picture) {
+        photo.src = URL.createObjectURL(picture)
+        actionButton.style.display = "none";
+        formatImage.style.display = "none";
+     };
+};
+photo.style.maxHeight = "169px";
+photo.style.objectFit = "contain";
+photo.style.border = "none";
+photo.style.display = "none";
+
 const iconPhoto = document.createElement("i");
 iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
-iconPhoto.style.width = "58px";
-iconPhoto.style.height = "46px";
 iconPhoto.style.fontSize = "58px";
 iconPhoto.style.justifyContent = "center";
 iconPhoto.style.color = "#B9C5CC";
-iconPhoto.style.marginTop = "30px";
+iconPhoto.style.marginTop = "10px";
 
-const buttonAddPhoto = document.createElement("button");
-buttonAddPhoto.setAttribute("id", "add-photo");
+//Bouton d'ajout de photo
+const actionButton = document.createElement("div");
+actionButton.setAttribute("id", "buttonAdd");
+actionButton.style.display = "flex";
+actionButton.style.flexDirection = "column";
+actionButton.style.alignItems = "center";
+actionButton.style.borderRadius = "60px";
+actionButton.style.backgroundColor = "#A7A7A7";
+actionButton.style.height = "36px";
+
+const buttonAddPhoto = document.createElement("label");
 buttonAddPhoto.textContent = "+ Ajouter photo";
-buttonAddPhoto.style.fontFamily ="syne";
-buttonAddPhoto.style.fontWeight = "700";
-buttonAddPhoto.style.color = "#306685";
-buttonAddPhoto.style.border = "none";
-buttonAddPhoto.style.backgroundColor = "#A7A7A7";
-buttonAddPhoto.style.justifyContent = "center";
-buttonAddPhoto.style.padding = "1em";
-buttonAddPhoto.style.width = "180px";
-buttonAddPhoto.style.borderRadius = "60px";
-buttonAddPhoto.style.marginTop = "28px";
+buttonAddPhoto.style.position = "relative";
+buttonAddPhoto.style.top = "12px";
+
+const inputAddPhoto = document.createElement("input");
+inputAddPhoto.setAttribute("type", "file");
+inputAddPhoto.setAttribute("id", "input-addphoto");
+inputAddPhoto.setAttribute("name", "picture");
+inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
+inputAddPhoto.style.height = "36px";
+inputAddPhoto.style.opacity = "0";
+
+inputAddPhoto.addEventListener("click", function (e){
+    photo.style.display = "flex";
+    iconPhoto.style.display = "none";
+});
 
 const formatImage = document.createElement("p");
 formatImage.textContent = "jpg, png : 4mo max";
+
+//Entrée des informations pour la nouvelle image
 
 const infoPhoto = document.createElement("div");
 infoPhoto.setAttribute("id", "infophoto");
@@ -252,7 +285,7 @@ infoPhoto.style.marginBottom = "47px";
 const addForm = document.createElement("form");
 addForm.setAttribute("action", "#");
 addForm.setAttribute("method", "post");
-addForm.setAttribute("id", "");
+addForm.setAttribute("id", "formElement");
 addForm.style.flexDirection = "column";
 
 const titleInput = document.createElement("label");
@@ -283,10 +316,13 @@ catPhoto.style.border = "none";
 catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
 
 formPhoto.appendChild(addPhoto);
+formPhoto.appendChild(infoPhoto)
+addPhoto.appendChild(photo);
 addPhoto.appendChild(iconPhoto);
-addPhoto.appendChild(buttonAddPhoto);
+addPhoto.appendChild(actionButton);
+actionButton.appendChild(buttonAddPhoto);
+actionButton.appendChild(inputAddPhoto);
 addPhoto.appendChild(formatImage);
-formPhoto.appendChild(infoPhoto);
 infoPhoto.appendChild(addForm);
 addForm.appendChild(titleInput);
 addForm.appendChild(titlePhoto);
