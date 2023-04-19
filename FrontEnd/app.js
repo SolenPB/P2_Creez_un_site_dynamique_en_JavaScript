@@ -166,7 +166,6 @@ changePhoto.addEventListener("click", function(event){
     galleryModal.style.display = "none";
     changePhoto.style.display = "none";
     deleteGallery.style.display = "none";
-    photo.style.display = "none";
     buttonPreModal.style.visibility = "visible";
     preModalTitle.style.display = "flex";
     addPhoto.style.display = "flex";
@@ -198,16 +197,6 @@ preModalTitle.style.fontWeight = "400";
 preModalTitle.style.color = "black";
 preModalTitle.style.marginTop = "10px";
 
-const buttonValidation = document.getElementById("btn-validation");
-buttonValidation.style.fontFamily ="syne";
-buttonValidation.style.fontWeight = "700";
-buttonValidation.style.color = "white";
-buttonValidation.style.border = "none";
-buttonValidation.style.backgroundColor = "#A7A7A7";
-buttonValidation.style.justifyContent = "center";
-buttonValidation.style.padding = "1em";
-buttonValidation.style.width = "180px";
-buttonValidation.style.borderRadius = "60px";
 
 //Formulaire d'ajout de nouvelles photos 
 
@@ -346,3 +335,13 @@ catPhoto.appendChild(catOjbect);
 catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
 
+const buttonValidation = document.getElementById("btn-validation");
+buttonValidation.style.fontFamily ="syne";
+buttonValidation.style.fontWeight = "700";
+buttonValidation.style.color = "white";
+buttonValidation.style.border = "none";
+buttonValidation.style.backgroundColor = "#A7A7A7";
+buttonValidation.style.justifyContent = "center";
+buttonValidation.style.padding = "1em";
+buttonValidation.style.width = "180px";
+buttonValidation.style.borderRadius = "60px";
