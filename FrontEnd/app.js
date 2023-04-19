@@ -171,7 +171,6 @@ changePhoto.addEventListener("click", function(event){
     addPhoto.style.display = "flex";
     addForm.style.display = "flex";
     validation.style.display = "flex";
-    location.reload();
 });
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
