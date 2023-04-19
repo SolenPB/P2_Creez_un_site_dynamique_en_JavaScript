@@ -299,7 +299,6 @@ titlePhoto.style.marginBottom = "20px";
 titlePhoto.style.border = "none";
 titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
 
-/*CHANGER INPUT CATPHOTO EN SELECT - VOIR MDN SELECT A LIST*/
 
 const catTitle = document.createElement("label");
 catTitle.setAttribute("for", "categorie");
