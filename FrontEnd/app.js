@@ -30,7 +30,8 @@ const closeModal = document.getElementById("closemodal");
     modal.removeAttribute('aria-modal');
 });
 
-//Importation et création de l'emplacement des travaux dans la modale
+
+//Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
 
 function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
@@ -95,7 +96,8 @@ function CreateSmallCard(smallCard){
 
 };    
 
-//Style des éléments du modal-wrapper
+
+//Style et fonctionnalité des éléments du modal-wrapper
 
 const titleModal = document.getElementById("titlemodal");
 titleModal.style.height = "30px";
