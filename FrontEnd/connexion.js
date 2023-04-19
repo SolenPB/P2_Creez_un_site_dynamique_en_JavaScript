@@ -9,7 +9,6 @@
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
     };
-    console.log(identification);
 
     //Création de la charge utile au format JSON
     const chargeUtile = JSON.stringify(identification);
@@ -21,9 +20,25 @@
         headers:{'Content-type': 'application/json'},
         body:chargeUtile
     })
-    .then(res => {return res.json()})
+    .then(res => {
+        if(res.status == 401) {
+            const notAuth = document.createElement("p");
+            notAuth.textContent = "Not authorized";
+            const passWord = document.getElementById("login");
+            passWord.appendChild(notAuth);
+        } else if(res.status == 404){
+            const notFound = document.createElement("p");
+            notFound.textContent = "User not found";
+            const userName = document.getElementById("login");
+            userName.appendChild(notFound);
+        } else {
+            return res.json()
+        };
+        
+    })
     .then(responseAuth => {
         localStorage.setItem("token", responseAuth.token);
+    
         window.location.href='./index.html';
     })
     .catch(err => console.log(err));
