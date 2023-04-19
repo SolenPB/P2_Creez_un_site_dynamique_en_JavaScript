@@ -164,6 +164,7 @@ changePhoto.addEventListener("click", function(event){
     galleryModal.style.display = "none";
     changePhoto.style.display = "none";
     deleteGallery.style.display = "none";
+    photo.style.display = "none";
     buttonPreModal.style.visibility = "visible";
     preModalTitle.style.display = "flex";
     addPhoto.style.display = "flex";
@@ -221,17 +222,19 @@ addPhoto.style.borderRadius = "5px";
 addPhoto.style.marginTop = "36px";
 
 let photo = document.createElement("img");
-photo.setAttribute("id", "newPhoto");
+photo.setAttribute("id", "newPicture");
 let previewPicture = function (e){
     const [picture] = e.files;
 
      if(picture) {
         photo.src = URL.createObjectURL(picture)
+        photo.style.display = "flex";
+        iconPhoto.style.display = "none";
         actionButton.style.display = "none";
         formatImage.style.display = "none";
      };
 };
-photo.style.maxHeight = "169px";
+photo.style.maxHeight = "180px";
 photo.style.objectFit = "contain";
 photo.style.border = "none";
 photo.style.display = "none";
@@ -265,11 +268,6 @@ inputAddPhoto.setAttribute("name", "picture");
 inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
 inputAddPhoto.style.height = "36px";
 inputAddPhoto.style.opacity = "0";
-
-inputAddPhoto.addEventListener("click", function (e){
-    photo.style.display = "flex";
-    iconPhoto.style.display = "none";
-});
 
 const formatImage = document.createElement("p");
 formatImage.textContent = "jpg, png : 4mo max";
@@ -307,13 +305,27 @@ const catTitle = document.createElement("label");
 catTitle.setAttribute("for", "categorie");
 catTitle.textContent = "Catégorie";
 catTitle.style.marginBottom = "10px";
-const catPhoto = document.createElement("input");
-catPhoto.setAttribute("type", "text");
-catPhoto.setAttribute("name", "cat");
+
+const catPhoto = document.createElement("select");
+catPhoto.setAttribute("name", "categorie");
 catPhoto.setAttribute("id", "catphoto");
 catPhoto.style.height = "50px";
 catPhoto.style.border = "none";
 catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+catPhoto.style.backgroundColor = "white";
+
+const listCat = document.createElement("option");
+listCat.setAttribute("value", "");
+const catOjbect = document.createElement("option");
+catOjbect.setAttribute("value", "Objets");
+catOjbect.textContent = "Objets";
+const catAppart = document.createElement("option");
+catAppart.setAttribute("value", "Appartements");
+catAppart.textContent = "Appartements";
+const catRestaurant = document.createElement("option");
+catRestaurant.setAttribute("value", "Hôtels & restaurants");
+catRestaurant.textContent = "Hôtels & restaurants";
+
 
 formPhoto.appendChild(addPhoto);
 formPhoto.appendChild(infoPhoto)
@@ -328,4 +340,8 @@ addForm.appendChild(titleInput);
 addForm.appendChild(titlePhoto);
 addForm.appendChild(catTitle);
 addForm.appendChild(catPhoto);
+catPhoto.appendChild(listCat);
+catPhoto.appendChild(catOjbect);
+catPhoto.appendChild(catAppart);
+catPhoto.appendChild(catRestaurant);
 
