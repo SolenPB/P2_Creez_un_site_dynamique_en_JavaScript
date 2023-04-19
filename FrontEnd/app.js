@@ -171,6 +171,7 @@ changePhoto.addEventListener("click", function(event){
     addPhoto.style.display = "flex";
     addForm.style.display = "flex";
     validation.style.display = "flex";
+    location.reload();
 });
 changePhoto.style.fontFamily ="syne";
 changePhoto.style.fontWeight = "700";
@@ -212,6 +213,8 @@ addPhoto.style.backgroundColor = "#E8F1F7";
 addPhoto.style.borderRadius = "5px";
 addPhoto.style.marginTop = "36px";
 
+
+
 let photo = document.createElement("img");
 photo.setAttribute("id", "newPicture");
 let previewPicture = function (e){
@@ -224,11 +227,14 @@ let previewPicture = function (e){
         actionButton.style.display = "none";
         formatImage.style.display = "none";
      };
+console.log(photo);
 };
 photo.style.maxHeight = "180px";
 photo.style.objectFit = "contain";
 photo.style.border = "none";
 photo.style.display = "none";
+
+
 
 const iconPhoto = document.createElement("i");
 iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
@@ -345,3 +351,4 @@ buttonValidation.style.justifyContent = "center";
 buttonValidation.style.padding = "1em";
 buttonValidation.style.width = "180px";
 buttonValidation.style.borderRadius = "60px";
+
