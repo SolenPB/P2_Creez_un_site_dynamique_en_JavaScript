@@ -322,6 +322,8 @@ catRestaurant.setAttribute("value", "Hôtels & restaurants");
 catRestaurant.textContent = "Hôtels & restaurants";
 
 
+//Rattachement des éléments de la modale avec les parents 
+
 formPhoto.appendChild(addPhoto);
 formPhoto.appendChild(infoPhoto)
 addPhoto.appendChild(photo);
@@ -339,6 +341,19 @@ catPhoto.appendChild(listCat);
 catPhoto.appendChild(catOjbect);
 catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
+
+
+//Condition pour la mise en forme du bouton de validation, selon le formulaire rempli
+
+const buttonValide = document.querySelector("btn-validation");
+window.addEventListener("", function(e){
+    if(!photo && !titlePhoto){
+        buttonValide.style.backgroundColor = "#1D6154";
+    };
+});
+
+
+//Mise en forme et fonctionnement du bouton de validation pour l'ajout des nouveaux travaux
 
 const buttonValidation = document.getElementById("btn-validation");
 buttonValidation.style.fontFamily ="syne";
