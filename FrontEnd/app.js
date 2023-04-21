@@ -336,6 +336,16 @@ validation.style.justifyContent = "center";
 const btnValidation = document.createElement("input");
 btnValidation.setAttribute("id", "btn-validation");
 btnValidation.setAttribute("value", "Valider");
+btnValidation.style.fontFamily ="syne";
+btnValidation.style.fontWeight = "700";
+btnValidation.style.color = "white";
+btnValidation.style.border = "none";
+btnValidation.style.backgroundColor = "#1D6154";
+btnValidation.style.padding = "1em";
+btnValidation.style.marginTop = "20px";
+btnValidation.style.width = "180px";
+btnValidation.style.borderRadius = "60px";
+btnValidation.style.textAlign = "center";
 
 //Rattachement des éléments de la modale avec les parents 
 
@@ -358,23 +368,4 @@ catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
 changeModal.appendChild(validation);
 validation.appendChild(btnValidation);
-
-
-//Condition pour la mise en forme du bouton de validation, selon le formulaire rempli
-
-
-
-//Mise en forme du bouton de validation pour l'ajout des nouveaux travaux
-
-const buttonValidation = document.getElementById("btn-validation");
-buttonValidation.style.fontFamily ="syne";
-buttonValidation.style.fontWeight = "700";
-buttonValidation.style.color = "white";
-buttonValidation.style.border = "none";
-buttonValidation.style.backgroundColor = "#1D6154";
-buttonValidation.style.padding = "1em";
-buttonValidation.style.marginTop = "15px";
-buttonValidation.style.width = "180px";
-buttonValidation.style.borderRadius = "60px";
-buttonValidation.style.textAlign = "center";
 
