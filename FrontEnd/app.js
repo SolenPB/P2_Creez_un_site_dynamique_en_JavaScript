@@ -36,56 +36,57 @@ const closeModal = document.getElementById("closemodal");
 function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
-        photoModal.style.width = "85px";
-        photoModal.style.height = "140px"
-        photoModal.style.marginRight = "8px";
+            photoModal.style.width = "85px";
+            photoModal.style.height = "140px"
+            photoModal.style.marginRight = "8px";
 
     const pictureModal = document.createElement("div");
-        pictureModal.setAttribute("id", "picture");
-        pictureModal.style.height = "120px";
+            pictureModal.setAttribute("id", "picture");
+            pictureModal.style.height = "120px";
 
     const deletePicture = document.createElement("i");
-        deletePicture.setAttribute("class", "fa-regular fa-trash-can");
-        deletePicture.style.display = "flex";
-        deletePicture.style.backgroundColor = "black";
-        deletePicture.style.color = "white";
-        deletePicture.style.width = "17px";
-        deletePicture.style.height = "17px";
-        deletePicture.style.justifyContent = "center";
-        deletePicture.style.position = "relative";
-        deletePicture.style.top = "10px";
-        deletePicture.style.left = "60px";
-        deletePicture.style.paddingTop = "2px";
-        deletePicture.style.paddingRight = "2px";
+            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+            deletePicture.style.display = "flex";
+            deletePicture.style.backgroundColor = "black";
+            deletePicture.style.color = "white";
+            deletePicture.style.width = "17px";
+            deletePicture.style.height = "17px";
+            deletePicture.style.justifyContent = "center";
+            deletePicture.style.position = "relative";
+            deletePicture.style.top = "10px";
+            deletePicture.style.left = "60px";
+            deletePicture.style.paddingTop = "2px";
+            deletePicture.style.paddingRight = "2px";
 
     const movePicture = document.createElement("i");
-        movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
-        movePicture.style.display = "none";
-        movePicture.style.justifyContent = "center";
-        movePicture.style.alignItems = "center";
-        movePicture.style.backgroundColor = "black";
-        movePicture.style.color = "white";
-        movePicture.style.position = "relative";
-        movePicture.style.width = "17px";
-        movePicture.style.height = "17px";
-        movePicture.style.bottom = "8px";
-        movePicture.style.left = "35px";
+            movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
+            movePicture.style.display = "none";
+            movePicture.style.justifyContent = "center";
+            movePicture.style.alignItems = "center";
+            movePicture.style.backgroundColor = "black";
+            movePicture.style.color = "white";
+            movePicture.style.position = "relative";
+            movePicture.style.width = "17px";
+            movePicture.style.height = "17px";
+            movePicture.style.bottom = "8px";
+            movePicture.style.left = "35px";
 
     const imageUrlModal = document.createElement("img");
-        imageUrlModal.src = smallCard.imageUrl;
-        imageUrlModal.style.width = "85px";
-        imageUrlModal.style.height = "120px";
-        imageUrlModal.style.position = "absolute";
-        imageUrlModal.addEventListener("mouseover", function (event){
-        movePicture.style.display = "flex";
-    });
-        imageUrlModal.addEventListener("mouseout", function(event){
-        movePicture.style.display = "none";
-    });
+            imageUrlModal.src = smallCard.imageUrl;
+            imageUrlModal.style.width = "85px";
+            imageUrlModal.style.height = "120px";
+            imageUrlModal.style.position = "absolute";
+            imageUrlModal.addEventListener("mouseover", function (event){
+            movePicture.style.display = "flex";
+        });
+            imageUrlModal.addEventListener("mouseout", function(event){
+            movePicture.style.display = "none";
+        });
 
     const titleImgModal = document.createElement("figcaption");
-    titleImgModal.textContent = "Editer";
-    titleImgModal.style.position = "relative";
+        titleImgModal.textContent = "Editer";
+        titleImgModal.style.position = "relative";
+
 
     galleryModal.appendChild(photoModal);
     photoModal.appendChild(pictureModal);
@@ -97,96 +98,99 @@ function CreateSmallCard(smallCard){
 };    
 
 
+
 //Style et fonctionnalité des éléments du modal-wrapper
 
 const titleModal = document.getElementById("titlemodal");
-titleModal.style.height = "30px";
-titleModal.style.fontFamily = "work sans";
-titleModal.style.fontWeight = "400";
-titleModal.style.color = "black";
+        titleModal.style.height = "30px";
+        titleModal.style.fontFamily = "work sans";
+        titleModal.style.fontWeight = "400";
+        titleModal.style.color = "black";
 
 const buttonsModal = document.getElementById("btns-modal");
-buttonsModal.style.width = "600px";
-buttonsModal.style.display = "flex";
-buttonsModal.style.justifyContent = "space-between";
-buttonsModal.style.alignItems = "center";
-buttonsModal.style.marginTop = "15px";
+        buttonsModal.style.width = "600px";
+        buttonsModal.style.display = "flex";
+        buttonsModal.style.justifyContent = "space-between";
+        buttonsModal.style.alignItems = "center";
+        buttonsModal.style.marginTop = "15px";
 
 const buttonCloseModal = document.getElementById("closemodal");
-buttonCloseModal.style.display = "flex";
-buttonCloseModal.style.height = "24px";
-buttonCloseModal.style.fontSize = "24px";
-buttonCloseModal.style.backgroundColor = "white";
-buttonCloseModal.style.border = "none";
-buttonCloseModal.style.paddingBottom = "5px";
+        buttonCloseModal.style.display = "flex";
+        buttonCloseModal.style.height = "24px";
+        buttonCloseModal.style.fontSize = "24px";
+        buttonCloseModal.style.backgroundColor = "white";
+        buttonCloseModal.style.border = "none";
+        buttonCloseModal.style.paddingBottom = "5px";
 
 const buttonPreModal = document.getElementById("premodal");
-buttonPreModal.style.border = "none";
-buttonPreModal.style.backgroundColor = "white";
-buttonPreModal.style.fontSize = "24px";
-buttonPreModal.style.padding = "0";
-buttonPreModal.addEventListener("click", function(event){
-    const galleryModal = document.getElementById("gallery-modal");
-    const modalWrapper = document.getElementById("modal-wrapper");
-    modalWrapper.style.height = "730px";
-    titleModal.style.display = "flex";
-    galleryModal.style.display = "flex";
-    changeModal.style.display = "flex";
-    buttonPreModal.style.visibility = "hidden";
-    preModalTitle.style.display = "none";
-    addPhoto.style.display = "none";
-    addPhoto.img = "";
-    addForm.style.display = "none";
-    validation.style.display = "none";
-});
+        buttonPreModal.style.border = "none";
+        buttonPreModal.style.backgroundColor = "white";
+        buttonPreModal.style.fontSize = "24px";
+        buttonPreModal.style.padding = "0";
+        buttonPreModal.addEventListener("click", function(event){
+            const galleryModal = document.getElementById("gallery-modal");
+            const modalWrapper = document.getElementById("modal-wrapper");
+                    modalWrapper.style.height = "730px";
+                    titleModal.style.display = "flex";
+                    galleryModal.style.display = "flex";
+                    changeModal.style.display = "flex";
+                    buttonPreModal.style.visibility = "hidden";
+                    preModalTitle.style.display = "none";
+                    addPhoto.style.display = "none";
+                    addPhoto.img = "";
+                    addForm.style.display = "none";
+                    validation.style.display = "none";
+            });
 
 const styleModalGallery = document.getElementById("gallery-modal");
-styleModalGallery.style.marginTop = "40px";
-styleModalGallery.style.paddingLeft = "65px";
-styleModalGallery.style.width = "530px";
-styleModalGallery.style.height = "450px" 
-styleModalGallery.style.display = "flex";
-styleModalGallery.style.flexDirection = "row";
-styleModalGallery.style.flexWrap = "wrap";
+        styleModalGallery.style.marginTop = "40px";
+        styleModalGallery.style.paddingLeft = "65px";
+        styleModalGallery.style.width = "530px";
+        styleModalGallery.style.height = "450px" 
+        styleModalGallery.style.display = "flex";
+        styleModalGallery.style.flexDirection = "row";
+        styleModalGallery.style.flexWrap = "wrap";
 
 const changeModal = document.getElementById("change-modal");
-changeModal.style.display = "flex";
-changeModal.style.flexDirection = "column";
-changeModal.style.justifyContent = "center";
-changeModal.style.width = "420px";
-changeModal.style.borderTop = "solid", "black";
-changeModal.style.marginBottom = "30px";
+        changeModal.style.display = "flex";
+        changeModal.style.flexDirection = "column";
+        changeModal.style.justifyContent = "center";
+        changeModal.style.width = "420px";
+        changeModal.style.borderTop = "solid", "black";
+        changeModal.style.marginBottom = "30px";
 
 const changePhoto = document.getElementById("change-photo");
-changePhoto.addEventListener("click", function(event){
-    const galleryModal = document.getElementById("gallery-modal");
-    const modalWrapper = document.getElementById("modal-wrapper");
-    modalWrapper.style.height = "670px";
-    titleModal.style.display = "none";
-    galleryModal.style.display = "none";
-    changeModal.style.display = "none";
-    buttonPreModal.style.visibility = "visible";
-    preModalTitle.style.display = "flex";
-    addPhoto.style.display = "flex";
-    addForm.style.display = "flex";
-    validation.style.display = "flex";
-});
-changePhoto.style.fontFamily ="syne";
-changePhoto.style.fontWeight = "700";
-changePhoto.style.color = "white";
-changePhoto.style.backgroundColor = "#1D6154";
-changePhoto.style.justifyContent = "center";
-changePhoto.style.margin = "2em", "auto";
-changePhoto.style.marginLeft = "120px";
-changePhoto.style.padding = "1em";
-changePhoto.style.width = "180px";
-changePhoto.style.borderRadius = "60px";
+    changePhoto.addEventListener("click", function(event){
+        const galleryModal = document.getElementById("gallery-modal");
+        const modalWrapper = document.getElementById("modal-wrapper");
+                modalWrapper.style.height = "670px";
+                titleModal.style.display = "none";
+                galleryModal.style.display = "none";
+                changeModal.style.display = "none";
+                buttonPreModal.style.visibility = "visible";
+                preModalTitle.style.display = "flex";
+                addPhoto.style.display = "flex";
+                addForm.style.display = "flex";
+                validation.style.display = "flex";
+        });
+    //Mise en forme du bouton pour ajouter des photos et passer à la modale suivante
+
+        changePhoto.style.fontFamily ="syne";
+        changePhoto.style.fontWeight = "700";
+        changePhoto.style.color = "white";
+        changePhoto.style.backgroundColor = "#1D6154";
+        changePhoto.style.justifyContent = "center";
+        changePhoto.style.margin = "2em", "auto";
+        changePhoto.style.marginLeft = "120px";
+        changePhoto.style.padding = "1em";
+        changePhoto.style.width = "180px";
+        changePhoto.style.borderRadius = "60px";
 
 const deleteGallery = document.getElementById("delete-gallery");
-deleteGallery.style.display = "flex";
-deleteGallery.style.justifyContent = "center";
-deleteGallery.style.color = "black";
-deleteGallery.style.textDecoration = "none";
+        deleteGallery.style.display = "flex";
+        deleteGallery.style.justifyContent = "center";
+        deleteGallery.style.color = "black";
+        deleteGallery.style.textDecoration = "none";
 
 
 
@@ -194,10 +198,10 @@ deleteGallery.style.textDecoration = "none";
 //Intégration de la modale d'ajout de photo
 
 const preModalTitle = document.getElementById("premodaltitle");
-preModalTitle.style.fontFamily = "work sans";
-preModalTitle.style.fontWeight = "400";
-preModalTitle.style.color = "black";
-preModalTitle.style.marginTop = "10px";
+        preModalTitle.style.fontFamily = "work sans";
+        preModalTitle.style.fontWeight = "400";
+        preModalTitle.style.color = "black";
+        preModalTitle.style.marginTop = "10px";
 
 
 //Formulaire d'ajout de nouvelles photos 
@@ -216,17 +220,17 @@ formPhoto.onsubmit = async (e) => {
     let response = fetch
 }*/
 const addPhoto = document.createElement("div");
-addPhoto.setAttribute("id","newphoto");
-addPhoto.style.width = "420px";
-addPhoto.style.height = "180px";
-addPhoto.style.justifyContent = "center";
-addPhoto.style.alignItems = "center";
-addPhoto.style.flexDirection = "column";
-addPhoto.style.backgroundColor = "#E8F1F7";
-addPhoto.style.borderRadius = "5px";
-addPhoto.style.marginTop = "36px";
+        addPhoto.setAttribute("id","newphoto");
+        addPhoto.style.width = "420px";
+        addPhoto.style.height = "180px";
+        addPhoto.style.justifyContent = "center";
+        addPhoto.style.alignItems = "center";
+        addPhoto.style.flexDirection = "column";
+        addPhoto.style.backgroundColor = "#E8F1F7";
+        addPhoto.style.borderRadius = "5px";
+        addPhoto.style.marginTop = "36px";
 
-
+//Prévisualisation de la photo et intégration de sa zone d'apparition
 
 let photo = document.createElement("img");
 photo.setAttribute("id", "newPicture");
@@ -242,123 +246,123 @@ let previewPicture = function (e){
      };
 
 };
-photo.style.maxHeight = "180px";
-photo.style.objectFit = "contain";
-photo.style.border = "none";
-photo.style.display = "none";
+        photo.style.maxHeight = "180px";
+        photo.style.objectFit = "contain";
+        photo.style.border = "none";
+        photo.style.display = "none";
 
 const iconPhoto = document.createElement("i");
-iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
-iconPhoto.style.fontSize = "58px";
-iconPhoto.style.justifyContent = "center";
-iconPhoto.style.color = "#B9C5CC";
-iconPhoto.style.marginTop = "10px";
+        iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
+        iconPhoto.style.fontSize = "58px";
+        iconPhoto.style.justifyContent = "center";
+        iconPhoto.style.color = "#B9C5CC";
+        iconPhoto.style.marginTop = "10px";
 
 //Bouton d'ajout de photo
 
 const actionButton = document.createElement("div");
-actionButton.setAttribute("id", "buttonAdd");
-actionButton.style.display = "flex";
-actionButton.style.flexDirection = "column";
-actionButton.style.alignItems = "center";
-actionButton.style.borderRadius = "60px";
-actionButton.style.backgroundColor = "#A7A7A7";
-actionButton.style.height = "36px";
-actionButton.style.marginTop = "15px";
+        actionButton.setAttribute("id", "buttonAdd");
+        actionButton.style.display = "flex";
+        actionButton.style.flexDirection = "column";
+        actionButton.style.alignItems = "center";
+        actionButton.style.borderRadius = "60px";
+        actionButton.style.backgroundColor = "#A7A7A7";
+        actionButton.style.height = "36px";
+        actionButton.style.marginTop = "15px";
 
 
 const buttonAddPhoto = document.createElement("label");
-buttonAddPhoto.textContent = "+ Ajouter photo";
-buttonAddPhoto.style.position = "relative";
-buttonAddPhoto.style.top = "12px";
-buttonAddPhoto.style.color = "#306685";
+        buttonAddPhoto.textContent = "+ Ajouter photo";
+        buttonAddPhoto.style.position = "relative";
+        buttonAddPhoto.style.top = "12px";
+        buttonAddPhoto.style.color = "#306685";
 const inputAddPhoto = document.createElement("input");
-inputAddPhoto.setAttribute("type", "file");
-inputAddPhoto.setAttribute("id", "input-addphoto");
-inputAddPhoto.setAttribute("name", "picture");
-inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
-inputAddPhoto.style.height = "36px";
-inputAddPhoto.style.opacity = "0";
+        inputAddPhoto.setAttribute("type", "file");
+        inputAddPhoto.setAttribute("id", "input-addphoto");
+        inputAddPhoto.setAttribute("name", "picture");
+        inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
+        inputAddPhoto.style.height = "36px";
+        inputAddPhoto.style.opacity = "0";
 
 const formatImage = document.createElement("p");
-formatImage.textContent = "jpg, png : 4mo max";
-formatImage.style.marginTop = "5px";
+        formatImage.textContent = "jpg, png : 4mo max";
+        formatImage.style.marginTop = "5px";
 
 //Entrée des informations pour la nouvelle image
 
 const infoPhoto = document.createElement("div");
-infoPhoto.setAttribute("id", "infophoto");
-infoPhoto.style.flexDirection = "column";
-infoPhoto.style.marginTop = "40px";
-infoPhoto.style.marginBottom = "47px";
+        infoPhoto.setAttribute("id", "infophoto");
+        infoPhoto.style.flexDirection = "column";
+        infoPhoto.style.marginTop = "40px";
+        infoPhoto.style.marginBottom = "47px";
 
 const addForm = document.createElement("form");
-addForm.setAttribute("action", "#");
-addForm.setAttribute("method", "post");
-addForm.setAttribute("id", "formElement");
-addForm.style.flexDirection = "column";
+        addForm.setAttribute("action", "#");
+        addForm.setAttribute("method", "post");
+        addForm.setAttribute("id", "formElement");
+        addForm.style.flexDirection = "column";
 
 const titleInput = document.createElement("label");
-titleInput.setAttribute("for","titre-photo");
-titleInput.textContent = "Titre";
-titleInput.style.marginBottom = "10px";
+        titleInput.setAttribute("for","titre-photo");
+        titleInput.textContent = "Titre";
+        titleInput.style.marginBottom = "10px";
 const titlePhoto = document.createElement("input");
-titlePhoto.setAttribute ("type", "text");
-titlePhoto.setAttribute("name","title");
-titlePhoto.setAttribute("id", "titlephoto");
-titlePhoto.setAttribute("onchange", "styleValidation()");
-titlePhoto.style.height = "50px";
-titlePhoto.style.marginBottom = "20px";
-titlePhoto.style.border = "none";
-titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+        titlePhoto.setAttribute ("type", "text");
+        titlePhoto.setAttribute("name","title");
+        titlePhoto.setAttribute("id", "titlephoto");
+        titlePhoto.setAttribute("onchange", "styleValidation()");
+        titlePhoto.style.height = "50px";
+        titlePhoto.style.marginBottom = "20px";
+        titlePhoto.style.border = "none";
+        titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
 
 
 const catTitle = document.createElement("label");
-catTitle.setAttribute("for", "categorie");
-catTitle.textContent = "Catégorie";
-catTitle.style.marginBottom = "10px";
+        catTitle.setAttribute("for", "categorie");
+        catTitle.textContent = "Catégorie";
+        catTitle.style.marginBottom = "10px";
 
 const catPhoto = document.createElement("select");
-catPhoto.setAttribute("name", "categorie");
-catPhoto.setAttribute("id", "catphoto");
-catPhoto.setAttribute("onchange", "styleValidation()");
-catPhoto.style.height = "50px";
-catPhoto.style.border = "none";
-catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
-catPhoto.style.backgroundColor = "white";
+        catPhoto.setAttribute("name", "categorie");
+        catPhoto.setAttribute("id", "catphoto");
+        catPhoto.setAttribute("onchange", "styleValidation()");
+        catPhoto.style.height = "50px";
+        catPhoto.style.border = "none";
+        catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+        catPhoto.style.backgroundColor = "white";
 
 const listCat = document.createElement("option");
-listCat.setAttribute("value", "");
+        listCat.setAttribute("value", "");
 const catOjbect = document.createElement("option");
-catOjbect.setAttribute("value", "Objets");
-catOjbect.textContent = "Objets";
+        catOjbect.setAttribute("value", "Objets");
+        catOjbect.textContent = "Objets";
 const catAppart = document.createElement("option");
-catAppart.setAttribute("value", "Appartements");
-catAppart.textContent = "Appartements";
+        catAppart.setAttribute("value", "Appartements");
+        catAppart.textContent = "Appartements";
 const catRestaurant = document.createElement("option");
-catRestaurant.setAttribute("value", "Hôtels & restaurants");
-catRestaurant.textContent = "Hôtels & restaurants";
+        catRestaurant.setAttribute("value", "Hôtels & restaurants");
+        catRestaurant.textContent = "Hôtels & restaurants";
 
 const validation = document.getElementById("validation");
-validation.style.display = "flex";
-validation.style.justifyContent = "center";
-validation.style.borderTop = "solid", "black", "1px";
+        validation.style.display = "flex";
+        validation.style.justifyContent = "center";
+        validation.style.borderTop = "solid", "black", "1px";
 
 const btnValidation = document.createElement("input");
-btnValidation.setAttribute("id", "btn-validation");
-btnValidation.setAttribute("type", "button");
-btnValidation.setAttribute("value", "Valider");
-btnValidation.setAttribute("onchange", "styleValidation");
-        btnValidation.style.fontFamily ="syne";
-        btnValidation.style.fontWeight = "700";
-        btnValidation.style.color = "white";
-        btnValidation.style.border = "none";
-        btnValidation.style.backgroundColor = "#A7A7A7";
-        btnValidation.style.padding = "1em";
-        btnValidation.style.marginTop = "20px";
-        btnValidation.style.width = "180px";
-        btnValidation.style.borderRadius = "60px";
-        btnValidation.style.textAlign = "center";
+        btnValidation.setAttribute("id", "btn-validation");
+        btnValidation.setAttribute("type", "button");   
+        btnValidation.setAttribute("value", "Valider"); 
+        btnValidation.setAttribute("onchange", "styleValidation");
+            btnValidation.style.fontFamily ="syne";
+            btnValidation.style.fontWeight = "700";
+            btnValidation.style.color = "white";
+            btnValidation.style.border = "none";
+            btnValidation.style.backgroundColor = "#A7A7A7";
+            btnValidation.style.padding = "1em";
+            btnValidation.style.marginTop = "20px";
+            btnValidation.style.width = "180px";
+            btnValidation.style.borderRadius = "60px";
+            btnValidation.style.textAlign = "center";
 
 
 const changeButtonValide = document.getElementById("btn-validation");
