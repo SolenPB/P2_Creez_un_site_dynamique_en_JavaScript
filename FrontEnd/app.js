@@ -131,8 +131,7 @@ buttonPreModal.addEventListener("click", function(event){
     modalWrapper.style.height = "730px";
     titleModal.style.display = "flex";
     galleryModal.style.display = "flex";
-    changePhoto.style.display = "flex";
-    deleteGallery.style.display = "flex";
+    changeModal.style.display = "flex";
     buttonPreModal.style.visibility = "hidden";
     preModalTitle.style.display = "none";
     addPhoto.style.display = "none";
@@ -165,8 +164,7 @@ changePhoto.addEventListener("click", function(event){
     modalWrapper.style.height = "670px";
     titleModal.style.display = "none";
     galleryModal.style.display = "none";
-    changePhoto.style.display = "none";
-    deleteGallery.style.display = "none";
+    changeModal.style.display = "none";
     buttonPreModal.style.visibility = "visible";
     preModalTitle.style.display = "flex";
     addPhoto.style.display = "flex";
@@ -344,6 +342,7 @@ catRestaurant.textContent = "Hôtels & restaurants";
 const validation = document.getElementById("validation");
 validation.style.display = "flex";
 validation.style.justifyContent = "center";
+validation.style.borderTop = "solid", "black", "1px";
 
 const btnValidation = document.createElement("input");
 btnValidation.setAttribute("id", "btn-validation");
@@ -391,6 +390,5 @@ catPhoto.appendChild(listCat);
 catPhoto.appendChild(catOjbect);
 catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
-changeModal.appendChild(validation);
 validation.appendChild(btnValidation);
 
