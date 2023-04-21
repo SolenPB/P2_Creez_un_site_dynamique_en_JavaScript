@@ -36,50 +36,50 @@ const closeModal = document.getElementById("closemodal");
 function CreateSmallCard(smallCard){
     const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
-    photoModal.style.width = "85px";
-    photoModal.style.height = "140px"
-    photoModal.style.marginRight = "8px";
+        photoModal.style.width = "85px";
+        photoModal.style.height = "140px"
+        photoModal.style.marginRight = "8px";
 
     const pictureModal = document.createElement("div");
-    pictureModal.setAttribute("id", "picture");
-    pictureModal.style.height = "120px";
+        pictureModal.setAttribute("id", "picture");
+        pictureModal.style.height = "120px";
 
     const deletePicture = document.createElement("i");
-    deletePicture.setAttribute("class", "fa-regular fa-trash-can");
-    deletePicture.style.display = "flex";
-    deletePicture.style.backgroundColor = "black";
-    deletePicture.style.color = "white";
-    deletePicture.style.width = "17px";
-    deletePicture.style.height = "17px";
-    deletePicture.style.justifyContent = "center";
-    deletePicture.style.position = "relative";
-    deletePicture.style.top = "10px";
-    deletePicture.style.left = "60px";
-    deletePicture.style.paddingTop = "2px";
-    deletePicture.style.paddingRight = "2px";
+        deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+        deletePicture.style.display = "flex";
+        deletePicture.style.backgroundColor = "black";
+        deletePicture.style.color = "white";
+        deletePicture.style.width = "17px";
+        deletePicture.style.height = "17px";
+        deletePicture.style.justifyContent = "center";
+        deletePicture.style.position = "relative";
+        deletePicture.style.top = "10px";
+        deletePicture.style.left = "60px";
+        deletePicture.style.paddingTop = "2px";
+        deletePicture.style.paddingRight = "2px";
 
     const movePicture = document.createElement("i");
-    movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
-    movePicture.style.display = "none";
-    movePicture.style.justifyContent = "center";
-    movePicture.style.alignItems = "center";
-    movePicture.style.backgroundColor = "black";
-    movePicture.style.color = "white";
-    movePicture.style.position = "relative";
-    movePicture.style.width = "17px";
-    movePicture.style.height = "17px";
-    movePicture.style.bottom = "8px";
-    movePicture.style.left = "35px";
+        movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
+        movePicture.style.display = "none";
+        movePicture.style.justifyContent = "center";
+        movePicture.style.alignItems = "center";
+        movePicture.style.backgroundColor = "black";
+        movePicture.style.color = "white";
+        movePicture.style.position = "relative";
+        movePicture.style.width = "17px";
+        movePicture.style.height = "17px";
+        movePicture.style.bottom = "8px";
+        movePicture.style.left = "35px";
 
     const imageUrlModal = document.createElement("img");
-    imageUrlModal.src = smallCard.imageUrl;
-    imageUrlModal.style.width = "85px";
-    imageUrlModal.style.height = "120px";
-    imageUrlModal.style.position = "absolute";
-    imageUrlModal.addEventListener("mouseover", function (event){
+        imageUrlModal.src = smallCard.imageUrl;
+        imageUrlModal.style.width = "85px";
+        imageUrlModal.style.height = "120px";
+        imageUrlModal.style.position = "absolute";
+        imageUrlModal.addEventListener("mouseover", function (event){
         movePicture.style.display = "flex";
     });
-    imageUrlModal.addEventListener("mouseout", function(event){
+        imageUrlModal.addEventListener("mouseout", function(event){
         movePicture.style.display = "none";
     });
 
@@ -226,7 +226,7 @@ let previewPicture = function (e){
         actionButton.style.display = "none";
         formatImage.style.display = "none";
      };
-console.log(photo);
+
 };
 photo.style.maxHeight = "180px";
 photo.style.objectFit = "contain";
@@ -251,11 +251,13 @@ actionButton.style.alignItems = "center";
 actionButton.style.borderRadius = "60px";
 actionButton.style.backgroundColor = "#A7A7A7";
 actionButton.style.height = "36px";
+actionButton.style.marginTop = "15px";
 
 const buttonAddPhoto = document.createElement("label");
 buttonAddPhoto.textContent = "+ Ajouter photo";
 buttonAddPhoto.style.position = "relative";
 buttonAddPhoto.style.top = "12px";
+buttonAddPhoto.style.color = "#306685";
 
 const inputAddPhoto = document.createElement("input");
 inputAddPhoto.setAttribute("type", "file");
@@ -267,6 +269,7 @@ inputAddPhoto.style.opacity = "0";
 
 const formatImage = document.createElement("p");
 formatImage.textContent = "jpg, png : 4mo max";
+formatImage.style.marginTop = "5px";
 
 //Entrée des informations pour la nouvelle image
 
@@ -290,6 +293,11 @@ const titlePhoto = document.createElement("input");
 titlePhoto.setAttribute ("type", "text");
 titlePhoto.setAttribute("name","title");
 titlePhoto.setAttribute("id", "titlephoto");
+titlePhoto.addEventListener("submit", function(e){
+    if(!titlePhoto && !catPhoto){
+        buttonValidation.style.backcolor = "#1D6154";
+    };
+})
 titlePhoto.style.height = "50px";
 titlePhoto.style.marginBottom = "20px";
 titlePhoto.style.border = "none";
@@ -321,6 +329,13 @@ const catRestaurant = document.createElement("option");
 catRestaurant.setAttribute("value", "Hôtels & restaurants");
 catRestaurant.textContent = "Hôtels & restaurants";
 
+const validation = document.getElementById("validation");
+validation.style.display = "flex";
+validation.style.justifyContent = "center";
+
+const btnValidation = document.createElement("input");
+btnValidation.setAttribute("id", "btn-validation");
+btnValidation.setAttribute("value", "Valider");
 
 //Rattachement des éléments de la modale avec les parents 
 
@@ -341,28 +356,25 @@ catPhoto.appendChild(listCat);
 catPhoto.appendChild(catOjbect);
 catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
+changeModal.appendChild(validation);
+validation.appendChild(btnValidation);
 
 
 //Condition pour la mise en forme du bouton de validation, selon le formulaire rempli
 
-const buttonValide = document.querySelector("btn-validation");
-window.addEventListener("", function(e){
-    if(!photo && !titlePhoto){
-        buttonValide.style.backgroundColor = "#1D6154";
-    };
-});
 
 
-//Mise en forme et fonctionnement du bouton de validation pour l'ajout des nouveaux travaux
+//Mise en forme du bouton de validation pour l'ajout des nouveaux travaux
 
 const buttonValidation = document.getElementById("btn-validation");
 buttonValidation.style.fontFamily ="syne";
 buttonValidation.style.fontWeight = "700";
 buttonValidation.style.color = "white";
 buttonValidation.style.border = "none";
-buttonValidation.style.backgroundColor = "#A7A7A7";
-buttonValidation.style.justifyContent = "center";
+buttonValidation.style.backgroundColor = "#1D6154";
 buttonValidation.style.padding = "1em";
+buttonValidation.style.marginTop = "15px";
 buttonValidation.style.width = "180px";
 buttonValidation.style.borderRadius = "60px";
+buttonValidation.style.textAlign = "center";
 
