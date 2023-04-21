@@ -190,6 +190,9 @@ deleteGallery.style.justifyContent = "center";
 deleteGallery.style.color = "black";
 deleteGallery.style.textDecoration = "none";
 
+
+
+
 //Intégration de la modale d'ajout de photo
 
 const preModalTitle = document.getElementById("premodaltitle");
@@ -202,6 +205,18 @@ preModalTitle.style.marginTop = "10px";
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
+
+/*let formData = new formData();
+formData.appendChild("image", "photo.src");
+formData.appendChild("title", "titlePhoto.value");
+formData.appendChild("category", "catPhoto.value");
+
+
+formPhoto.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = fetch
+}*/
 const addPhoto = document.createElement("div");
 addPhoto.setAttribute("id","newphoto");
 addPhoto.style.width = "420px";
@@ -259,8 +274,6 @@ buttonAddPhoto.textContent = "+ Ajouter photo";
 buttonAddPhoto.style.position = "relative";
 buttonAddPhoto.style.top = "12px";
 buttonAddPhoto.style.color = "#306685";
-
-
 const inputAddPhoto = document.createElement("input");
 inputAddPhoto.setAttribute("type", "file");
 inputAddPhoto.setAttribute("id", "input-addphoto");
@@ -361,7 +374,8 @@ const styleValidation = function (){
 //Rattachement des éléments de la modale avec les parents 
 
 formPhoto.appendChild(addPhoto);
-formPhoto.appendChild(infoPhoto)
+formPhoto.appendChild(infoPhoto);
+formPhoto.appendChild(validation);
 addPhoto.appendChild(photo);
 addPhoto.appendChild(iconPhoto);
 addPhoto.appendChild(actionButton);
