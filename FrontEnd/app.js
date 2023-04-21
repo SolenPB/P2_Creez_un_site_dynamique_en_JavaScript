@@ -136,6 +136,7 @@ buttonPreModal.addEventListener("click", function(event){
     buttonPreModal.style.visibility = "hidden";
     preModalTitle.style.display = "none";
     addPhoto.style.display = "none";
+    addPhoto.img = "";
     addForm.style.display = "none";
     validation.style.display = "none";
 });
@@ -259,6 +260,7 @@ buttonAddPhoto.style.position = "relative";
 buttonAddPhoto.style.top = "12px";
 buttonAddPhoto.style.color = "#306685";
 
+
 const inputAddPhoto = document.createElement("input");
 inputAddPhoto.setAttribute("type", "file");
 inputAddPhoto.setAttribute("id", "input-addphoto");
@@ -293,11 +295,7 @@ const titlePhoto = document.createElement("input");
 titlePhoto.setAttribute ("type", "text");
 titlePhoto.setAttribute("name","title");
 titlePhoto.setAttribute("id", "titlephoto");
-titlePhoto.addEventListener("submit", function(e){
-    if(!titlePhoto && !catPhoto){
-        buttonValidation.style.backcolor = "#1D6154";
-    };
-})
+titlePhoto.setAttribute("onchange", "styleValidation()");
 titlePhoto.style.height = "50px";
 titlePhoto.style.marginBottom = "20px";
 titlePhoto.style.border = "none";
@@ -312,6 +310,7 @@ catTitle.style.marginBottom = "10px";
 const catPhoto = document.createElement("select");
 catPhoto.setAttribute("name", "categorie");
 catPhoto.setAttribute("id", "catphoto");
+catPhoto.setAttribute("onchange", "styleValidation()");
 catPhoto.style.height = "50px";
 catPhoto.style.border = "none";
 catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
@@ -335,18 +334,46 @@ validation.style.justifyContent = "center";
 
 const btnValidation = document.createElement("input");
 btnValidation.setAttribute("id", "btn-validation");
+btnValidation.setAttribute("type", "button");
 btnValidation.setAttribute("value", "Valider");
-btnValidation.style.fontFamily ="syne";
-btnValidation.style.fontWeight = "700";
-btnValidation.style.color = "white";
-btnValidation.style.border = "none";
-btnValidation.style.backgroundColor = "#1D6154";
-btnValidation.style.padding = "1em";
-btnValidation.style.marginTop = "20px";
-btnValidation.style.width = "180px";
-btnValidation.style.borderRadius = "60px";
-btnValidation.style.textAlign = "center";
+btnValidation.setAttribute("onchange", "styleValidation");
+        btnValidation.style.fontFamily ="syne";
+        btnValidation.style.fontWeight = "700";
+        btnValidation.style.color = "white";
+        btnValidation.style.border = "none";
+        btnValidation.style.backgroundColor = "#A7A7A7";
+        btnValidation.style.padding = "1em";
+        btnValidation.style.marginTop = "20px";
+        btnValidation.style.width = "180px";
+        btnValidation.style.borderRadius = "60px";
+        btnValidation.style.textAlign = "center";
 
+
+        /*let photo = document.createElement("img");
+        photo.setAttribute("id", "newPicture");
+        let previewPicture = function (e){
+            const [picture] = e.files;
+        
+             if(picture) {
+                photo.src = URL.createObjectURL(picture)
+                photo.style.display = "flex";
+                iconPhoto.style.display = "none";
+                actionButton.style.display = "none";
+                formatImage.style.display = "none";
+             };
+        
+        };*/
+
+const changeButtonValide = document.getElementById("btn-validation");
+const styleValidation = function (){
+console.log(photo);
+console.log(titlePhoto);
+    if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
+        btnValidation.style.backgroundColor = "#1D6154";
+    } else {
+        btnValidation.style.backgroundColor = "#A7A7A7";
+    };
+};
 //Rattachement des éléments de la modale avec les parents 
 
 formPhoto.appendChild(addPhoto);
