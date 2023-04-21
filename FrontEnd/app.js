@@ -234,8 +234,6 @@ photo.style.objectFit = "contain";
 photo.style.border = "none";
 photo.style.display = "none";
 
-
-
 const iconPhoto = document.createElement("i");
 iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
 iconPhoto.style.fontSize = "58px";
@@ -244,6 +242,7 @@ iconPhoto.style.color = "#B9C5CC";
 iconPhoto.style.marginTop = "10px";
 
 //Bouton d'ajout de photo
+
 const actionButton = document.createElement("div");
 actionButton.setAttribute("id", "buttonAdd");
 actionButton.style.display = "flex";
@@ -253,6 +252,7 @@ actionButton.style.borderRadius = "60px";
 actionButton.style.backgroundColor = "#A7A7A7";
 actionButton.style.height = "36px";
 actionButton.style.marginTop = "15px";
+
 
 const buttonAddPhoto = document.createElement("label");
 buttonAddPhoto.textContent = "+ Ajouter photo";
@@ -349,27 +349,11 @@ btnValidation.setAttribute("onchange", "styleValidation");
         btnValidation.style.textAlign = "center";
 
 
-        /*let photo = document.createElement("img");
-        photo.setAttribute("id", "newPicture");
-        let previewPicture = function (e){
-            const [picture] = e.files;
-        
-             if(picture) {
-                photo.src = URL.createObjectURL(picture)
-                photo.style.display = "flex";
-                iconPhoto.style.display = "none";
-                actionButton.style.display = "none";
-                formatImage.style.display = "none";
-             };
-        
-        };*/
-
 const changeButtonValide = document.getElementById("btn-validation");
 const styleValidation = function (){
-console.log(photo);
-console.log(titlePhoto);
     if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
         btnValidation.style.backgroundColor = "#1D6154";
+        //btnValidation.addEventListener
     } else {
         btnValidation.style.backgroundColor = "#A7A7A7";
     };
