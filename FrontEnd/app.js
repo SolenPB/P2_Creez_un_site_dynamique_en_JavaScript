@@ -5,6 +5,9 @@ fetch("http://localhost:5678/api/works/")
     CreateSmallCard(works);
 }}); 
 
+
+//Création de la modale 
+
 const modal = document.getElementById('modal1');
 
 const openModal = document.getElementById('js-modal');
