@@ -21,7 +21,7 @@ openModal.addEventListener("click", function(event) {
                 preModalTitle.style.display = "none";
                 validation.style.display = "none";
                 addPhoto.style.display = "none";
-                addForm.style.display = "none";
+                infoPhoto.style.display = "none";
 
 });    
 
@@ -104,6 +104,57 @@ function CreateSmallCard(smallCard){
 
 //Style et fonctionnalité des éléments du modal-wrapper
 
+
+//Style du titre de la modale
+const titleModal = document.getElementById("titlemodal");
+
+                titleModal.style.height = "30px";
+                titleModal.style.fontFamily = "work sans";
+                titleModal.style.fontWeight = "400";
+                titleModal.style.color = "black";
+
+//Style des boutons supérieurs de la modale
+const buttonsModal = document.getElementById("btns-modal");
+                buttonsModal.style.width = "600px";
+                buttonsModal.style.display = "flex";
+                buttonsModal.style.justifyContent = "space-between";
+                buttonsModal.style.alignItems = "center";
+                buttonsModal.style.marginTop = "15px";
+
+        
+const buttonCloseModal = document.getElementById("closemodal");
+                buttonCloseModal.style.display = "flex";
+                buttonCloseModal.style.height = "24px";
+                buttonCloseModal.style.fontSize = "24px";
+                buttonCloseModal.style.backgroundColor = "white";
+                buttonCloseModal.style.border = "none";
+                buttonCloseModal.style.paddingBottom = "5px";
+
+const styleModalGallery = document.getElementById("gallery-modal");
+                styleModalGallery.style.marginTop = "40px";
+                styleModalGallery.style.paddingLeft = "65px";
+                styleModalGallery.style.width = "530px";
+                styleModalGallery.style.height = "450px" 
+                styleModalGallery.style.display = "flex";
+                styleModalGallery.style.flexDirection = "row";
+                styleModalGallery.style.flexWrap = "wrap";
+
+//Mise en forme de la galerie modale, du bouton ouvrant la seconde modale et du futur bouton de suppression
+
+const changeModal = document.getElementById("change-modal");
+                changeModal.style.display = "flex";
+                changeModal.style.flexDirection = "column";
+                changeModal.style.justifyContent = "center";
+                changeModal.style.width = "420px";
+                changeModal.style.borderTop = "solid", "black";
+                changeModal.style.marginBottom = "30px";
+
+const deleteGallery = document.getElementById("delete-gallery");
+                deleteGallery.style.display = "flex";
+                deleteGallery.style.justifyContent = "center";
+                deleteGallery.style.color = "black";
+                deleteGallery.style.textDecoration = "none";
+
 const buttonPreModal = document.getElementById("premodal");
         buttonPreModal.style.border = "none";
         buttonPreModal.style.backgroundColor = "white";
@@ -119,8 +170,7 @@ const buttonPreModal = document.getElementById("premodal");
                     buttonPreModal.style.visibility = "hidden";
                     preModalTitle.style.display = "none";
                     addPhoto.style.display = "none";
-                    addPhoto.img = "";
-                    addForm.style.display = "none";
+                    infoPhoto.style.display = "none";
                     validation.style.display = "none";
             });
 
@@ -135,7 +185,7 @@ const changePhoto = document.getElementById("change-photo");
                 buttonPreModal.style.visibility = "visible";
                 preModalTitle.style.display = "flex";
                 addPhoto.style.display = "flex";
-                addForm.style.display = "flex";
+                infoPhoto.style.display = "flex";
                 validation.style.display = "flex";
         });
     //Mise en forme du bouton pour ajouter des photos et passer à la modale suivante
@@ -192,6 +242,7 @@ const addPhoto = document.createElement("div");
 
 let photo = document.createElement("img");
 photo.setAttribute("id", "newPicture");
+photo.setAttribute("name", "image");
 let previewPicture = function (e){
     const [picture] = e.files;
 
@@ -253,15 +304,14 @@ const formatImage = document.createElement("p");
 const infoPhoto = document.createElement("div");
         infoPhoto.setAttribute("id", "infophoto");
                         infoPhoto.style.flexDirection = "column";
-                        infoPhoto.style.marginTop = "40px";
-                        infoPhoto.style.marginBottom = "47px";
+                        infoPhoto.style.height = "250px";
+                        infoPhoto.style.justifyContent = "center";
+//Entrée du titre de la nouvelle image
 
-const addForm = document.createElement("form");
-        addForm.setAttribute("action", "#");
-        addForm.setAttribute("method", "post");
-        addForm.setAttribute("id", "formElement");
-                        addForm.style.flexDirection = "column";
-
+const infoTitle = document.createElement("div");
+        infoTitle.setAttribute("id", "infotitle");
+        infoTitle.style.display = "flex";
+        infoTitle.style.flexDirection = "column";
 const titleInput = document.createElement("label");
         titleInput.setAttribute("for","titre-photo");
         titleInput.textContent = "Titre";
@@ -276,7 +326,12 @@ const titlePhoto = document.createElement("input");
                         titlePhoto.style.border = "none";
                         titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
 
+//Entrée de la catégorie de la nouvelle image
 
+const infoCat = document.createElement("div");
+        infoCat.setAttribute("id", "infocat");
+        infoCat.style.display = "flex";
+        infoCat.style.flexDirection = "column";
 const catTitle = document.createElement("label");
         catTitle.setAttribute("for", "categorie");
         catTitle.textContent = "Catégorie";
@@ -285,6 +340,7 @@ const catTitle = document.createElement("label");
 const catPhoto = document.createElement("select");
         catPhoto.setAttribute("name", "categorie");
         catPhoto.setAttribute("id", "catphoto");
+        catPhoto.setAttribute("name", "category");
         catPhoto.setAttribute("onchange", "styleValidation()");
                         catPhoto.style.height = "50px";
                         catPhoto.style.border = "none";
@@ -305,7 +361,7 @@ const catRestaurant = document.createElement("option");
 
 const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
-        btnValidation.setAttribute("type", "button");   
+        btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
                         btnValidation.style.fontFamily ="syne";
@@ -324,34 +380,25 @@ const changeButtonValide = document.getElementById("btn-validation");
 const styleValidation = function (){
     if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
         btnValidation.style.backgroundColor = "#1D6154";
-        /*btnValidation.addEventListener("click", function (e){
-                e.preventDefault();
-        let formData = new formData();
-                formData.appendChild("image", photo.src);
-                formData.appendChild("title", titlePhoto.value);
-                formData.appendChild("category", catPhoto.value);
-
-        fetch("http://localhost:5678/api/works/",{
-                method:'POST',
-                headers:{'Authorization:`Bearer`+ localStorage.getItem("token"),
-                        'Content-type': 'multipart/form-data'},
-                body:formData,
-        })
-        .then(res => {
-                if(res.status !== ok){
-                
-                        
-                }
-        })
-        .then(res => res.json());
-
-        )};*/
-
     } else {
         btnValidation.style.backgroundColor = "#A7A7A7";
-        //btnValidation.removeEventListener();
     };
 };
+
+const sendNewWork = document.getElementById("formphoto");
+sendNewWork.addEventListener('submit', addNewWork);
+
+function addNewWork(e){
+        e.preventDefault();
+const formData = new FormData(sendNewWork);
+console.log(formData);
+const image = formData.get('image');
+const title = formData.get('title');
+const category = formData.get('category');
+console.log('data', {image, title, category});
+
+};         
+
 
 const validation = document.getElementById("validation");
                 validation.style.display = "flex";
@@ -369,11 +416,12 @@ addPhoto.appendChild(actionButton);
 actionButton.appendChild(buttonAddPhoto);
 actionButton.appendChild(inputAddPhoto);
 addPhoto.appendChild(formatImage);
-infoPhoto.appendChild(addForm);
-addForm.appendChild(titleInput);
-addForm.appendChild(titlePhoto);
-addForm.appendChild(catTitle);
-addForm.appendChild(catPhoto);
+infoPhoto.appendChild(infoTitle);
+infoPhoto.appendChild(infoCat);
+infoTitle.appendChild(titleInput);
+infoTitle.appendChild(titlePhoto);
+infoCat.appendChild(catTitle);
+infoCat.appendChild(catPhoto);
 catPhoto.appendChild(listCat);
 catPhoto.appendChild(catOjbect);
 catPhoto.appendChild(catAppart);
@@ -382,53 +430,6 @@ validation.appendChild(btnValidation);
 
 //Style des différents éléments de la première modale puis la seconde
 
-//Style du titre de la modale
-const titleModal = document.getElementById("titlemodal");
-
-                titleModal.style.height = "30px";
-                titleModal.style.fontFamily = "work sans";
-                titleModal.style.fontWeight = "400";
-                titleModal.style.color = "black";
-
-//Style des boutons supérieurs de la modale
-const buttonsModal = document.getElementById("btns-modal");
-                buttonsModal.style.width = "600px";
-                buttonsModal.style.display = "flex";
-                buttonsModal.style.justifyContent = "space-between";
-                buttonsModal.style.alignItems = "center";
-                buttonsModal.style.marginTop = "15px";
-
-        
-const buttonCloseModal = document.getElementById("closemodal");
-                buttonCloseModal.style.display = "flex";
-                buttonCloseModal.style.height = "24px";
-                buttonCloseModal.style.fontSize = "24px";
-                buttonCloseModal.style.backgroundColor = "white";
-                buttonCloseModal.style.border = "none";
-                buttonCloseModal.style.paddingBottom = "5px";
 
 
-//Mise en forme de la galerie modale, du bouton ouvrant la seconde modale et du futur bouton de suppression
 
-const styleModalGallery = document.getElementById("gallery-modal");
-                styleModalGallery.style.marginTop = "40px";
-                styleModalGallery.style.paddingLeft = "65px";
-                styleModalGallery.style.width = "530px";
-                styleModalGallery.style.height = "450px" 
-                styleModalGallery.style.display = "flex";
-                styleModalGallery.style.flexDirection = "row";
-                styleModalGallery.style.flexWrap = "wrap";
-
-const changeModal = document.getElementById("change-modal");
-                changeModal.style.display = "flex";
-                changeModal.style.flexDirection = "column";
-                changeModal.style.justifyContent = "center";
-                changeModal.style.width = "420px";
-                changeModal.style.borderTop = "solid", "black";
-                changeModal.style.marginBottom = "30px";
-
-const deleteGallery = document.getElementById("delete-gallery");
-                deleteGallery.style.display = "flex";
-                deleteGallery.style.justifyContent = "center";
-                deleteGallery.style.color = "black";
-                deleteGallery.style.textDecoration = "none";
