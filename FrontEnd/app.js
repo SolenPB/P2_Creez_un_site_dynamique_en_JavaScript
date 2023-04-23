@@ -177,18 +177,6 @@ const preModalTitle = document.getElementById("premodaltitle");
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
-
-/*let formData = new formData();
-formData.appendChild("image", "photo.src");
-formData.appendChild("title", "titlePhoto.value");
-formData.appendChild("category", "catPhoto.value");
-
-
-formPhoto.onsubmit = async (e) => {
-    e.preventDefault();
-
-    let response = fetch
-}*/
 const addPhoto = document.createElement("div");
         addPhoto.setAttribute("id","newphoto");
                         addPhoto.style.width = "420px";
@@ -315,13 +303,6 @@ const catRestaurant = document.createElement("option");
         catRestaurant.setAttribute("value", "Hôtels & restaurants");
         catRestaurant.textContent = "Hôtels & restaurants";
 
-
-
-const validation = document.getElementById("validation");
-                        validation.style.display = "flex";
-                        validation.style.justifyContent = "center";
-                        validation.style.borderTop = "solid", "black", "1px";
-
 const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
         btnValidation.setAttribute("type", "button");   
@@ -344,14 +325,38 @@ const styleValidation = function (){
     if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
         btnValidation.style.backgroundColor = "#1D6154";
         /*btnValidation.addEventListener("click", function (e){
+                e.preventDefault();
+        let formData = new formData();
+                formData.appendChild("image", photo.src);
+                formData.appendChild("title", titlePhoto.value);
+                formData.appendChild("category", catPhoto.value);
 
-        });*/
+        fetch("http://localhost:5678/api/works/",{
+                method:'POST',
+                headers:{'Authorization:`Bearer`+ localStorage.getItem("token"),
+                        'Content-type': 'multipart/form-data'},
+                body:formData,
+        })
+        .then(res => {
+                if(res.status !== ok){
+                
+                        
+                }
+        })
+        .then(res => res.json());
+
+        )};*/
+
     } else {
         btnValidation.style.backgroundColor = "#A7A7A7";
+        //btnValidation.removeEventListener();
     };
 };
 
-
+const validation = document.getElementById("validation");
+                validation.style.display = "flex";
+                validation.style.justifyContent = "center";
+                validation.style.borderTop = "solid", "black", "1px";
 
 //Rattachement des éléments de la modale avec les parents 
 
