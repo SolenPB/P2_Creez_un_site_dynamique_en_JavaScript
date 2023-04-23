@@ -386,13 +386,14 @@ const styleValidation = function (){
 };
 
 const sendNewWork = document.getElementById("formphoto");
+console.log(sendNewWork);
 sendNewWork.addEventListener('submit', addNewWork);
 
 function addNewWork(e){
         e.preventDefault();
 const formData = new FormData(sendNewWork);
 console.log(formData);
-const image = formData.get('image');
+const image = formData.get('picture');
 const title = formData.get('title');
 const category = formData.get('category');
 console.log('data', {image, title, category});
