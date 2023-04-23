@@ -37,10 +37,13 @@
         
     })
     .then(responseAuth => {
+
         localStorage.setItem("token", responseAuth.token);
-    
+        localStorage.setItem("userId", responseAuth.userId);
+        console.log(responseAuth);
         window.location.href='./index.html';
     })
+
     .catch(err => console.log(err));
 });
 

@@ -385,21 +385,27 @@ const styleValidation = function (){
     };
 };
 
-const sendNewWork = document.getElementById("formphoto");
-console.log(sendNewWork);
-sendNewWork.addEventListener('submit', addNewWork);
+        const sendNewWork = document.getElementById("formphoto");
+        sendNewWork.addEventListener('submit', function (e){
+                e.preventDefault();
 
-function addNewWork(e){
-        e.preventDefault();
-const formData = new FormData(sendNewWork);
-console.log(formData);
-const image = formData.get('picture');
-const title = formData.get('title');
-const category = formData.get('category');
-console.log('data', {image, title, category});
+                const newWork = {
+                        image: document.getElementById("newPicture").src,
+                        title: document.getElementById("titlephoto").value,
+                        category: document.getElementById("catphoto").value,
+                };
+                console.log(newWork);
 
-};         
+                const chargeUtile = JSON.stringify(newWork);
 
+                fetch("http://localhost:5678/api/works/", {
+                        method: 'POST',
+                        headers: {'Content-type': 'multipart/form-data',
+                                'Authorization': localStorage.getItem("token")},
+                        body:chargeUtile,
+                })
+                .then(res => res.json());
+        }); 
 
 const validation = document.getElementById("validation");
                 validation.style.display = "flex";
