@@ -227,8 +227,7 @@ const preModalTitle = document.getElementById("premodaltitle");
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
-const addPhoto = document.createElement("div");
-        addPhoto.setAttribute("id","newphoto");
+const addPhoto = document.getElementById("newphoto");
                         addPhoto.style.width = "420px";
                         addPhoto.style.height = "180px";
                         addPhoto.style.justifyContent = "center";
@@ -240,9 +239,7 @@ const addPhoto = document.createElement("div");
 
 //Prévisualisation de la photo et intégration de sa zone d'apparition
 
-let photo = document.createElement("img");
-photo.setAttribute("id", "newPicture");
-photo.setAttribute("name", "image");
+let photo = document.getElementById("newpicture");
 let previewPicture = function (e){
     const [picture] = e.files;
 
@@ -260,8 +257,7 @@ let previewPicture = function (e){
                         photo.style.border = "none";
                         photo.style.display = "none";
 
-const iconPhoto = document.createElement("i");
-        iconPhoto.setAttribute("class", "fa-sharp fa-regular fa-image");
+const iconPhoto = document.getElementById("icon");
                         iconPhoto.style.fontSize = "58px";
                         iconPhoto.style.justifyContent = "center";
                         iconPhoto.style.color = "#B9C5CC";
@@ -269,8 +265,7 @@ const iconPhoto = document.createElement("i");
 
 //Bouton d'ajout de photo
 
-const actionButton = document.createElement("div");
-        actionButton.setAttribute("id", "buttonAdd");
+const actionButton = document.getElementById("buttonAdd");
                         actionButton.style.display = "flex";
                         actionButton.style.flexDirection = "column";
                         actionButton.style.alignItems = "center";
@@ -280,21 +275,16 @@ const actionButton = document.createElement("div");
                         actionButton.style.marginTop = "15px";
 
 
-const buttonAddPhoto = document.createElement("label");
+const buttonAddPhoto = document.getElementById("buttonaddphoto");
                         buttonAddPhoto.textContent = "+ Ajouter photo";
                         buttonAddPhoto.style.position = "relative";
                         buttonAddPhoto.style.top = "12px";
                         buttonAddPhoto.style.color = "#306685";
-const inputAddPhoto = document.createElement("input");
-        inputAddPhoto.setAttribute("type", "file");
-        inputAddPhoto.setAttribute("id", "input-addphoto");
-        inputAddPhoto.setAttribute("name", "picture");
-        inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
+const inputAddPhoto = document.getElementById("input-addphoto");
                         inputAddPhoto.style.height = "36px";
                         inputAddPhoto.style.opacity = "0";
 
-const formatImage = document.createElement("p");
-        formatImage.textContent = "jpg, png : 4mo max";
+const formatImage = document.getElementById("formatimage");
                         formatImage.style.marginTop = "5px";
 
 

@@ -80,7 +80,15 @@
 			</div>
 
 			<form id="formphoto" method="post">
-
+				<div id="newphoto">
+					<img src="" id="newpicture" name="image">
+					<i class="fa-sharp fa-regular fa-image" id="icon"></i>
+						<div id="buttonAdd">
+							<label id="buttonaddphoto">+ Ajouter photo</label>
+							<input type="file" id="input-addphoto" name="picture" onchange="previewPicture(this)">
+						</div>
+					<p id="formatimage">jpg, png : 4mo max</p>
+				</div>
 			</form>
 			
 			<div id="change-modal">
