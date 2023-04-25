@@ -338,7 +338,7 @@ btnValidation.addEventListener("click", function(e){
                 formData.append('categoryId', document.getElementById('catphoto').value);
 
                 console.log(formData);
-
+//A REGLER !!!!!! ERREUR 500 PERSISTANTE
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers:{'Content-type': 'multipart/form-data',
