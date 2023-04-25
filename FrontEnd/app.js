@@ -391,7 +391,7 @@ const styleValidation = function (){
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers: {'Content-type': 'multipart/form-data',
-                                'Authorization': localStorage.getItem("token")},
+                                'Authorization': sessionStorage.getItem("token")},
                         body:chargeUtile,
                 })
                 .then(res => res.json());

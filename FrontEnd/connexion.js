@@ -38,8 +38,8 @@
     })
     .then(responseAuth => {
 
-        localStorage.setItem("token", responseAuth.token);
-        localStorage.setItem("userId", responseAuth.userId);
+        sessionStorage.setItem("token", responseAuth.token);
+        sessionStorage.setItem("userId", responseAuth.userId);
         console.log(responseAuth);
         window.location.href='./index.html';
     })

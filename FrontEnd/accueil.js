@@ -201,8 +201,16 @@ modifTitle.style.marginLeft = "5px";
 
 //Condition d'apparition des outils de modification
 
-let userLoggedIn = localStorage.getItem("token");
-let userLoggedOut = localStorage.removeItem("token");
+let userLoggedIn = getElementById("login");
+userLoggedIn.addEventListener('click', function(e){
+    localStorage.getItem("token");
+});
+
+let userLoggedOut = getElementById("logout");
+userLoggedOut.addEventListener('click', function(e){
+    localStorage.removeItem("token");
+});
+
 console.log(userLoggedIn);
 
 if(userLoggedIn == null){
