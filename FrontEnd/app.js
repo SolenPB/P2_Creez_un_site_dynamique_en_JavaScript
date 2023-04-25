@@ -354,28 +354,7 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
-
-
-                btnValidation.addEventListener("click", function(e){
-                        const newWork = {
-                                image: document.getElementById("newpicture").src,
-                                title: document.getElementById("titlephoto").value,
-                                category: document.getElementById("catphoto").value,
-                                
-                        };
-                        console.log(newWork);
-
-                        const chargeUtile = JSON.stringify(newWork);
-
-                        fetch("http://localhost:5678/api/works/", {
-                                method: 'POST',
-                                headers: {'Content-type': 'multipart/form-data',
-                                        'Authorization': sessionStorage.getItem("token")},
-                                body:chargeUtile
-                        })
-                        .then(res => res.json());
-                       
-                });
+  
                         btnValidation.style.fontFamily ="syne";
                         btnValidation.style.fontWeight = "700";
                         btnValidation.style.color = "white";
@@ -387,8 +366,6 @@ const btnValidation = document.createElement("input");
                         btnValidation.style.borderRadius = "60px";
                         btnValidation.style.textAlign = "center";
 
-
-const changeButtonValide = document.getElementById("btn-validation");
 const styleValidation = function (){
     if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
         btnValidation.style.backgroundColor = "#1D6154";
@@ -396,7 +373,6 @@ const styleValidation = function (){
         btnValidation.style.backgroundColor = "#A7A7A7";
     };
 };              
-       
 
 const validation = document.getElementById("validation");
                 validation.style.display = "flex";
