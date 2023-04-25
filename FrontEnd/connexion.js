@@ -41,7 +41,8 @@
         sessionStorage.setItem("token", responseAuth.token);
         sessionStorage.setItem("userId", responseAuth.userId);
         console.log(responseAuth);
-        window.location.href='./index.html';
+        window.location.href ='./index.html';
+      
     })
 
     .catch(err => console.log(err));

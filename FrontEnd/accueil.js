@@ -17,7 +17,12 @@ const linksIn = document.getElementById("login");
 linksIn.style.color = "black";
 linksIn.style.textDecoration = "none";
 
+
+
 const linksOut = document.getElementById("logout");
+linksOut.addEventListener('click', function(e){
+    sessionStorage.removeItem("token");
+})
 linksOut.style.color = "black";
 linksOut.style.textDecoration = "none";
 
@@ -201,26 +206,19 @@ modifTitle.style.marginLeft = "5px";
 
 //Condition d'apparition des outils de modification
 
-let userLoggedIn = getElementById("login");
-userLoggedIn.addEventListener('click', function(e){
-    localStorage.getItem("token");
-});
+let userLoggedIn = sessionStorage.getItem("token");
+    console.log(userLoggedIn);
+    if(userLoggedIn == null){
+        edition.style.display = "none";
+        linksOut.style.display = "none";
+        modTitle.style.display ="none";
+        modImage.style.display = "none";
+        modGallery.style.display ="none";
+    } else {
+        let btnfilters = document.getElementById("ens-btn");
+        btnfilters.style.display = "none";
+        linksIn.style.display = "none";
+    };
 
-let userLoggedOut = getElementById("logout");
-userLoggedOut.addEventListener('click', function(e){
-    localStorage.removeItem("token");
-});
 
-console.log(userLoggedIn);
 
-if(userLoggedIn == null){
-    edition.style.display = "none";
-    linksOut.style.display = "none";
-    modTitle.style.display ="none";
-    modImage.style.display = "none";
-    modGallery.style.display ="none";
-} else {
-    let btnfilters = document.getElementById("ens-btn");
-    btnfilters.style.display = "none";
-    linksIn.style.display = "none";
-};
