@@ -354,6 +354,28 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
+
+
+                btnValidation.addEventListener("click", function(e){
+                        const newWork = {
+                                image: document.getElementById("newpicture").src,
+                                title: document.getElementById("titlephoto").value,
+                                category: document.getElementById("catphoto").value,
+                                
+                        };
+                        console.log(newWork);
+
+                        const chargeUtile = JSON.stringify(newWork);
+
+                        fetch("http://localhost:5678/api/works/", {
+                                method: 'POST',
+                                headers: {'Content-type': 'multipart/form-data',
+                                        'Authorization': sessionStorage.getItem("token")},
+                                body:chargeUtile
+                        })
+                        .then(res => res.json());
+                       
+                });
                         btnValidation.style.fontFamily ="syne";
                         btnValidation.style.fontWeight = "700";
                         btnValidation.style.color = "white";
@@ -374,31 +396,14 @@ const styleValidation = function (){
         btnValidation.style.backgroundColor = "#A7A7A7";
     };
 };              
-
-                const newWork = {
-                        image: document.getElementById("newpicture").src,
-                        title: document.getElementById("titlephoto").value,
-                        category: document.getElementById("catphoto").value,
-                };
-
-                /*const chargeUtile = JSON.stringify(newWork);*/
-
-               fetch("http://localhost:5678/api/works/", {
-                        method: 'POST',
-                        headers: {'Content-type': 'multipart/form-data',
-                                'Authorization': sessionStorage.getItem("token"), 
-                                'Authorization': sessionStorage.getItem("userId"),
-                                },
-                        body:chargeUtile,
-                })
-
-                .then(res => res.json());
-        
+       
 
 const validation = document.getElementById("validation");
                 validation.style.display = "flex";
                 validation.style.justifyContent = "center";
                 validation.style.borderTop = "solid", "black", "1px";
+
+
 
 //Rattachement des éléments de la modale avec les parents 
 
