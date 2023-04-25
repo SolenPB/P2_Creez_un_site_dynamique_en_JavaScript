@@ -331,12 +331,15 @@ const btnValidation = document.createElement("input");
 btnValidation.addEventListener("click", function(e){
         e.preventDefault();
         let myForm = document.getElementById("formphoto");
-        let formData = new FormData(myForm);
+        let formData = new FormData();
                 formData.append('userId', sessionStorage.getItem('userId'));      
+                formData.append('title', document.getElementById('titlephoto').value);
+                formData.append('imageUrl', document.getElementById('newpicture').src);
+                formData.append('categoryId', document.getElementById('catphoto').value);
 
                 console.log(formData);
 
-                /*fetch("http://localhost:5678/api/works/", {
+                fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers:{'Content-type': 'multipart/form-data',
                                 'Authorization': `Bearer ` + sessionStorage.getItem("token")},
@@ -344,7 +347,7 @@ btnValidation.addEventListener("click", function(e){
                 })
                 .then(res => res.json())
                 .then(response => console.log(response))
-                .catch(err => console.log(err));*/
+                .catch(err => console.log(err));
 });
      
                         btnValidation.style.fontFamily ="syne";
