@@ -396,6 +396,7 @@ const styleValidation = function (){
                                 },
                         body:chargeUtile,
                 })
+                
                 .then(res => res.json());
         }); 
 
