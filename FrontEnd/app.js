@@ -300,8 +300,8 @@ const infoPhoto = document.createElement("div");
 
 const infoTitle = document.createElement("div");
         infoTitle.setAttribute("id", "infotitle");
-        infoTitle.style.display = "flex";
-        infoTitle.style.flexDirection = "column";
+                        infoTitle.style.display = "flex";
+                        infoTitle.style.flexDirection = "column";
 const titleInput = document.createElement("label");
         titleInput.setAttribute("for","titre-photo");
         titleInput.textContent = "Titre";
