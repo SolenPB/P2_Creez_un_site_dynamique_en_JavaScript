@@ -356,6 +356,18 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("onchange", "styleValidation");
   
 
+        let myForm = document.getElementById("formphoto");
+        formData = new FormData(myForm);
+                let image = document.getElementById("newpicture");
+                let title = document.getElementsByName('title');
+                let category = document.getElementsByName('category');
+
+                formData.append('image', image);
+                formData.append('title', title);
+                formData.append('category', category);
+
+                console.log(formData);
+
                         btnValidation.style.fontFamily ="syne";
                         btnValidation.style.fontWeight = "700";
                         btnValidation.style.color = "white";
