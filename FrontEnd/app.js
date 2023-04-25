@@ -291,26 +291,18 @@ const formatImage = document.getElementById("formatimage");
 
 //Entrée des informations pour la nouvelle image
 
-const infoPhoto = document.createElement("div");
-        infoPhoto.setAttribute("id", "infophoto");
+const infoPhoto = document.getElementById("infophoto");
                         infoPhoto.style.flexDirection = "column";
                         infoPhoto.style.height = "250px";
                         infoPhoto.style.justifyContent = "center";
 //Entrée du titre de la nouvelle image
 
-const infoTitle = document.createElement("div");
-        infoTitle.setAttribute("id", "infotitle");
+const infoTitle = document.getElementById("infotitle");
                         infoTitle.style.display = "flex";
                         infoTitle.style.flexDirection = "column";
-const titleInput = document.createElement("label");
-        titleInput.setAttribute("for","titre-photo");
-        titleInput.textContent = "Titre";
+const titleInput = document.getElementById("titrephoto");
                         titleInput.style.marginBottom = "10px";
-const titlePhoto = document.createElement("input");
-        titlePhoto.setAttribute ("type", "text");
-        titlePhoto.setAttribute("name","title");
-        titlePhoto.setAttribute("id", "titlephoto");
-        titlePhoto.setAttribute("onchange", "styleValidation()");
+const titlePhoto = document.getElementById("titlephoto");
                         titlePhoto.style.height = "50px";
                         titlePhoto.style.marginBottom = "20px";
                         titlePhoto.style.border = "none";
@@ -318,36 +310,17 @@ const titlePhoto = document.createElement("input");
 
 //Entrée de la catégorie de la nouvelle image
 
-const infoCat = document.createElement("div");
-        infoCat.setAttribute("id", "infocat");
-        infoCat.style.display = "flex";
-        infoCat.style.flexDirection = "column";
-const catTitle = document.createElement("label");
-        catTitle.setAttribute("for", "categorie");
-        catTitle.textContent = "Catégorie";
+const infoCat = document.getElementById("infocat");
+                        infoCat.style.display = "flex";
+                        infoCat.style.flexDirection = "column";
+const catTitle = document.getElementById("categorie");
                         catTitle.style.marginBottom = "10px";
 
-const catPhoto = document.createElement("select");
-        catPhoto.setAttribute("name", "categorie");
-        catPhoto.setAttribute("id", "catphoto");
-        catPhoto.setAttribute("name", "category");
-        catPhoto.setAttribute("onchange", "styleValidation()");
+const catPhoto = document.getElementById("catphoto");
                         catPhoto.style.height = "50px";
                         catPhoto.style.border = "none";
                         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
                         catPhoto.style.backgroundColor = "white";
-
-const listCat = document.createElement("option");
-        listCat.setAttribute("value", "");
-const catOjbect = document.createElement("option");
-        catOjbect.setAttribute("value", "Objets");
-        catOjbect.textContent = "Objets";
-const catAppart = document.createElement("option");
-        catAppart.setAttribute("value", "Appartements");
-        catAppart.textContent = "Appartements";
-const catRestaurant = document.createElement("option");
-        catRestaurant.setAttribute("value", "Hôtels & restaurants");
-        catRestaurant.textContent = "Hôtels & restaurants";
 
 const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
@@ -355,19 +328,25 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
   
-
+btnValidation.addEventListener("click", function(e){
+        e.preventDefault();
         let myForm = document.getElementById("formphoto");
-        formData = new FormData(myForm);
-                let image = document.getElementById("newpicture");
-                let title = document.getElementsByName('title');
-                let category = document.getElementsByName('category');
-
-                formData.append('image', image);
-                formData.append('title', title);
-                formData.append('category', category);
+        let formData = new FormData(myForm);
+                formData.append('userId', sessionStorage.getItem('userId'));      
 
                 console.log(formData);
 
+                /*fetch("http://localhost:5678/api/works/", {
+                        method: 'POST',
+                        headers:{'Content-type': 'multipart/form-data',
+                                'Authorization': `Bearer ` + sessionStorage.getItem("token")},
+                        body: formData,
+                })
+                .then(res => res.json())
+                .then(response => console.log(response))
+                .catch(err => console.log(err));*/
+});
+     
                         btnValidation.style.fontFamily ="syne";
                         btnValidation.style.fontWeight = "700";
                         btnValidation.style.color = "white";
@@ -412,10 +391,6 @@ infoTitle.appendChild(titleInput);
 infoTitle.appendChild(titlePhoto);
 infoCat.appendChild(catTitle);
 infoCat.appendChild(catPhoto);
-catPhoto.appendChild(listCat);
-catPhoto.appendChild(catOjbect);
-catPhoto.appendChild(catAppart);
-catPhoto.appendChild(catRestaurant);
 validation.appendChild(btnValidation);
 
 

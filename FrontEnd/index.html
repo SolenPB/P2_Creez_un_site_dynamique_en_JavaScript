@@ -89,6 +89,21 @@
 						</div>
 					<p id="formatimage">jpg, png : 4mo max</p>
 				</div>
+				<div id="infophoto">
+					<div id="infotitle">
+						<label for="titre-photo" id="titrephoto">Titre</label>
+						<input type="text" name="title" id="titlephoto" onchange="styleValidation()">
+					</div>
+					<div id="infocat">
+						<label for="categorie" id="categorie">Catégorie</label>
+						<select name="categorie" id="catphoto" onchange="styleValidation()">
+							<option value=""></option>
+							<option value="Objets">Objets</option>
+							<option value="Appartements">Appartements</option>
+							<option value="Hôtels & restaurants">Hôtels & restaurants</option>
+						</select>
+					</div>
+				</div>
 			</form>
 			
 			<div id="change-modal">
