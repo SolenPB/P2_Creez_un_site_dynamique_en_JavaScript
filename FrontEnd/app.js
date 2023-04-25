@@ -373,22 +373,17 @@ const styleValidation = function (){
     } else {
         btnValidation.style.backgroundColor = "#A7A7A7";
     };
-};
-
-        const sendNewWork = document.getElementById("formphoto");
-        sendNewWork.addEventListener('submit', function (e){
-                e.preventDefault();
+};              
 
                 const newWork = {
                         image: document.getElementById("newpicture").src,
                         title: document.getElementById("titlephoto").value,
                         category: document.getElementById("catphoto").value,
                 };
-                console.log(newWork);
 
-                const chargeUtile = JSON.stringify(newWork);
+                /*const chargeUtile = JSON.stringify(newWork);*/
 
-                fetch("http://localhost:5678/api/works/", {
+               fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers: {'Content-type': 'multipart/form-data',
                                 'Authorization': sessionStorage.getItem("token"), 
@@ -396,9 +391,9 @@ const styleValidation = function (){
                                 },
                         body:chargeUtile,
                 })
-                
+
                 .then(res => res.json());
-        }); 
+        
 
 const validation = document.getElementById("validation");
                 validation.style.display = "flex";
