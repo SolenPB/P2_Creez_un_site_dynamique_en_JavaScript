@@ -207,7 +207,6 @@ modifTitle.style.marginLeft = "5px";
 //Condition d'apparition des outils de modification
 
 let userLoggedIn = sessionStorage.getItem("token");
-    console.log(userLoggedIn);
     if(userLoggedIn == null){
         edition.style.display = "none";
         linksOut.style.display = "none";

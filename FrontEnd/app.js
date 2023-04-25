@@ -380,7 +380,7 @@ const styleValidation = function (){
                 e.preventDefault();
 
                 const newWork = {
-                        image: document.getElementById("newPicture").src,
+                        image: document.getElementById("newpicture").src,
                         title: document.getElementById("titlephoto").value,
                         category: document.getElementById("catphoto").value,
                 };
@@ -391,7 +391,9 @@ const styleValidation = function (){
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers: {'Content-type': 'multipart/form-data',
-                                'Authorization': sessionStorage.getItem("token")},
+                                'Authorization': sessionStorage.getItem("token"), 
+                                'Authorization': sessionStorage.getItem("userId"),
+                                },
                         body:chargeUtile,
                 })
                 .then(res => res.json());
