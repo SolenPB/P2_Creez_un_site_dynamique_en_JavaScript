@@ -355,6 +355,7 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
   
+
                         btnValidation.style.fontFamily ="syne";
                         btnValidation.style.fontWeight = "700";
                         btnValidation.style.color = "white";
@@ -378,6 +379,7 @@ const validation = document.getElementById("validation");
                 validation.style.display = "flex";
                 validation.style.justifyContent = "center";
                 validation.style.borderTop = "solid", "black", "1px";
+
 
 
 
