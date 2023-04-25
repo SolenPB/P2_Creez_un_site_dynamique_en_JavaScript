@@ -404,7 +404,7 @@ catPhoto.appendChild(catAppart);
 catPhoto.appendChild(catRestaurant);
 validation.appendChild(btnValidation);
 
-//Style des différents éléments de la première modale puis la seconde
+
 
 
 
