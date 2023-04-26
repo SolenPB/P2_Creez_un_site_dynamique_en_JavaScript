@@ -330,19 +330,19 @@ const btnValidation = document.createElement("input");
   
 btnValidation.addEventListener("click", function(e){
         e.preventDefault();
-        let myForm = document.getElementById("formphoto");
+        const token = sessionStorage.getItem("token");
         let formData = new FormData();
-                formData.append('userId', sessionStorage.getItem('userId'));      
+                //formData.append('userId', sessionStorage.getItem('userId'));      
                 formData.append('title', document.getElementById('titlephoto').value);
-                formData.append('imageUrl', document.getElementById('newpicture').files[0]);
-                formData.append('categoryId', document.getElementById('catphoto').value);
+                formData.append('image', document.getElementById('input-addphoto').files[0]);
+                formData.append('category', document.getElementById('catphoto').value);
 
                 console.log(formData);
-//A REGLER !!!!!! ERREUR 500 PERSISTANTE
+//ENFIN RESOLUUUUUUUUUUUUUUUUUUUUUUUUUUU !!!!!!
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers:{'accept': 'application/json',
-                                'Authorization': `Bearer ` + sessionStorage.getItem("token")},
+                                'authorization': `Bearer ${token}`},
                         body: formData,
                 })
                 .then(res => res.json())
