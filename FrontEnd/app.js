@@ -334,14 +334,14 @@ btnValidation.addEventListener("click", function(e){
         let formData = new FormData();
                 formData.append('userId', sessionStorage.getItem('userId'));      
                 formData.append('title', document.getElementById('titlephoto').value);
-                formData.append('imageUrl', document.getElementById('newpicture').src);
+                formData.append('imageUrl', document.getElementById('newpicture').files[0]);
                 formData.append('categoryId', document.getElementById('catphoto').value);
 
                 console.log(formData);
 //A REGLER !!!!!! ERREUR 500 PERSISTANTE
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
-                        headers:{'Content-type': 'multipart/form-data',
+                        headers:{'accept': 'application/json',
                                 'Authorization': `Bearer ` + sessionStorage.getItem("token")},
                         body: formData,
                 })
