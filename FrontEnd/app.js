@@ -48,34 +48,7 @@ function CreateSmallCard(smallCard){
     const pictureModal = document.createElement("div");
             pictureModal.setAttribute("id", "picture");
                         pictureModal.style.height = "120px";
-
-    const deletePicture = document.createElement("input");
-    const iconDelete = document.createElement("i");
-        iconDelete.setAttribute("class", "fa-regular fa-trash-can");
-            iconDelete.style.zIndex = 50;
-            iconDelete.style.width = "15px";
-            iconDelete.style.height = "15px";
-            iconDelete.style.color = "red";
-        deletePicture.appendChild(iconDelete);
-
-            deletePicture.setAttribute("id", "deleteButton");
-            deletePicture.setAttribute("type", "button");
-            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
-            
-                        deletePicture.style.display = "flex";
-                        deletePicture.style.backgroundColor = "";
-                        deletePicture.style.color = "red";
-                        deletePicture.style.width = "17px";
-                        deletePicture.style.height = "17px";
-                        deletePicture.style.justifyContent = "center";
-                        deletePicture.style.position = "relative";
-                        deletePicture.style.top = "10px";
-                        deletePicture.style.left = "60px";
-                        deletePicture.style.paddingTop = "2px";
-                        deletePicture.style.paddingRight = "2px";
     
-
-        
     const movePicture = document.createElement("i");
                         movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
                             movePicture.style.display = "none";
@@ -89,6 +62,30 @@ function CreateSmallCard(smallCard){
                             movePicture.style.bottom = "8px";
                             movePicture.style.left = "35px";
 
+
+    const deletePicture = document.createElement("input");
+    const iconDelete = document.createElement("i");
+        iconDelete.setAttribute("class", "fa-regular fa-trash-can");
+            iconDelete.style.width = "15px";
+            iconDelete.style.height = "15px";
+            iconDelete.style.color = "red";
+        deletePicture.appendChild(iconDelete);
+
+            deletePicture.setAttribute("id", "deleteButton");
+            deletePicture.setAttribute("type", "button");
+            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+                deletePicture.style.display = "flex";
+                deletePicture.style.backgroundColor = "";
+                deletePicture.style.color = "red";
+                deletePicture.style.width = "17px";
+                deletePicture.style.height = "17px";
+                deletePicture.style.justifyContent = "center";
+                deletePicture.style.position = "relative";
+                deletePicture.style.top = "10px";
+                deletePicture.style.left = "60px";
+                deletePicture.style.paddingTop = "2px";
+                deletePicture.style.paddingRight = "2px";  
+                                      
     const imageUrlModal = document.createElement("img");
                         imageUrlModal.src = smallCard.imageUrl;
                             imageUrlModal.style.width = "85px";
@@ -113,13 +110,14 @@ function CreateSmallCard(smallCard){
     photoModal.appendChild(titleImgModal);
     pictureModal.appendChild(deletePicture);
     pictureModal.appendChild(movePicture);
-
 };    
-   
+
+
+            
+                        
 //Suppression des éléments de la modale 
 
-    const deletePicture = document.getElementById("deleteButton");
-    console.log(deletePicture);
+
 
 /*deletePicture.addEventListener("click", function(e){
     e.preventDefault();
