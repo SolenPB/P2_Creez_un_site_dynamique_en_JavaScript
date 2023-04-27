@@ -4,7 +4,7 @@ fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
     for(let works of worksArray){
-    CreateSmallCard(works);
+    //CreateSmallCard(works);
 }}); 
 
 
@@ -38,8 +38,7 @@ const closeModal = document.getElementById("closemodal");
 
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
 
-function CreateSmallCard(smallCard){
-    const galleryModal = document.getElementById("gallery-modal");
+const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
                         photoModal.style.width = "85px";
                         photoModal.style.height = "140px"
@@ -87,7 +86,7 @@ function CreateSmallCard(smallCard){
                 deletePicture.style.paddingRight = "2px";  
                                       
     const imageUrlModal = document.createElement("img");
-                        imageUrlModal.src = smallCard.imageUrl;
+                        //imageUrlModal.src = works.imageUrl;
                             imageUrlModal.style.width = "85px";
                             imageUrlModal.style.height = "120px";
                             imageUrlModal.style.position = "absolute";
@@ -110,14 +109,13 @@ function CreateSmallCard(smallCard){
     photoModal.appendChild(titleImgModal);
     pictureModal.appendChild(deletePicture);
     pictureModal.appendChild(movePicture);
-};    
+    
+  
 
 
             
                         
 //Suppression des éléments de la modale 
-
-
 
 /*deletePicture.addEventListener("click", function(e){
     e.preventDefault();
