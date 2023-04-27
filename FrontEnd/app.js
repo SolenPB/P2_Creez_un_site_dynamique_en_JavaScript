@@ -198,7 +198,7 @@ const buttonPreModal = document.getElementById("premodal");
                     buttonPreModal.style.visibility = "hidden";
                     preModalTitle.style.display = "none";
                     addPhoto.style.display = "none";
-                    infoPhoto.style.display = "none";
+                    infoPhoto.innerHTML="";
                     validation.style.display = "none";
             });
 
