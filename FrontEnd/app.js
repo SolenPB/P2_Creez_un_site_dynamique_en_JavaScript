@@ -53,15 +53,18 @@ function CreateSmallCard(smallCard){
     const iconDelete = document.createElement("i");
         iconDelete.setAttribute("class", "fa-regular fa-trash-can");
             iconDelete.style.zIndex = 50;
+            iconDelete.style.width = "15px";
+            iconDelete.style.height = "15px";
+            iconDelete.style.color = "red";
         deletePicture.appendChild(iconDelete);
 
-            deletePicture.setAttribute("id", "delete");
+            deletePicture.setAttribute("id", "deleteButton");
             deletePicture.setAttribute("type", "button");
-            //deletePicture.setAttribute("class", "fa-regular fa-trash-can");
-
+            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+            
                         deletePicture.style.display = "flex";
-                        deletePicture.style.backgroundColor = "black";
-                        deletePicture.style.color = "white";
+                        deletePicture.style.backgroundColor = "";
+                        deletePicture.style.color = "red";
                         deletePicture.style.width = "17px";
                         deletePicture.style.height = "17px";
                         deletePicture.style.justifyContent = "center";
@@ -70,7 +73,9 @@ function CreateSmallCard(smallCard){
                         deletePicture.style.left = "60px";
                         deletePicture.style.paddingTop = "2px";
                         deletePicture.style.paddingRight = "2px";
+    
 
+        
     const movePicture = document.createElement("i");
                         movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
                             movePicture.style.display = "none";
@@ -86,9 +91,10 @@ function CreateSmallCard(smallCard){
 
     const imageUrlModal = document.createElement("img");
                         imageUrlModal.src = smallCard.imageUrl;
-                        imageUrlModal.style.width = "85px";
-                        imageUrlModal.style.height = "120px";
-                        imageUrlModal.style.position = "absolute";
+                            imageUrlModal.style.width = "85px";
+                            imageUrlModal.style.height = "120px";
+                            imageUrlModal.style.position = "absolute";
+
             imageUrlModal.addEventListener("mouseover", function (event){
             movePicture.style.display = "flex";
         });
@@ -109,23 +115,25 @@ function CreateSmallCard(smallCard){
     pictureModal.appendChild(movePicture);
 
 };    
-    const deleteWork = document.getElementById("delete");
-        /*deleteWork.addEventListener("click", function(e){
-            e.preventDefault();
+   
+//Suppression des éléments de la modale 
 
-            const token = sessionStorage.getItem("token");
+    const deletePicture = document.getElementById("deleteButton");
+    console.log(deletePicture);
 
-            fetch("http://localhost:5678/api/works/{id}", {
-                method: 'DELETE',
-                headers:{'accept': '*
-                       'authorization': `Bearer ${token}`},
-            })
-            .then(res => res.json())
-            .then(response => console.log(response));
+/*deletePicture.addEventListener("click", function(e){
+    e.preventDefault();
+    const imageId = document.getElementById("picture");
+    const token = sessionStorage.getItem("token");
 
-        });*/
-
-//Style et fonctionnalité des éléments du modal-wrapper
+    fetch("http://localhost:5678/api/works/{id}", {
+        method: 'DELETE',
+        headers:{'accept': '*
+                'authorization': `Bearer ${token}`},
+    })
+    .then(res => console.log("Projet supprimé !"))
+    
+});*/
 
 
 //Style du titre de la modale
