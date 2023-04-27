@@ -332,13 +332,13 @@ btnValidation.addEventListener("click", function(e){
         e.preventDefault();
         const token = sessionStorage.getItem("token");
         let formData = new FormData();
-                //formData.append('userId', sessionStorage.getItem('userId'));      
+   
                 formData.append('title', document.getElementById('titlephoto').value);
                 formData.append('image', document.getElementById('input-addphoto').files[0]);
                 formData.append('category', document.getElementById('catphoto').value);
 
                 console.log(formData);
-//ENFIN RESOLUUUUUUUUUUUUUUUUUUUUUUUUUUU !!!!!!
+
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
                         headers:{'accept': 'application/json',
