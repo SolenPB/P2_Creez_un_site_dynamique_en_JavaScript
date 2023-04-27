@@ -5,6 +5,7 @@ fetch("http://localhost:5678/api/works/")
 .then(worksArray => {
     for(let works of worksArray){
     CreateSmallCard(works);
+    console.log(worksArray);
 }}); 
 
 
@@ -40,6 +41,7 @@ const closeModal = document.getElementById("closemodal");
 function CreateSmallCard(smallCards){
 const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
+                    photoModal.setAttribute("id", "photomodal")
                         photoModal.style.width = "85px";
                         photoModal.style.height = "140px"
                         photoModal.style.marginRight = "8px";
@@ -78,7 +80,8 @@ const galleryModal = document.getElementById("gallery-modal");
 
             deletePicture.addEventListener("click", function(e){
                 e.preventDefault();
-                    //const imageId = document.getElementById("picture");
+                    const smallPhoto = document.getElementById("image");
+                    
                     const token = sessionStorage.getItem("token");
 
                     fetch("http://localhost:5678/api/works/{id}", {
@@ -103,6 +106,7 @@ const galleryModal = document.getElementById("gallery-modal");
                 deletePicture.style.border = "none";
 
     const imageUrlModal = document.createElement("img");
+                    imageUrlModal.setAttribute("id", "image");
                         imageUrlModal.src = smallCards.imageUrl;
                             imageUrlModal.style.width = "85px";
                             imageUrlModal.style.height = "120px";
