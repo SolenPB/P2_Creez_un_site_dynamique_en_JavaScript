@@ -4,7 +4,7 @@ fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
     for(let works of worksArray){
-    //CreateSmallCard(works);
+    CreateSmallCard(works);
 }}); 
 
 
@@ -37,7 +37,7 @@ const closeModal = document.getElementById("closemodal");
 
 
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
-
+function CreateSmallCard(smallCards){
 const galleryModal = document.getElementById("gallery-modal");
     const photoModal = document.createElement("figure");
                         photoModal.style.width = "85px";
@@ -62,31 +62,48 @@ const galleryModal = document.getElementById("gallery-modal");
                             movePicture.style.left = "35px";
 
 
-    const deletePicture = document.createElement("input");
+    const deletePicture = document.createElement("button");
     const iconDelete = document.createElement("i");
         iconDelete.setAttribute("class", "fa-regular fa-trash-can");
             iconDelete.style.width = "15px";
             iconDelete.style.height = "15px";
-            iconDelete.style.color = "red";
-        deletePicture.appendChild(iconDelete);
+            iconDelete.style.color = "white";
+            iconDelete.style.paddingTop = "2px";
+            
+            deletePicture.appendChild(iconDelete);
 
             deletePicture.setAttribute("id", "deleteButton");
-            deletePicture.setAttribute("type", "button");
-            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+                            
+    //Suppression des éléments de la modale 
+
+            deletePicture.addEventListener("click", function(e){
+                e.preventDefault();
+                    //const imageId = document.getElementById("picture");
+                    const token = sessionStorage.getItem("token");
+
+                    fetch("http://localhost:5678/api/works/{id}", {
+                    method: 'DELETE',
+                    headers:{'accept': '*/*',
+                    'authorization': `Bearer ${token}`},
+                })
+                .then(res => console.log("Projet supprimé !"))
+    
+            });
+        //Mise en forme des boutons de suppression
+
                 deletePicture.style.display = "flex";
-                deletePicture.style.backgroundColor = "";
-                deletePicture.style.color = "red";
-                deletePicture.style.width = "17px";
-                deletePicture.style.height = "17px";
+                deletePicture.style.backgroundColor = "black";
+                deletePicture.style.width = "18px";
+                deletePicture.style.height = "18px";
                 deletePicture.style.justifyContent = "center";
                 deletePicture.style.position = "relative";
                 deletePicture.style.top = "10px";
                 deletePicture.style.left = "60px";
-                deletePicture.style.paddingTop = "2px";
-                deletePicture.style.paddingRight = "2px";  
-                                      
+                deletePicture.style.padding = "0";
+                deletePicture.style.border = "none";
+
     const imageUrlModal = document.createElement("img");
-                        //imageUrlModal.src = works.imageUrl;
+                        imageUrlModal.src = smallCards.imageUrl;
                             imageUrlModal.style.width = "85px";
                             imageUrlModal.style.height = "120px";
                             imageUrlModal.style.position = "absolute";
@@ -110,27 +127,11 @@ const galleryModal = document.getElementById("gallery-modal");
     pictureModal.appendChild(deletePicture);
     pictureModal.appendChild(movePicture);
     
-  
+};
 
 
             
                         
-//Suppression des éléments de la modale 
-
-/*deletePicture.addEventListener("click", function(e){
-    e.preventDefault();
-    const imageId = document.getElementById("picture");
-    const token = sessionStorage.getItem("token");
-
-    fetch("http://localhost:5678/api/works/{id}", {
-        method: 'DELETE',
-        headers:{'accept': '*
-                'authorization': `Bearer ${token}`},
-    })
-    .then(res => console.log("Projet supprimé !"))
-    
-});*/
-
 
 //Style du titre de la modale
 const titleModal = document.getElementById("titlemodal");
