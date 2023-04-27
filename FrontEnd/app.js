@@ -1,3 +1,5 @@
+//import {CreateCard} from './accueil.js';
+
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
@@ -47,8 +49,16 @@ function CreateSmallCard(smallCard){
             pictureModal.setAttribute("id", "picture");
                         pictureModal.style.height = "120px";
 
-    const deletePicture = document.createElement("i");
-            deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+    const deletePicture = document.createElement("input");
+    const iconDelete = document.createElement("i");
+        iconDelete.setAttribute("class", "fa-regular fa-trash-can");
+            iconDelete.style.zIndex = 50;
+        deletePicture.appendChild(iconDelete);
+
+            deletePicture.setAttribute("id", "delete");
+            deletePicture.setAttribute("type", "button");
+            //deletePicture.setAttribute("class", "fa-regular fa-trash-can");
+
                         deletePicture.style.display = "flex";
                         deletePicture.style.backgroundColor = "black";
                         deletePicture.style.color = "white";
@@ -63,16 +73,16 @@ function CreateSmallCard(smallCard){
 
     const movePicture = document.createElement("i");
                         movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
-                        movePicture.style.display = "none";
-                        movePicture.style.justifyContent = "center";
-                        movePicture.style.alignItems = "center";
-                        movePicture.style.backgroundColor = "black";
-                        movePicture.style.color = "white";
-                        movePicture.style.position = "relative";
-                        movePicture.style.width = "17px";
-                        movePicture.style.height = "17px";
-                        movePicture.style.bottom = "8px";
-                        movePicture.style.left = "35px";
+                            movePicture.style.display = "none";
+                            movePicture.style.justifyContent = "center";
+                            movePicture.style.alignItems = "center";
+                            movePicture.style.backgroundColor = "black";
+                            movePicture.style.color = "white";
+                            movePicture.style.position = "relative";
+                            movePicture.style.width = "17px";
+                            movePicture.style.height = "17px";
+                            movePicture.style.bottom = "8px";
+                            movePicture.style.left = "35px";
 
     const imageUrlModal = document.createElement("img");
                         imageUrlModal.src = smallCard.imageUrl;
@@ -99,8 +109,21 @@ function CreateSmallCard(smallCard){
     pictureModal.appendChild(movePicture);
 
 };    
+    const deleteWork = document.getElementById("delete");
+        /*deleteWork.addEventListener("click", function(e){
+            e.preventDefault();
 
+            const token = sessionStorage.getItem("token");
 
+            fetch("http://localhost:5678/api/works/{id}", {
+                method: 'DELETE',
+                headers:{'accept': '*
+                       'authorization': `Bearer ${token}`},
+            })
+            .then(res => res.json())
+            .then(response => console.log(response));
+
+        });*/
 
 //Style et fonctionnalité des éléments du modal-wrapper
 
@@ -188,18 +211,10 @@ const changePhoto = document.getElementById("change-photo");
                 infoPhoto.style.display = "flex";
                 validation.style.display = "flex";
         });
-    //Mise en forme du bouton pour ajouter des photos et passer à la modale suivante
 
-        changePhoto.style.fontFamily ="syne";
-        changePhoto.style.fontWeight = "700";
-        changePhoto.style.color = "white";
-        changePhoto.style.backgroundColor = "#1D6154";
-        changePhoto.style.justifyContent = "center";
-        changePhoto.style.margin = "2em", "auto";
         changePhoto.style.marginLeft = "120px";
         changePhoto.style.padding = "1em";
-        changePhoto.style.width = "180px";
-        changePhoto.style.borderRadius = "60px";
+
 
 
 
@@ -239,19 +254,19 @@ const addPhoto = document.getElementById("newphoto");
 
 //Prévisualisation de la photo et intégration de sa zone d'apparition
 
-let photo = document.getElementById("newpicture");
-let previewPicture = function (e){
-    const [picture] = e.files;
+        let photo = document.getElementById("newpicture");
+            let previewPicture = function (e){
+                const [picture] = e.files;
 
-     if(picture) {
-        photo.src = URL.createObjectURL(picture)
-        photo.style.display = "flex";
-        iconPhoto.style.display = "none";
-        actionButton.style.display = "none";
-        formatImage.style.display = "none";
-     };
+                    if(picture) {
+                        photo.src = URL.createObjectURL(picture)
+                        photo.style.display = "flex";
+                        iconPhoto.style.display = "none";
+                        actionButton.style.display = "none";
+                        formatImage.style.display = "none";
+                    };
 
-};
+            };
                         photo.style.maxHeight = "180px";
                         photo.style.objectFit = "contain";
                         photo.style.border = "none";
@@ -281,6 +296,8 @@ const buttonAddPhoto = document.getElementById("buttonaddphoto");
                         buttonAddPhoto.style.top = "12px";
                         buttonAddPhoto.style.color = "#306685";
 const inputAddPhoto = document.getElementById("input-addphoto");
+            inputAddPhoto.setAttribute("name", "max_file_size");
+            inputAddPhoto.setAttribute("value", "4096");
                         inputAddPhoto.style.height = "36px";
                         inputAddPhoto.style.opacity = "0";
 
@@ -327,7 +344,8 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
         btnValidation.setAttribute("onchange", "styleValidation");
-  
+
+
 btnValidation.addEventListener("click", function(e){
         e.preventDefault();
         const token = sessionStorage.getItem("token");
@@ -337,7 +355,6 @@ btnValidation.addEventListener("click", function(e){
                 formData.append('image', document.getElementById('input-addphoto').files[0]);
                 formData.append('category', document.getElementById('catphoto').value);
 
-                console.log(formData);
 
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
@@ -345,22 +362,37 @@ btnValidation.addEventListener("click", function(e){
                                 'authorization': `Bearer ${token}`},
                         body: formData,
                 })
-                .then(res => res.json())
-                .then(response => console.log(response))
-                .catch(err => console.log(err));
-});
-     
-                        btnValidation.style.fontFamily ="syne";
-                        btnValidation.style.fontWeight = "700";
-                        btnValidation.style.color = "white";
-                        btnValidation.style.border = "none";
-                        btnValidation.style.backgroundColor = "#A7A7A7";
+                .then(res => {
+                    if(res.status == 400){
+                        const badrequest = document.createElement("p");
+                        badrequest.textContent = "Bad request";
+                        const validation = document.getElementById("validation");
+                        validation.appendChild(badrequest)
+                    } else if (res.status == 401){
+                        const notAuth = document.createElement("p");
+                        notAuth.textContent = "Not authorized";
+                        const validation = document.getElementById("validation");
+                        validation.appendChild(notAuth);
+                    } else if (res.status == 500){
+                        const unexpected = document.createElement("p");
+                        unexpected.textContent = "Erreur inattendue !";
+                        const validation = document.getElementById("validation");
+                        validation.appendChild(unexpected);
+                    } else {
+                        return res.json();
+                    };
+                })
+                .then(response => {
+                    
+                })
+                
+                //.catch(err => console.log(err));
+    });
+
                         btnValidation.style.padding = "1em";
                         btnValidation.style.marginTop = "20px";
-                        btnValidation.style.width = "180px";
-                        btnValidation.style.borderRadius = "60px";
-                        btnValidation.style.textAlign = "center";
 
+                        
 const styleValidation = function (){
     if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
         btnValidation.style.backgroundColor = "#1D6154";
@@ -373,8 +405,6 @@ const validation = document.getElementById("validation");
                 validation.style.display = "flex";
                 validation.style.justifyContent = "center";
                 validation.style.borderTop = "solid", "black", "1px";
-
-
 
 
 //Rattachement des éléments de la modale avec les parents 
