@@ -18,7 +18,6 @@ linksIn.style.color = "black";
 linksIn.style.textDecoration = "none";
 
 
-
 const linksOut = document.getElementById("logout");
 linksOut.addEventListener('click', function(e){
     sessionStorage.removeItem("token");
