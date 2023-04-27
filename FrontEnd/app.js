@@ -351,8 +351,8 @@ btnValidation.addEventListener("click", function(e){
         const token = sessionStorage.getItem("token");
         let formData = new FormData();
    
-                formData.append('title', document.getElementById('titlephoto').value);
                 formData.append('image', document.getElementById('input-addphoto').files[0]);
+                formData.append('title', document.getElementById('titlephoto').value);
                 formData.append('category', document.getElementById('catphoto').value);
 
 
@@ -363,30 +363,21 @@ btnValidation.addEventListener("click", function(e){
                         body: formData,
                 })
                 .then(res => {
-                    if(res.status == 400){
-                        const badrequest = document.createElement("p");
-                        badrequest.textContent = "Bad request";
+                    if(!res.status.ok){
+                        const notOk = document.createElement("p");
                         const validation = document.getElementById("validation");
-                        validation.appendChild(badrequest)
-                    } else if (res.status == 401){
-                        const notAuth = document.createElement("p");
-                        notAuth.textContent = "Not authorized";
-                        const validation = document.getElementById("validation");
-                        validation.appendChild(notAuth);
-                    } else if (res.status == 500){
-                        const unexpected = document.createElement("p");
-                        unexpected.textContent = "Erreur inattendue !";
-                        const validation = document.getElementById("validation");
-                        validation.appendChild(unexpected);
+                        notOk.textContent = "Erreur lors de l'envoi du formulaire";
+                        validation.appendChild(notOk);
                     } else {
                         return res.json();
                     };
                 })
                 .then(response => {
-                    
+                    window.location.replace();
+                    console.log(response);
                 })
                 
-                //.catch(err => console.log(err));
+                .catch(err => console.log(err));
     });
 
                         btnValidation.style.padding = "1em";
