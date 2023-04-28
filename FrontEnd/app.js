@@ -5,7 +5,7 @@ fetch("http://localhost:5678/api/works/")
 .then(worksArray => {
     for(let works of worksArray){
     CreateSmallCard(works);
-    console.log(worksArray);
+    //console.log(worksArray);
 }}); 
 
 
@@ -38,20 +38,38 @@ const closeModal = document.getElementById("closemodal");
 
 
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
-function CreateSmallCard(smallCards){
-const galleryModal = document.getElementById("gallery-modal");
-    const photoModal = document.createElement("figure");
+    function CreateSmallCard(works){
+        const galleryModal = document.getElementById("gallery-modal");
+            const photoModal = document.createElement("figure");
                     photoModal.setAttribute("id", "photomodal")
-                        photoModal.style.width = "85px";
-                        photoModal.style.height = "140px"
-                        photoModal.style.marginRight = "8px";
+                                photoModal.style.width = "85px";
+                                photoModal.style.height = "140px"
+                                photoModal.style.marginRight = "8px";
 
-    const pictureModal = document.createElement("div");
-            pictureModal.setAttribute("id", "picture");
-                        pictureModal.style.height = "120px";
+            const pictureModal = document.createElement("div");
+                    pictureModal.setAttribute("id", "picture");
+                                pictureModal.style.height = "120px";
+
+            const imageUrlModal = document.createElement("img");
+                    imageUrlModal.setAttribute("id", "image");
+                        imageUrlModal.src = works.imageUrl;
+                                imageUrlModal.style.width = "85px";
+                                imageUrlModal.style.height = "120px";
+                                imageUrlModal.style.position = "absolute";
     
-    const movePicture = document.createElement("i");
-                        movePicture.setAttribute("class", "fa-solid fa-up-down-left-right");
+                imageUrlModal.addEventListener("mouseover", function (event){
+                    movePicture.style.display = "flex";
+            });
+                imageUrlModal.addEventListener("mouseout", function(event){
+                    movePicture.style.display = "none";
+            });
+    
+        const titleImgModal = document.createElement("figcaption");
+                            titleImgModal.textContent = "Editer";
+                            titleImgModal.style.position = "relative";
+
+        const movePicture = document.createElement("i");
+                    movePicture.className = "fa-solid fa-up-down-left-right";
                             movePicture.style.display = "none";
                             movePicture.style.justifyContent = "center";
                             movePicture.style.alignItems = "center";
@@ -63,79 +81,63 @@ const galleryModal = document.getElementById("gallery-modal");
                             movePicture.style.bottom = "8px";
                             movePicture.style.left = "35px";
 
+    
+        //Suppression des éléments de la modale 
 
-    const deletePicture = document.createElement("button");
-    const iconDelete = document.createElement("i");
-        iconDelete.setAttribute("class", "fa-regular fa-trash-can");
-            iconDelete.style.width = "15px";
-            iconDelete.style.height = "15px";
-            iconDelete.style.color = "white";
-            iconDelete.style.paddingTop = "2px";
-            
-            deletePicture.appendChild(iconDelete);
+        function DeleteWork(e){
+                const worksId = works.id;
+                        console.log(worksId);
 
-            deletePicture.setAttribute("id", "deleteButton");
-                            
-    //Suppression des éléments de la modale 
+            const token = sessionStorage.getItem("token");
 
-            deletePicture.addEventListener("click", function(e){
-                e.preventDefault();
-                    const smallPhoto = document.getElementById("image");
-                    
-                    const token = sessionStorage.getItem("token");
-
-                    fetch("http://localhost:5678/api/works/{id}", {
+                    fetch("http://localhost:5678/api/works/${workId}", {
                     method: 'DELETE',
                     headers:{'accept': '*/*',
                     'authorization': `Bearer ${token}`},
                 })
-                .then(res => console.log("Projet supprimé !"))
-    
-            });
-        //Mise en forme des boutons de suppression
+                .then(res => {
+                    if(res.status == 204){
+                        console.log("Projet supprimé !");
+                    } else if(res.status == 500){
+                        console.log("Erreur lors de l'envoi");
+                    };
+                })
+                /*.then(resWork => {
+                    const gallery-modal = document.getElementById("")
+                    window.location.reload
+                })*/
+                .catch(err => console.log(err));
+            };
 
-                deletePicture.style.display = "flex";
-                deletePicture.style.backgroundColor = "black";
-                deletePicture.style.width = "18px";
-                deletePicture.style.height = "18px";
-                deletePicture.style.justifyContent = "center";
-                deletePicture.style.position = "relative";
-                deletePicture.style.top = "10px";
-                deletePicture.style.left = "60px";
-                deletePicture.style.padding = "0";
-                deletePicture.style.border = "none";
-
-    const imageUrlModal = document.createElement("img");
-                    imageUrlModal.setAttribute("id", "image");
-                        imageUrlModal.src = smallCards.imageUrl;
-                            imageUrlModal.style.width = "85px";
-                            imageUrlModal.style.height = "120px";
-                            imageUrlModal.style.position = "absolute";
-
-            imageUrlModal.addEventListener("mouseover", function (event){
-            movePicture.style.display = "flex";
-        });
-            imageUrlModal.addEventListener("mouseout", function(event){
-            movePicture.style.display = "none";
-        });
-
-    const titleImgModal = document.createElement("figcaption");
-                        titleImgModal.textContent = "Editer";
-                        titleImgModal.style.position = "relative";
-
-
-    galleryModal.appendChild(photoModal);
-    photoModal.appendChild(pictureModal);
-    pictureModal.appendChild(imageUrlModal);
-    photoModal.appendChild(titleImgModal);
-    pictureModal.appendChild(deletePicture);
-    pictureModal.appendChild(movePicture);
-    
-};
-
-
+        const iconDelete = document.createElement("i");
+            iconDelete.className = "fa-regular fa-trash-can";
+            iconDelete.id = works.id;
+            //console.log(iconDelete.id);
+                            iconDelete.style.display = "flex";
+                            iconDelete.style.position = "relative";
+                            iconDelete.style.width = "15px";
+                            iconDelete.style.height = "15px";
+                            iconDelete.backgroundColor = "black";
+                            iconDelete.style.color = "white";
+                            iconDelete.style.paddingTop = "2px";
+                            iconDelete.style.border = "none";
+                            iconDelete.style.width = "17px";
+                            iconDelete.style.height = "17px";
+                            iconDelete.style.top = "11px";
+                            iconDelete.style.left = "62px";
             
-                        
+            iconDelete.addEventListener("click", function(e){
+                e.preventDefault();
+                DeleteWork(e);
+            });
+
+                galleryModal.appendChild(photoModal);
+                photoModal.appendChild(pictureModal);
+                pictureModal.appendChild(imageUrlModal);
+                photoModal.appendChild(titleImgModal);
+                pictureModal.appendChild(iconDelete);
+                pictureModal.appendChild(movePicture);
+        };
 
 //Style du titre de la modale
 const titleModal = document.getElementById("titlemodal");
