@@ -125,12 +125,19 @@ const closeModal = document.getElementById("closemodal");
                             iconDelete.style.height = "17px";
                             iconDelete.style.top = "11px";
                             iconDelete.style.left = "62px";
+          
+                
+                iconDelete.addEventListener("click", function(e){
+                    const pictures = document.getElementById("photomodal");
+                    console.log(pictures);
+                    e.preventDefault();
+                    pictures.remove();
+                    DeleteWork(e);
+                });
+                
+    
             
-            iconDelete.addEventListener("click", function(e){
-                e.preventDefault();
-                DeleteWork(e);
-            });
-
+            
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
                 pictureModal.appendChild(imageUrlModal);
