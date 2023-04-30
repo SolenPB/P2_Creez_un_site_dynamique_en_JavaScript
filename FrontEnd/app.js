@@ -87,7 +87,7 @@ const closeModal = document.getElementById("closemodal");
         const iconDelete = document.createElement("i");
             iconDelete.className = "fa-regular fa-trash-can";
             iconDelete.id = works.id;
-        //console.log(iconDelete.id);
+        
                         iconDelete.style.display = "flex";
                         iconDelete.style.position = "relative";
                         iconDelete.style.width = "15px";
@@ -105,22 +105,22 @@ const closeModal = document.getElementById("closemodal");
             iconDelete.addEventListener("click", function(e){
                     e.preventDefault();
                     const worksId = e.target.id;
-                    console.log(worksId);
-                    fetch(`http://localhost:5678/api/works/${worksId}`, {
-                    method: 'DELETE',
-                    headers:{'accept': '*/*',
-                    'authorization': `Bearer ${sessionStorage.token}`},
-                })
-                .then(res => {
-                    if(res.status == 204){
-                        console.log("Projet supprimé !");
                     
-                    } else if(res.status == 500){
-                        console.log("Erreur lors de l'envoi");
-                    };
-                })
-                .catch(err => console.log(err));
-                });
+                        fetch(`http://localhost:5678/api/works/${worksId}`, {
+                            method: 'DELETE',
+                            headers:{'accept': '*/*',
+                                    'authorization': `Bearer ${sessionStorage.token}`},
+                        })
+                        .then(res => {
+                            if(res.status == 204){
+                                console.log("Projet supprimé !");
+                    
+                            } else if(res.status == 500){
+                                console.log("Erreur lors de l'envoi");
+                            };
+                        })
+                        .catch(err => console.log(err));
+                        });
         
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
