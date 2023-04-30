@@ -30,11 +30,11 @@ openModal.addEventListener("click", function(event) {
 
 const closeModal = document.getElementById("closemodal"); 
     closeModal.addEventListener('click', function (event) {
-    event.preventDefault();
-    modal.style.display = "none";
-    modal.setAttribute('aria-hidden', 'true');
-    modal.removeAttribute('aria-modal');
-});
+            event.preventDefault();
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
+            modal.removeAttribute('aria-modal');
+    });
 
 
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
@@ -84,60 +84,48 @@ const closeModal = document.getElementById("closemodal");
     
         //Suppression des éléments de la modale 
 
-        function DeleteWork(e){
-                const worksId = works.id;
-                        console.log(worksId);
+        const iconDelete = document.createElement("i");
+            iconDelete.className = "fa-regular fa-trash-can";
+            iconDelete.id = works.id;
+        //console.log(iconDelete.id);
+                        iconDelete.style.display = "flex";
+                        iconDelete.style.position = "relative";
+                        iconDelete.style.width = "15px";
+                        iconDelete.style.height = "15px";
+                        iconDelete.backgroundColor = "black";
+                        iconDelete.style.color = "white";
+                        iconDelete.style.paddingTop = "2px";
+                        iconDelete.style.border = "none";
+                        iconDelete.style.width = "17px";
+                        iconDelete.style.height = "17px";
+                        iconDelete.style.top = "11px";
+                        iconDelete.style.left = "62px";
 
-            const token = sessionStorage.getItem("token");
 
-                    fetch("http://localhost:5678/api/works/${workId}", {
+            iconDelete.addEventListener("click", function(e){
+                    e.preventDefault();
+                    const worksId = e.target.id;
+                    console.log(worksId);
+                    fetch(`http://localhost:5678/api/works/${worksId}`, {
                     method: 'DELETE',
                     headers:{'accept': '*/*',
-                    'authorization': `Bearer ${token}`},
+                    'authorization': `Bearer ${sessionStorage.token}`},
                 })
                 .then(res => {
                     if(res.status == 204){
                         console.log("Projet supprimé !");
+                    
                     } else if(res.status == 500){
                         console.log("Erreur lors de l'envoi");
                     };
                 })
-                /*.then(resWork => {
-                    const gallery-modal = document.getElementById("")
-                    window.location.reload
-                })*/
                 .catch(err => console.log(err));
-            };
-
-        const iconDelete = document.createElement("i");
-            iconDelete.className = "fa-regular fa-trash-can";
-            iconDelete.id = works.id;
-            //console.log(iconDelete.id);
-                            iconDelete.style.display = "flex";
-                            iconDelete.style.position = "relative";
-                            iconDelete.style.width = "15px";
-                            iconDelete.style.height = "15px";
-                            iconDelete.backgroundColor = "black";
-                            iconDelete.style.color = "white";
-                            iconDelete.style.paddingTop = "2px";
-                            iconDelete.style.border = "none";
-                            iconDelete.style.width = "17px";
-                            iconDelete.style.height = "17px";
-                            iconDelete.style.top = "11px";
-                            iconDelete.style.left = "62px";
-          
-                
-                iconDelete.addEventListener("click", function(e){
-                    const pictures = document.getElementById("photomodal");
-                    console.log(pictures);
-                    e.preventDefault();
-                    pictures.remove();
-                    DeleteWork(e);
                 });
-                
+        
+
+       
+          
     
-            
-            
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
                 pictureModal.appendChild(imageUrlModal);
@@ -197,11 +185,12 @@ const deleteGallery = document.getElementById("delete-gallery");
                 deleteGallery.style.textDecoration = "none";
 
 const buttonPreModal = document.getElementById("premodal");
-        buttonPreModal.style.border = "none";
-        buttonPreModal.style.backgroundColor = "white";
-        buttonPreModal.style.fontSize = "24px";
-        buttonPreModal.style.padding = "0";
-        buttonPreModal.addEventListener("click", function(event){
+                buttonPreModal.style.border = "none";
+                buttonPreModal.style.backgroundColor = "white";
+                buttonPreModal.style.fontSize = "24px";
+                buttonPreModal.style.padding = "0";
+
+            buttonPreModal.addEventListener("click", function(event){
             const galleryModal = document.getElementById("gallery-modal");
             const modalWrapper = document.getElementById("modal-wrapper");
                     modalWrapper.style.height = "730px";
@@ -211,7 +200,6 @@ const buttonPreModal = document.getElementById("premodal");
                     buttonPreModal.style.visibility = "hidden";
                     preModalTitle.style.display = "none";
                     addPhoto.style.display = "none";
-                    infoPhoto.innerHTML="";
                     validation.style.display = "none";
             });
 
@@ -219,15 +207,15 @@ const changePhoto = document.getElementById("change-photo");
     changePhoto.addEventListener("click", function(event){
         const galleryModal = document.getElementById("gallery-modal");
         const modalWrapper = document.getElementById("modal-wrapper");
-                modalWrapper.style.height = "670px";
-                titleModal.style.display = "none";
-                galleryModal.style.display = "none";
-                changeModal.style.display = "none";
-                buttonPreModal.style.visibility = "visible";
-                preModalTitle.style.display = "flex";
-                addPhoto.style.display = "flex";
-                infoPhoto.style.display = "flex";
-                validation.style.display = "flex";
+                    modalWrapper.style.height = "670px";
+                    titleModal.style.display = "none";
+                    galleryModal.style.display = "none";
+                    changeModal.style.display = "none";
+                    buttonPreModal.style.visibility = "visible";
+                    preModalTitle.style.display = "flex";
+                    addPhoto.style.display = "flex";
+                    infoPhoto.style.display = "flex";
+                    validation.style.display = "flex";
         });
 
         changePhoto.style.marginLeft = "120px";

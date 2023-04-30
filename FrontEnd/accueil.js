@@ -8,6 +8,11 @@ const productsArray = await reponse.json();
 const filters = await fetch("http://localhost:5678/api/categories/")
 .then(filters => filters.json());
 
+//Fonction pour sauvegarder les filtres
+function SaveFilter(cat){
+    localStorage.setItem("filtre", cat);
+};
+
 console.log(filters);
 let filtre = "";
 
@@ -48,12 +53,6 @@ const editionText = document.querySelector(".icontitle");
             editionText.style.fontSize = "16px";
             editionText.style.margin = "none";
 
-
-//Fonction pour sauvegarder les filtres
-function SaveFilter(cat){
-    localStorage.setItem("filtre", cat);
-}
-
 // Condition créée pour aider au filtrage des catégories
 
 if (localStorage.getItem("filtre")){
@@ -72,25 +71,21 @@ if (localStorage.getItem("filtre")){
 
 const styleBoutons = document.getElementsByClassName("btn-style");
  for(let i = 0; i < styleBoutons.length; i++){
-    styleBoutons[i].style.fontFamily = "syne";
-    styleBoutons[i].style.fontWeight = "700";
     styleBoutons[i].style.color = "#1D6154";
     styleBoutons[i].style.backgroundColor = "white";
     styleBoutons[i].style.margin = "2em", "auto";
     styleBoutons[i].style.padding = "1em";
     styleBoutons[i].style.width = "180px";
     styleBoutons[i].style.justifyContent = "center";
-    styleBoutons[i].style.borderRadius = "60px";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
  };
 
 //Fonctionnalité et mise en forme du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
-boutonTous.style.color = "white";
 boutonTous.style.backgroundColor = "#1D6154";
-boutonTous.style.border ="none";
-
+boutonTous.style.color = "white";
+boutonTous.style.border = "none";
 boutonTous.addEventListener("click", function() {
     localStorage.removeItem("filtre");
     location.reload();
@@ -143,7 +138,7 @@ boutonRestaurants.addEventListener("click", function () {
 export function CreateCard (card) {
             const travailElement = document.querySelector(".gallery");
             const photoElement = document.createElement("figure");
-
+        
             const imageUrlElement = document.createElement("img");
                 imageUrlElement.src = card.imageUrl;
 
@@ -160,48 +155,45 @@ export function CreateCard (card) {
 //Intégration du bouton de publication des changements
 
 const boutonChangement = document.getElementById("change");
-boutonChangement.style.fontFamily = "work sans";
-boutonChangement.style.fontWeight = "700";
-boutonChangement.style.width = "216px";
-boutonChangement.style.color = "black";
-boutonChangement.style.margin = "2em", "auto";
-boutonChangement.style.padding = "1em";
-boutonChangement.style.borderRadius = "60px";
-boutonChangement.style.border = "2px";
-boutonChangement.style.justifyContent = "center";
+                boutonChangement.style.fontFamily = "work sans";
+                boutonChangement.style.width = "216px";
+                boutonChangement.style.backgroundColor = "white";
+                boutonChangement.style.color = "black";
+                boutonChangement.style.margin = "2em";
+                boutonChangement.style.padding = "1em";
 
 //Intégration de la modification du titre de la page d'accueil
 
 const modTitle = document.querySelector("#modTitle");
-modTitle.style.display = "flex";
+                modTitle.style.display = "flex";
 
 const titleDesign = document.querySelector(".titledesign");
-titleDesign.style.marginLeft ="5px";
+                titleDesign.style.marginLeft ="5px";
 
 //Intégration de la modification de l'image de la page d'accueil
 
 const modImage = document.querySelector("#modImage");
-modImage.style.height = "40px";
-modImage.style.display = "flex";
-modImage.style.alignItems ="center";
-modImage.style.marginLeft= "55px";
+                modImage.style.height = "40px";
+                modImage.style.display = "flex";
+                modImage.style.alignItems ="center";
+                modImage.style.marginLeft= "55px";
 
 const titleImage = document.querySelector(".icontitleimage");
-titleImage.style.margin = "5px";
+                titleImage.style.margin = "5px";
 
 //Intégration de la modification du titre de la page d'accueil
 
 const modifGallery = document.querySelector("#titleGallery");
-modifGallery.style.display = "flex";
-modifGallery.style.justifyContent = "center";
+                modifGallery.style.display = "flex";
+                modifGallery.style.justifyContent = "center";
 
 const modGallery = document.querySelector("#modGallery");
-modGallery.style.display = "flex";
-modGallery.style.width = "150px";
-modGallery.style.margin = "10px", "0", "0","15px";
+                modGallery.style.display = "flex";
+                modGallery.style.width = "150px";
+                modGallery.style.margin = "10px", "0", "0","15px";
 
 const modifTitle = document.querySelector(".icontitleproject");
-modifTitle.style.marginLeft = "5px";
+                modifTitle.style.marginLeft = "5px";
 
 //Condition d'apparition des outils de modification
 
