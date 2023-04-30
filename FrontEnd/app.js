@@ -122,10 +122,6 @@ const closeModal = document.getElementById("closemodal");
                 .catch(err => console.log(err));
                 });
         
-
-       
-          
-    
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
                 pictureModal.appendChild(imageUrlModal);
