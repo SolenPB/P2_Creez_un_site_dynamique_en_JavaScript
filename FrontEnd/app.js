@@ -1,4 +1,4 @@
-//import {CreateCard} from './accueil.js';
+//import CreateCard from './accueil.js';
 
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
@@ -239,8 +239,6 @@ const preModalTitle = document.getElementById("premodaltitle");
                         preModalTitle.style.color = "black";
                         preModalTitle.style.marginTop = "10px";
 
-
-
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
@@ -375,7 +373,8 @@ btnValidation.addEventListener("click", function(e){
                     };
                 })
                 .then(response => {
-                    window.location.replace();
+                    //CreateCard();
+                    CreateSmallCard();
                     console.log(response);
                 })
                 
