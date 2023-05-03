@@ -86,7 +86,7 @@
 					<i class="fa-sharp fa-regular fa-image" id="icon"></i>
 						<div id="buttonAdd">
 							<label id="buttonaddphoto">+ Ajouter photo</label>
-							<input type="file" id="input-addphoto" name="picture" onchange="previewPicture(this)">
+							<input type="file" id="input-addphoto" name="picture" onchange= "styleValidation()">
 						</div>
 					<p id="formatimage">jpg, png : 4mo max</p>
 				</div>
@@ -99,9 +99,9 @@
 						<label for="categorie" id="categorie">Catégorie</label>
 						<select name="categorie" id="catphoto" onchange="styleValidation()">
 							<option value=""></option>
-							<option value="Objets">Objets</option>
-							<option value="Appartements">Appartements</option>
-							<option value="Hôtels & restaurants">Hôtels & restaurants</option>
+							<option id= 1 value="Objets">Objets</option>
+							<option id= 2 value="Appartements">Appartements</option>
+							<option id= 3 value="Hôtels & restaurants">Hôtels & restaurants</option>
 						</select>
 					</div>
 				</div>

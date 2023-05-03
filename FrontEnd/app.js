@@ -1,11 +1,10 @@
-//import CreateCard from './accueil.js';
 
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
     for(let works of worksArray){
     CreateSmallCard(works);
-    //console.log(worksArray);
+    
 }}); 
 
 
@@ -343,39 +342,43 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
-        btnValidation.setAttribute("onchange", "styleValidation");
+        btnValidation.setAttribute("onchange", "styleValidation()");
 
 
 btnValidation.addEventListener("click", function(e){
         e.preventDefault();
-        const token = sessionStorage.getItem("token");
+        
         let formData = new FormData();
-   
+    
                 formData.append('image', document.getElementById('input-addphoto').files[0]);
                 formData.append('title', document.getElementById('titlephoto').value);
-                formData.append('category', document.getElementById('catphoto').value);
-
+                
+        
+                if(document.getElementById('catphoto').value === "Objets"){
+                    formData.append('category', 1)
+                } else if(document.getElementById('catphoto').value === "Appartements"){
+                    formData.append('category', 2)
+                } else if(document.getElementById('catphoto').value === "Hôtels & restaurants"){
+                    formData.append('category', 3)
+                } else {
+                    alert("Elément sans catégorie")
+                };
+                
 
                 fetch("http://localhost:5678/api/works/", {
                         method: 'POST',
-                        headers:{'accept': 'application/json',
-                                'authorization': `Bearer ${token}`},
+                        headers:{'accept': '*/*',
+                                'authorization': `Bearer ${sessionStorage.getItem('token')}`},
+                        auth: sessionStorage.getItem('userId'),
                         body: formData,
+                   
                 })
                 .then(res => {
                     if(!res.status.ok){
-                        const notOk = document.createElement("p");
-                        const validation = document.getElementById("validation");
-                        notOk.textContent = "Erreur lors de l'envoi du formulaire";
-                        validation.appendChild(notOk);
+                        console.log ("Erreur lors de l'envoi du formulaire");  
                     } else {
                         return res.json();
                     };
-                })
-                .then(response => {
-                    //CreateCard();
-                    CreateSmallCard();
-                    console.log(response);
                 })
                 
                 .catch(err => console.log(err));

@@ -1,3 +1,5 @@
+import {CreateCard} from './utils.js';
+
 //Récupération des données sur API works
 
 const reponse = await fetch("http://localhost:5678/api/works/");
@@ -133,24 +135,6 @@ boutonRestaurants.addEventListener("click", function () {
         };
 });
 
-//Fonction pour créer les cartes présentant les travaux
-
-export function CreateCard (card) {
-            const travailElement = document.querySelector(".gallery");
-            const photoElement = document.createElement("figure");
-        
-            const imageUrlElement = document.createElement("img");
-                imageUrlElement.src = card.imageUrl;
-
-            const titleElement = document.createElement("figcaption");
-                titleElement.innerText = card.title;
-
-
-                travailElement.appendChild(photoElement);
-                photoElement.appendChild(imageUrlElement);
-                photoElement.appendChild(titleElement);
-
-};
 
 //Intégration du bouton de publication des changements
 
