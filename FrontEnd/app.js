@@ -46,11 +46,11 @@ const closeModal = document.getElementById("closemodal");
                                 photoModal.style.marginRight = "8px";
 
             const pictureModal = document.createElement("div");
-                    pictureModal.setAttribute("id", "picture");
+                    pictureModal.id = "picture";
                                 pictureModal.style.height = "120px";
 
             const imageUrlModal = document.createElement("img");
-                    imageUrlModal.setAttribute("id", "image");
+                    imageUrlModal.id = "image";
                         imageUrlModal.src = works.imageUrl;
                                 imageUrlModal.style.width = "85px";
                                 imageUrlModal.style.height = "120px";
