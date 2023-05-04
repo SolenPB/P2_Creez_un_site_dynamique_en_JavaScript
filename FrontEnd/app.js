@@ -278,6 +278,13 @@ const validation = document.getElementById("validation");
 
 
 
+
+
+
+
+
+
+                
 //Intégration de la modale d'ajout de photo
 
 const preModalTitle = document.getElementById("premodaltitle");
@@ -341,7 +348,7 @@ const deleteGallery = document.getElementById("delete-gallery");
 
 
 
-                
+
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
