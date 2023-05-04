@@ -40,7 +40,7 @@ const closeModal = document.getElementById("closemodal");
     function CreateSmallCard(works){
         const galleryModal = document.getElementById("gallery-modal");
             const photoModal = document.createElement("figure");
-                    photoModal.setAttribute("id", "photomodal")
+                    photoModal.id = "photomodal";
                                 photoModal.style.width = "85px";
                                 photoModal.style.height = "140px"
                                 photoModal.style.marginRight = "8px";
