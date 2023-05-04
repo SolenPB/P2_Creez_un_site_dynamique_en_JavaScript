@@ -1,7 +1,7 @@
 //Fonctionnalité authentification 
     const boutonConnecter = document.getElementById("btn-connecter");
-    boutonConnecter.addEventListener("click", function(event) {
-    event.preventDefault();
+            boutonConnecter.addEventListener("click", function(event) {
+                event.preventDefault();
     
     //Création de la charge utile
 
@@ -22,15 +22,9 @@
     })
     .then(res => {
         if(res.status == 401) {
-            const notAuth = document.createElement("p");
-            notAuth.textContent = "Not authorized";
-            const passWord = document.getElementById("login");
-            passWord.appendChild(notAuth);
+            alert("Utilisateur non autorisé !")
         } else if(res.status == 404){
-            const notFound = document.createElement("p");
-            notFound.textContent = "User not found";
-            const userName = document.getElementById("login");
-            userName.appendChild(notFound);
+            alert("Utilisateur inconnu")
         } else {
             return res.json()
         };
@@ -40,7 +34,6 @@
 
         sessionStorage.setItem("token", responseAuth.token);
         sessionStorage.setItem("userId", responseAuth.userId);
-        console.log(responseAuth);
         window.location.href ='./index.html';
       
     })

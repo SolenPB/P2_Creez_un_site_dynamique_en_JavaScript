@@ -21,39 +21,16 @@ let filtre = "";
 //Mise en forme des liens 
 
 const linksIn = document.getElementById("login");
-linksIn.style.color = "black";
-linksIn.style.textDecoration = "none";
+        linksIn.style.color = "black";
+        linksIn.style.textDecoration = "none";
 
 
 const linksOut = document.getElementById("logout");
-linksOut.addEventListener('click', function(e){
-    sessionStorage.removeItem("token");
-})
-linksOut.style.color = "black";
-linksOut.style.textDecoration = "none";
-
-//Intégration de l'encadré édition présent après login
-
-const edition = document.getElementById("edition");
-            edition.style.height = "60px";
-            edition.style.backgroundColor = "black";
-            edition.style.color = "white";
-            edition.style.fontFamily = "work sans";
-            edition.style.display = "flex";
-
-const editionMod = document.getElementById("mode");
-            editionMod.style.width = "100%";
-            editionMod.style.display = "flex";
-            editionMod.style.justifyContent = "center";
-            editionMod.style.alignItems = "center";
-
-const editionIcon = document.querySelector(".editSquare");
-            editionIcon.style.paddingRight = "10px";
-            editionIcon.style.fontSize = "16px";
-
-const editionText = document.querySelector(".icontitle");
-            editionText.style.fontSize = "16px";
-            editionText.style.margin = "none";
+    linksOut.addEventListener('click', function(e){
+        sessionStorage.removeItem("token");
+    })
+        linksOut.style.color = "black";
+        linksOut.style.textDecoration = "none";
 
 // Condition créée pour aider au filtrage des catégories
 
@@ -85,9 +62,9 @@ const styleBoutons = document.getElementsByClassName("btn-style");
 //Fonctionnalité et mise en forme du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
-boutonTous.style.backgroundColor = "#1D6154";
-boutonTous.style.color = "white";
-boutonTous.style.border = "none";
+            boutonTous.style.backgroundColor = "#1D6154";
+            boutonTous.style.color = "white";
+            boutonTous.style.border = "none";
 boutonTous.addEventListener("click", function() {
     localStorage.removeItem("filtre");
     location.reload();
@@ -136,6 +113,15 @@ boutonRestaurants.addEventListener("click", function () {
 });
 
 
+
+
+
+
+
+
+
+
+
 //Intégration du bouton de publication des changements
 
 const boutonChangement = document.getElementById("change");
@@ -179,6 +165,31 @@ const modGallery = document.querySelector("#modGallery");
 const modifTitle = document.querySelector(".icontitleproject");
                 modifTitle.style.marginLeft = "5px";
 
+
+
+//Intégration de l'encadré édition présent après login
+
+const edition = document.getElementById("edition");
+            edition.style.height = "60px";
+            edition.style.backgroundColor = "black";
+            edition.style.color = "white";
+            edition.style.fontFamily = "work sans";
+            edition.style.display = "flex";
+
+const editionMod = document.getElementById("mode");
+            editionMod.style.width = "100%";
+            editionMod.style.display = "flex";
+            editionMod.style.justifyContent = "center";
+            editionMod.style.alignItems = "center";
+
+const editionIcon = document.querySelector(".editSquare");
+            editionIcon.style.paddingRight = "10px";
+            editionIcon.style.fontSize = "16px";
+
+const editionText = document.querySelector(".icontitle");
+            editionText.style.fontSize = "16px";
+            editionText.style.margin = "none";
+
 //Condition d'apparition des outils de modification
 
 let userLoggedIn = sessionStorage.getItem("token");
@@ -193,6 +204,3 @@ let userLoggedIn = sessionStorage.getItem("token");
         btnfilters.style.display = "none";
         linksIn.style.display = "none";
     };
-
-
-
