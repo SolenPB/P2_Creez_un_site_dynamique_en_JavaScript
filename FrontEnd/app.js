@@ -241,7 +241,7 @@ const preModalTitle = document.getElementById("premodaltitle");
 //Formulaire d'ajout de nouvelles photos 
 
 const formPhoto = document.getElementById("formphoto");
-const addPhoto = document.getElementById("newphoto");
+    const addPhoto = document.getElementById("newphoto");
                         addPhoto.style.width = "420px";
                         addPhoto.style.height = "180px";
                         addPhoto.style.justifyContent = "center";
@@ -271,7 +271,7 @@ const addPhoto = document.getElementById("newphoto");
                         photo.style.border = "none";
                         photo.style.display = "none";
 
-const iconPhoto = document.getElementById("icon");
+    const iconPhoto = document.getElementById("icon");
                         iconPhoto.style.fontSize = "58px";
                         iconPhoto.style.justifyContent = "center";
                         iconPhoto.style.color = "#B9C5CC";
@@ -279,7 +279,7 @@ const iconPhoto = document.getElementById("icon");
 
 //Bouton d'ajout de photo
 
-const actionButton = document.getElementById("buttonAdd");
+    const actionButton = document.getElementById("buttonAdd");
                         actionButton.style.display = "flex";
                         actionButton.style.flexDirection = "column";
                         actionButton.style.alignItems = "center";
@@ -289,18 +289,18 @@ const actionButton = document.getElementById("buttonAdd");
                         actionButton.style.marginTop = "15px";
 
 
-const buttonAddPhoto = document.getElementById("buttonaddphoto");
+    const buttonAddPhoto = document.getElementById("buttonaddphoto");
                         buttonAddPhoto.textContent = "+ Ajouter photo";
                         buttonAddPhoto.style.position = "relative";
                         buttonAddPhoto.style.top = "12px";
                         buttonAddPhoto.style.color = "#306685";
-const inputAddPhoto = document.getElementById("input-addphoto");
+    const inputAddPhoto = document.getElementById("input-addphoto");
             inputAddPhoto.setAttribute("name", "max_file_size");
             inputAddPhoto.setAttribute("value", "4096");
                         inputAddPhoto.style.height = "36px";
                         inputAddPhoto.style.opacity = "0";
 
-const formatImage = document.getElementById("formatimage");
+    const formatImage = document.getElementById("formatimage");
                         formatImage.style.marginTop = "5px";
 
 
