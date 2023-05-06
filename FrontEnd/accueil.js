@@ -15,7 +15,6 @@ function SaveFilter(cat){
     localStorage.setItem("filtre", cat);
 };
 
-console.log(filters);
 let filtre = "";
 
 //Mise en forme des liens 
@@ -73,7 +72,8 @@ boutonTous.addEventListener("click", function() {
 //Fonctionnalité du bouton "Objets"
 
 const boutonObjets = document.getElementById("btn-objets");
-boutonObjets.addEventListener("click", function(){
+boutonObjets.addEventListener("click", function(e){
+    e.preventDefault();
     const type = filters.map(filter => filter.name);
         for( let i = filters.length -1; i >= 0; i--){
             if(filters[i].name == "Objets"){
