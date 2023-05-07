@@ -58,7 +58,7 @@ const openModal = document.getElementById('js-modal');
 openModal.addEventListener("click", function(event) {
         event.preventDefault();
         const modal = document.getElementById('modal1');
-        modal.style.display = true;
+        modal.style.display = "flex";
         modal.removeAttribute('aria-hidden');
         modal.setAttribute('aria-modal', 'true');
                 buttonPreModal.style.visibility = "hidden";
