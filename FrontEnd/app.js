@@ -9,8 +9,7 @@ fetch("http://localhost:5678/api/works/")
 
 
 //Création de la modale 
-
-
+const mainModal = document.getElementById("mainpage");
 const modal = document.createElement("aside");
     modal.id = "modal1";
     modal.className = "modal";
@@ -27,9 +26,9 @@ const modal = document.createElement("aside");
             modal.style.height = "100%";
             modal.style.background = "rgba(0,0,0,0.5)";
             modal.style.boxSizing = "border-box";
-    document.body.appendChild(modal);
+    //document.main.appendChild(modal);
 
-
+    mainModal.appendChild(modal);
 const modalWrapper = document.createElement("div");
     modalWrapper.id = "modal-wrapper";
         modalWrapper.style.overflow = "auto";
@@ -89,6 +88,7 @@ const buttonPreModal = document.createElement("button");
                     buttonPreModal.style.visibility = "hidden";
                     preModalTitle.style.display = "none";
                     addPhoto.style.display = "none";
+                    infoPhoto.style.display = "none";
                     validation.style.display = "none";
             });
 
@@ -96,6 +96,12 @@ const buttonPreModal = document.createElement("button");
 
 const closeModal = document.createElement("button");
     closeModal.id = "closemodal";
+        closeModal.style.display = "flex";
+        closeModal.style.height = "24px";
+        closeModal.style.fontSize = "24px";
+        closeModal.style.backgroundColor = "white";
+        closeModal.style.border = "none";
+        closeModal.style.paddingBottom = "5px";
             const iconCloseModal = document.createElement("i");
                 iconCloseModal.className = "fa-solid fa-xmark";
                     closeModal.appendChild(iconCloseModal);
@@ -110,6 +116,7 @@ const closeModal = document.createElement("button");
 
 const titleModal = document.createElement("h2");
     titleModal.id = "titlemodal"
+    titleModal.textContent = "Galerie photo";
         titleModal.style.height = "30px";
         titleModal.style.fontFamily = "work sans";
         titleModal.style.fontWeight = "400";
@@ -118,40 +125,47 @@ const titleModal = document.createElement("h2");
 
 const preModalTitle = document.createElement("h2");
     preModalTitle.id = "premodaltitle";
-    preModalTitle.value = "Ajout photo";
+    preModalTitle.textContent = "Ajout photo";
         preModalTitle.style.fontFamily = "work sans";
         preModalTitle.style.fontWeight = "400";
         preModalTitle.style.color = "black";
         preModalTitle.style.marginTop = "10px";
             modalWrapper.appendChild(preModalTitle);
 
+const galleryModal = document.createElement("div");
+    galleryModal.id = "gallery-modal";
+        galleryModal.style.marginTop = "40px";
+        galleryModal.style.paddingLeft = "65px";
+        galleryModal.style.width = "530px";
+        galleryModal.style.height = "450px" 
+        galleryModal.style.display = "flex";
+        galleryModal.style.flexDirection = "row";
+        galleryModal.style.flexWrap = "wrap";
+            modalWrapper.appendChild(galleryModal);
+
+
+
+
+
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
     function CreateSmallCard(works){
-        const galleryModal = document.createElement("div");
-            galleryModal.id = "gallery-modal";
-                galleryModal.style.marginTop = "40px";
-                galleryModal.style.paddingLeft = "65px";
-                galleryModal.style.width = "530px";
-                galleryModal.style.height = "450px" 
-                galleryModal.style.display = "flex";
-                galleryModal.style.flexDirection = "row";
-                galleryModal.style.flexWrap = "wrap";
-                    const photoModal = document.createElement("figure");
-                        photoModal.id = "photomodal";
-                                photoModal.style.width = "85px";
-                                photoModal.style.height = "140px"
-                                photoModal.style.marginRight = "8px";
+        
+        const photoModal = document.createElement("figure");
+            photoModal.id = "photomodal";
+                photoModal.style.width = "85px";
+                photoModal.style.height = "140px"
+                photoModal.style.marginRight = "8px";
 
-            const pictureModal = document.createElement("div");
-                    pictureModal.id = "picture";
-                                pictureModal.style.height = "120px";
+        const pictureModal = document.createElement("div");
+            pictureModal.id = "picture";
+                pictureModal.style.height = "120px";
 
-            const imageUrlModal = document.createElement("img");
-                    imageUrlModal.id = "image";
-                        imageUrlModal.src = works.imageUrl;
-                                imageUrlModal.style.width = "85px";
-                                imageUrlModal.style.height = "120px";
-                                imageUrlModal.style.position = "absolute";
+        const imageUrlModal = document.createElement("img");
+            imageUrlModal.id = "image";
+                imageUrlModal.src = works.imageUrl;
+                    imageUrlModal.style.width = "85px";
+                    imageUrlModal.style.height = "120px";
+                    imageUrlModal.style.position = "absolute";
     
                 imageUrlModal.addEventListener("mouseover", function (event){
                     movePicture.style.display = "flex";
@@ -161,21 +175,21 @@ const preModalTitle = document.createElement("h2");
             });
     
         const titleImgModal = document.createElement("figcaption");
-                            titleImgModal.textContent = "Editer";
-                            titleImgModal.style.position = "relative";
+            titleImgModal.textContent = "Editer";
+            titleImgModal.style.position = "relative";
 
         const movePicture = document.createElement("i");
-                    movePicture.className = "fa-solid fa-up-down-left-right";
-                            movePicture.style.display = "none";
-                            movePicture.style.justifyContent = "center";
-                            movePicture.style.alignItems = "center";
-                            movePicture.style.backgroundColor = "black";
-                            movePicture.style.color = "white";
-                            movePicture.style.position = "relative";
-                            movePicture.style.width = "17px";
-                            movePicture.style.height = "17px";
-                            movePicture.style.bottom = "8px";
-                            movePicture.style.left = "35px";
+            movePicture.className = "fa-solid fa-up-down-left-right";
+                movePicture.style.display = "none";
+                movePicture.style.justifyContent = "center";
+                movePicture.style.alignItems = "center";
+                movePicture.style.backgroundColor = "black";
+                movePicture.style.color = "white";
+                movePicture.style.position = "relative";
+                movePicture.style.width = "17px";
+                movePicture.style.height = "17px";
+                movePicture.style.bottom = "8px";
+                movePicture.style.left = "35px";
 
     
         //Suppression des éléments de la modale 
@@ -184,19 +198,19 @@ const preModalTitle = document.createElement("h2");
             iconDelete.className = "fa-regular fa-trash-can";
             iconDelete.id = works.id;
         
-                        iconDelete.style.display = "flex";
-                        iconDelete.style.position = "relative";
-                        iconDelete.style.width = "15px";
-                        iconDelete.style.height = "15px";
-                        iconDelete.style.backgroundColor = "black";
-                        iconDelete.style.color = "white";
-                        iconDelete.style.paddingLeft = "3px";
-                        iconDelete.style.paddingTop = "3px";
-                        iconDelete.style.border = "none";
-                        iconDelete.style.width = "17px";
-                        iconDelete.style.height = "17px";
-                        iconDelete.style.top = "9px";
-                        iconDelete.style.left = "62px";
+                iconDelete.style.display = "flex";
+                iconDelete.style.position = "relative";
+                iconDelete.style.width = "15px";
+                iconDelete.style.height = "15px";
+                iconDelete.style.backgroundColor = "black";
+                iconDelete.style.color = "white";
+                iconDelete.style.paddingLeft = "3px";
+                iconDelete.style.paddingTop = "3px";
+                iconDelete.style.border = "none";
+                iconDelete.style.width = "17px";
+                iconDelete.style.height = "17px";
+                iconDelete.style.top = "9px";
+                iconDelete.style.left = "62px";
 
 
             iconDelete.addEventListener("click", function(e){
@@ -219,10 +233,8 @@ const preModalTitle = document.createElement("h2");
                         .catch(err => console.log(err));
                         });
         
-            
-
-            
-                modalWrapper.appendChild(galleryModal);
+        
+                
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
                 pictureModal.appendChild(imageUrlModal);
@@ -230,9 +242,7 @@ const preModalTitle = document.createElement("h2");
                 pictureModal.appendChild(iconDelete);
                 pictureModal.appendChild(movePicture);
 
-
         };
-
 
 const changeModal = document.createElement("div");
     changeModal.id = "change-modal";
@@ -244,9 +254,10 @@ const changeModal = document.createElement("div");
         changeModal.style.marginBottom = "30px";
             modalWrapper.appendChild(changeModal);
 
-const changePhoto = document.createElement("button");
+const changePhoto = document.createElement("input");
     changePhoto.id = "change-photo";
-    changePhoto.textContent = "Ajouter une photo";
+    changePhoto.value = "Ajouter une photo";
+    changePhoto.type = "submit";
 
         changeModal.appendChild(changePhoto);
     changePhoto.addEventListener("click", function(event){
@@ -263,9 +274,7 @@ const changePhoto = document.createElement("button");
                     validation.style.display = "flex";
         });
 
-        changePhoto.style.marginLeft = "120px";
         changePhoto.style.padding = "1em";
-
 
 const deleteGallery = document.createElement("a");
     deleteGallery.href = "#";
@@ -275,6 +284,7 @@ const deleteGallery = document.createElement("a");
         deleteGallery.style.justifyContent = "center";
         deleteGallery.style.color = "black";
         deleteGallery.style.textDecoration = "none";
+            changeModal.appendChild(deleteGallery);
 
 
 
@@ -300,6 +310,9 @@ const formPhoto = document.createElement("form");
     formPhoto.id = "formphoto";
     formPhoto.method = "post";
     formPhoto.enctype = "multipart/form-data";
+
+const titleFormPhoto = document.createElement("h2");
+    titleFormPhoto.id = "titleformphoto";
 
 const addPhoto = document.createElement("div");
     addPhoto.id = "newphoto";
@@ -339,13 +352,15 @@ const labelButtonAdd = document.createElement("label");
         labelButtonAdd.style.color = "#306685";        
 const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
-    inputAddPhoto.type = "text";
+    inputAddPhoto.type = "submit";
     inputAddPhoto.name = "picture";
     inputAddPhoto.onchange = "previewPicture()";
     /*inputAddPhoto.setAttribute("name", "max_file_size");
     inputAddPhoto.setAttribute("value", "4096");*/
                 inputAddPhoto.style.height = "36px";
                 inputAddPhoto.style.opacity = "0";
+                inputAddPhoto.style.margin = "0";
+                inputAddPhoto.style.bottom = "10px";
 
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
@@ -493,31 +508,8 @@ const validation = document.createElement("div");
 
 
 
-
-
-
-
-
-
-
-
-
-                
-
-const buttonCloseModal = document.getElementById("closemodal");
-                buttonCloseModal.style.display = "flex";
-                buttonCloseModal.style.height = "24px";
-                buttonCloseModal.style.fontSize = "24px";
-                buttonCloseModal.style.backgroundColor = "white";
-                buttonCloseModal.style.border = "none";
-                buttonCloseModal.style.paddingBottom = "5px";
-
-
-
-
-
 //Rattachement des éléments de la modale avec les parents 
-
+modalWrapper.appendChild(formPhoto);
 formPhoto.appendChild(addPhoto);
 formPhoto.appendChild(infoPhoto);
 formPhoto.appendChild(validation);
