@@ -357,29 +357,30 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.onchange = "previewPicture()";
     /*inputAddPhoto.setAttribute("name", "max_file_size");
     inputAddPhoto.setAttribute("value", "4096");*/
-                inputAddPhoto.style.height = "36px";
-                inputAddPhoto.style.opacity = "0";
-                inputAddPhoto.style.margin = "0";
-                inputAddPhoto.style.bottom = "10px";
+        inputAddPhoto.style.height = "36px";
+        inputAddPhoto.style.opacity = "0";
+        inputAddPhoto.style.margin = "0";
+        inputAddPhoto.style.bottom = "10px";
 
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
     formatImage.textContent = "jpg, png : 4mo max"
-                formatImage.style.marginTop = "5px";
+        formatImage.style.marginTop = "5px";
 
 //Entrée des informations pour la nouvelle image
 
 const infoPhoto = document.createElement("div");
-        infoPhoto.id = "infophoto";
-                infoPhoto.style.flexDirection = "column";
-                infoPhoto.style.height = "250px";
-                infoPhoto.style.justifyContent = "center";
+    infoPhoto.id = "infophoto";
+        infoPhoto.style.flexDirection = "column";
+        infoPhoto.style.height = "250px";
+        infoPhoto.style.justifyContent = "center";
+
 //Entrée du titre de la nouvelle image
 
 const infoTitle = document.createElement("div");
     infoTitle.id = "infotitle";
-                infoTitle.style.display = "flex";
-                infoTitle.style.flexDirection = "column";
+        infoTitle.style.display = "flex";
+        infoTitle.style.flexDirection = "column";
 const titlePhoto = document.createElement("label");
     titlePhoto.id = "titlephoto";
     titlePhoto.textContent = "Titre";
@@ -413,7 +414,25 @@ const catPhoto = document.createElement("select");
         catPhoto.style.border = "none";
         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
         catPhoto.style.backgroundColor = "white";
+            const catOption = document.createElement("option");
+                catOption.textContent = "";
+            const catOptionObject = document.createElement("option");
+                catOptionObject.id = "1";
+                catOptionObject.value = "Objets";
+                catOptionObject.textContent = "Objets";
+            const catOptionAppart = document.createElement("option");
+                catOptionAppart.id = "2";
+                catOptionAppart.value = "Appartements";
+                catOptionAppart.textContent = "Appartements";
+            const catOptionHotel = document.createElement("option");
+                catOptionHotel.id = "3";
+                catOptionHotel.value = "Hôtels & restaurants";
+                catOptionHotel.textContent = "Hôtels & restaurants";
 
+                    catPhoto.appendChild(catOption);
+                    catPhoto.appendChild(catOptionObject);
+                    catPhoto.appendChild(catOptionAppart);
+                    catPhoto.appendChild(catOptionHotel);
 
 
 
