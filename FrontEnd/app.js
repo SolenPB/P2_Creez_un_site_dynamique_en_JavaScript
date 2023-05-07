@@ -233,8 +233,7 @@ const galleryModal = document.createElement("div");
                         .catch(err => console.log(err));
                         });
         
-        
-                
+                        
                 galleryModal.appendChild(photoModal);
                 photoModal.appendChild(pictureModal);
                 pictureModal.appendChild(imageUrlModal);
@@ -342,14 +341,15 @@ const labelButtonAdd = document.createElement("label");
     labelButtonAdd.textContent = "+ Ajouter photo"
         labelButtonAdd.style.display = "flex";
         labelButtonAdd.style.flexDirection = "column";
+        labelButtonAdd.style.justifyContent = "center";
         labelButtonAdd.style.alignItems = "center";
         labelButtonAdd.style.borderRadius = "60px";
         labelButtonAdd.style.backgroundColor = "#A7A7A7";
+        labelButtonAdd.style.color = "#306685";
         labelButtonAdd.style.height = "36px";
         labelButtonAdd.style.marginTop = "15px";
         labelButtonAdd.style.position = "relative";
-        labelButtonAdd.style.top = "12px";
-        labelButtonAdd.style.color = "#306685";        
+        labelButtonAdd.style.top = "12px";           
 const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "submit";
@@ -360,12 +360,15 @@ const inputAddPhoto = document.createElement("input");
         inputAddPhoto.style.height = "36px";
         inputAddPhoto.style.opacity = "0";
         inputAddPhoto.style.margin = "0";
-        inputAddPhoto.style.bottom = "10px";
+        inputAddPhoto.style.position = "relative";
+        inputAddPhoto.style.bottom = "25px";
 
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
     formatImage.textContent = "jpg, png : 4mo max"
         formatImage.style.marginTop = "5px";
+
+
 
 //Entrée des informations pour la nouvelle image
 
@@ -391,8 +394,14 @@ const titlePhoto = document.createElement("label");
 const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
+    titleInput.name = "title";
     titleInput.onchange = "styleValidation()";
                 titleInput.style.marginBottom = "10px";
+
+                infoPhoto.appendChild(infoTitle);
+                infoTitle.appendChild(titlePhoto);
+                infoTitle.appendChild(titleInput);
+
 
 
 //Entrée de la catégorie de la nouvelle image
@@ -434,7 +443,11 @@ const catPhoto = document.createElement("select");
                     catPhoto.appendChild(catOptionAppart);
                     catPhoto.appendChild(catOptionHotel);
 
-
+                    
+                    infoPhoto.appendChild(infoCat);
+                    
+                    infoCat.appendChild(catTitle);
+                    infoCat.appendChild(catPhoto);
 
         let photo = document.createElement("figure");
             photo.id = "newpicture";
@@ -519,10 +532,7 @@ const validation = document.createElement("div");
                 validation.style.display = "flex";
                 validation.style.justifyContent = "center";
                 validation.style.borderTop = "solid", "black", "1px";
-
-
-
-
+                    validation.appendChild(btnValidation);
 
 
 
@@ -538,11 +548,6 @@ addPhoto.appendChild(buttonAddPhoto);
 buttonAddPhoto.appendChild(labelButtonAdd);
 buttonAddPhoto.appendChild(inputAddPhoto);
 addPhoto.appendChild(formatImage);
-infoPhoto.appendChild(infoTitle);
-infoPhoto.appendChild(infoCat);
-infoTitle.appendChild(titlePhoto);
-infoTitle.appendChild(titleInput);
-infoCat.appendChild(catTitle);
-infoCat.appendChild(catPhoto);
-validation.appendChild(btnValidation);
+
+
 
