@@ -336,6 +336,7 @@ const iconPhoto = document.createElement("i");
 //Bouton d'ajout de photo
 const buttonAddPhoto = document.createElement("div");
     buttonAddPhoto.id = "buttonaddphoto";
+        buttonAddPhoto.style.height = "40px";
 const labelButtonAdd = document.createElement("label");
     labelButtonAdd.id = "labelbuttonadd";
     labelButtonAdd.textContent = "+ Ajouter photo"
@@ -349,7 +350,7 @@ const labelButtonAdd = document.createElement("label");
         labelButtonAdd.style.height = "36px";
         labelButtonAdd.style.marginTop = "15px";
         labelButtonAdd.style.position = "relative";
-        labelButtonAdd.style.top = "12px";           
+               
 const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "submit";
@@ -366,7 +367,8 @@ const inputAddPhoto = document.createElement("input");
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
     formatImage.textContent = "jpg, png : 4mo max"
-        formatImage.style.marginTop = "5px";
+        formatImage.style.position = "relative";
+        formatImage.style.top = "20px";
 
 
 
