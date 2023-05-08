@@ -317,6 +317,7 @@ const titleFormPhoto = document.createElement("h2");
 
     let photo = document.createElement("figure");
             photo.id = "newpicture";
+            photo.src = "";
             let previewPicture = function (e){
                 const [picture] = e.files;
 
@@ -394,6 +395,9 @@ const inputAddPhoto = document.createElement("input");
         inputAddPhoto.style.position = "relative";
         inputAddPhoto.style.bottom = "25px";
 
+            buttonAddPhoto.appendChild(labelButtonAdd);
+            buttonAddPhoto.appendChild(inputAddPhoto);
+            
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
     formatImage.textContent = "jpg, png : 4mo max"
@@ -479,8 +483,7 @@ const catPhoto = document.createElement("select");
                     catPhoto.appendChild(catOptionHotel);
 
                     
-                    infoPhoto.appendChild(infoCat);
-                    
+                    infoPhoto.appendChild(infoCat);                    
                     infoCat.appendChild(catTitle);
                     infoCat.appendChild(catPhoto);
 
@@ -556,8 +559,6 @@ formPhoto.appendChild(validation);
 addPhoto.appendChild(photo);
 addPhoto.appendChild(iconPhoto);
 addPhoto.appendChild(buttonAddPhoto);
-buttonAddPhoto.appendChild(labelButtonAdd);
-buttonAddPhoto.appendChild(inputAddPhoto);
 addPhoto.appendChild(formatImage);
 
 
