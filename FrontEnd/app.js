@@ -387,13 +387,14 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
     inputAddPhoto.accept = ".jpg, .png";
-    inputAddPhoto.required;
-    
+    inputAddPhoto.required = "required";
+        inputAddPhoto.onchange = "previewPicture(this)";
         inputAddPhoto.style.height = "36px";
         inputAddPhoto.style.opacity = "0";
         inputAddPhoto.style.margin = "0";
         inputAddPhoto.style.position = "relative";
-        inputAddPhoto.style.bottom = "25px";
+        inputAddPhoto.style.bottom = "35px";
+
 
             buttonAddPhoto.appendChild(labelButtonAdd);
             buttonAddPhoto.appendChild(inputAddPhoto);
@@ -429,7 +430,7 @@ const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
-        titleInput.setAttribute("onchange", "styleValidation(this)");
+        //titleInput.setAttribute("onchange", "styleValidation(this)");
 
             titleInput.style.height = "50px";
             titleInput.style.marginBottom = "20px";
@@ -457,7 +458,7 @@ const catTitle = document.createElement("label");
 const catPhoto = document.createElement("select");
     catPhoto.id = "catphoto";
     catPhoto.name = "categorie";
-        catPhoto.setAttribute("onchange", "styleValidation(this)");
+        //catPhoto.setAttribute("onchange", styleValidation(this));
         catPhoto.style.height = "50px";
         catPhoto.style.border = "none";
         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
@@ -502,7 +503,7 @@ btnValidation.addEventListener("click", function(e){
         
         let formData = new FormData();
     
-                formData.append('image', document.getElementById('input-addphoto').files[0]);
+                formData.append('image', document.getElementById('inputaddphoto').files[0]);
                 formData.append('title', document.getElementById('titlephoto').value);
                 
         
