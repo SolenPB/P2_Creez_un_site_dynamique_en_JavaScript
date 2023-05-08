@@ -297,7 +297,7 @@ const deleteGallery = document.createElement("a");
 
 
 
-
+          
 
 
 
@@ -312,6 +312,36 @@ const formPhoto = document.createElement("form");
 
 const titleFormPhoto = document.createElement("h2");
     titleFormPhoto.id = "titleformphoto";
+
+    
+
+    let photo = document.createElement("figure");
+            photo.id = "newpicture";
+            let previewPicture = function (e){
+                const [picture] = e.files;
+
+                    if(picture) {
+                        photo.src = URL.createObjectURL(picture)
+                        photo.style.display = "flex";
+                        iconPhoto.style.display = "none";
+                        actionButton.style.display = "none";
+                        formatImage.style.display = "none";
+                    };
+
+            };
+                        photo.style.maxHeight = "180px";
+                        photo.style.objectFit = "contain";
+                        photo.style.border = "none";
+                        photo.style.display = "none";
+
+    const styleValidation = function (){
+        if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
+            btnValidation.style.backgroundColor = "#1D6154";
+        } else {
+            btnValidation.style.backgroundColor = "#A7A7A7";
+        };
+    };              
+                        
 
 const addPhoto = document.createElement("div");
     addPhoto.id = "newphoto";
@@ -355,9 +385,9 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
+    inputAddPhoto.accept = ".jpg, .png";
+    inputAddPhoto.required;
     
-    /*inputAddPhoto.setAttribute("name", "max_file_size");
-    inputAddPhoto.setAttribute("value", "4096");*/
         inputAddPhoto.style.height = "36px";
         inputAddPhoto.style.opacity = "0";
         inputAddPhoto.style.margin = "0";
@@ -395,11 +425,13 @@ const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
-        titleInput.style.height = "50px";
-        titleInput.style.marginBottom = "20px";
-        titleInput.style.border = "none";
-        titleInput.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
-        titleInput.style.marginBottom = "10px";
+        titleInput.setAttribute("onchange", "styleValidation(this)");
+
+            titleInput.style.height = "50px";
+            titleInput.style.marginBottom = "20px";
+            titleInput.style.border = "none";
+            titleInput.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+            titleInput.style.marginBottom = "10px";
 
                 infoPhoto.appendChild(infoTitle);
                 infoTitle.appendChild(titlePhoto);
@@ -421,7 +453,7 @@ const catTitle = document.createElement("label");
 const catPhoto = document.createElement("select");
     catPhoto.id = "catphoto";
     catPhoto.name = "categorie";
-    //catPhoto.onchange = styleValidation();
+        catPhoto.setAttribute("onchange", "styleValidation(this)");
         catPhoto.style.height = "50px";
         catPhoto.style.border = "none";
         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
@@ -452,31 +484,14 @@ const catPhoto = document.createElement("select");
                     infoCat.appendChild(catTitle);
                     infoCat.appendChild(catPhoto);
 
-        let photo = document.createElement("figure");
-            photo.id = "newpicture";
-            let previewPicture = function (e){
-                const [picture] = e.files;
-
-                    if(picture) {
-                        photo.src = URL.createObjectURL(picture)
-                        photo.style.display = "flex";
-                        iconPhoto.style.display = "none";
-                        actionButton.style.display = "none";
-                        formatImage.style.display = "none";
-                    };
-
-            };
-                        photo.style.maxHeight = "180px";
-                        photo.style.objectFit = "contain";
-                        photo.style.border = "none";
-                        photo.style.display = "none";
+        
 
     
 const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
-        btnValidation.setAttribute("onchange", "styleValidation()");
+        btnValidation.setAttribute("onchange", styleValidation(this));
 
 
 btnValidation.addEventListener("click", function(e){
@@ -522,13 +537,6 @@ btnValidation.addEventListener("click", function(e){
                         btnValidation.style.marginTop = "20px";
 
                         
-const styleValidation = function (){
-    if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
-        btnValidation.style.backgroundColor = "#1D6154";
-    } else {
-        btnValidation.style.backgroundColor = "#A7A7A7";
-    };
-};              
 
 const validation = document.createElement("div");
     validation.id = "validation";
