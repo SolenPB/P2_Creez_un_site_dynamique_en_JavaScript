@@ -427,8 +427,8 @@ const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
-    titleInput.setAttribute("onchange", "styleValidation()");
-        //titleInput.setAttribute("onchange", "styleValidation(this)");
+    titleInput.setAttribute("onchange", "styleValidation(this)");
+        
 
             titleInput.style.height = "50px";
             titleInput.style.marginBottom = "20px";
@@ -457,7 +457,7 @@ const catPhoto = document.createElement("select");
     catPhoto.id = "catphoto";
     catPhoto.name = "categorie";
     catPhoto.setAttribute("onchange", "styleValidation()")
-        //catPhoto.setAttribute("onchange", styleValidation(this));
+        
         catPhoto.style.height = "50px";
         catPhoto.style.border = "none";
         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
@@ -488,7 +488,13 @@ const catPhoto = document.createElement("select");
                     infoCat.appendChild(catPhoto);
 
         
-
+const styleValidation = function() {
+    if(!photo === "" && !titleInput === "" && !catPhoto === ""){
+        btnValidation.style.color = "#1D6154";
+    } else {
+        btnValidation.style.color = "#A7A7A7";
+    };
+};
     
 const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
@@ -518,7 +524,7 @@ btnValidation.addEventListener("click", function(e){
                 } else if(document.getElementById('catphoto').value === "Hôtels & restaurants"){
                     formData.append('category', 3)
                 } else {
-                    alert("Elément sans catégorie")
+                    alert("Elément sans catégorie !")
                 };
                 
 
