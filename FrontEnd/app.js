@@ -351,7 +351,8 @@ const buttonAddPhoto = document.createElement("div");
         buttonAddPhoto.style.height = "45px";
 const buttonAdd = document.createElement("button");
     buttonAdd.id = "buttonadd";
-    buttonAdd.textContent = "+ Ajouter photo"
+    buttonAdd.textContent = "+ Ajouter photo";
+    buttonAdd.type = "submit";
         buttonAdd.style.display = "flex";
         buttonAdd.style.flexDirection = "column";
         buttonAdd.style.justifyContent = "center";
@@ -369,6 +370,7 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
+    inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
     /*inputAddPhoto.accept = ".jpg, .png";
     inputAddPhoto.required = "required";*/
         
@@ -382,6 +384,7 @@ console.log(inputAddPhoto);
             let photo = document.createElement("img");
                 photo.id = "newpicture";
                 photo.src = "";
+                photo.setAttribute("onchange", "previewPicture(this)");
 
                             photo.style.maxHeight = "180px";
                             photo.style.objectFit = "contain";
@@ -389,18 +392,19 @@ console.log(inputAddPhoto);
                             photo.style.display = "none";
 
             let previewPicture = function(e){
-                const [picture] = e.files
-    
-                        if(picture) {
+                
+                const picture = e.files[0];
+
+                        if(picture) { 
                             photo.src = URL.createObjectURL(picture)
                             photo.style.display = "flex";
                             iconPhoto.style.display = "none";
-                            actionButton.style.display = "none";
+                            buttonAddPhoto.style.display = "none";
                             formatImage.style.display = "none";
                         };
             
             };
-
+            addPhoto.appendChild(photo);
             buttonAddPhoto.appendChild(buttonAdd);
             buttonAddPhoto.appendChild(inputAddPhoto);
             
