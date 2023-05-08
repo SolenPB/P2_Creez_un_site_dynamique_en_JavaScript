@@ -353,9 +353,9 @@ const labelButtonAdd = document.createElement("label");
                
 const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
-    inputAddPhoto.type = "submit";
+    inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
-    inputAddPhoto.onchange = "previewPicture()";
+    
     /*inputAddPhoto.setAttribute("name", "max_file_size");
     inputAddPhoto.setAttribute("value", "4096");*/
         inputAddPhoto.style.height = "36px";
@@ -389,16 +389,17 @@ const infoTitle = document.createElement("div");
 const titlePhoto = document.createElement("label");
     titlePhoto.id = "titlephoto";
     titlePhoto.textContent = "Titre";
-                titlePhoto.style.height = "50px";
-                titlePhoto.style.marginBottom = "20px";
-                titlePhoto.style.border = "none";
-                titlePhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+        titlePhoto.style.marginBottom = "10px";
+                
 const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
-    titleInput.onchange = "styleValidation()";
-                titleInput.style.marginBottom = "10px";
+        titleInput.style.height = "50px";
+        titleInput.style.marginBottom = "20px";
+        titleInput.style.border = "none";
+        titleInput.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
+        titleInput.style.marginBottom = "10px";
 
                 infoPhoto.appendChild(infoTitle);
                 infoTitle.appendChild(titlePhoto);
@@ -420,7 +421,7 @@ const catTitle = document.createElement("label");
 const catPhoto = document.createElement("select");
     catPhoto.id = "catphoto";
     catPhoto.name = "categorie";
-    catPhoto.onchange = "styleValidation()";
+    //catPhoto.onchange = styleValidation();
         catPhoto.style.height = "50px";
         catPhoto.style.border = "none";
         catPhoto.style.boxShadow = "0 4px 14px rgba(0,0,0,0.09)";
