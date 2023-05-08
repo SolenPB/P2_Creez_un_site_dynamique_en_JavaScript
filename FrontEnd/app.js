@@ -359,15 +359,15 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
     inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
-    /*inputAddPhoto.accept = ".jpg, .png";
-    inputAddPhoto.required = "required";*/
+    inputAddPhoto.accept = ".jpg, .png";
+    
         
         inputAddPhoto.style.height = "36px";
         inputAddPhoto.style.opacity = "0";
         inputAddPhoto.style.margin = "0";
         inputAddPhoto.style.position = "relative";
         inputAddPhoto.style.bottom = "35px";
-console.log(inputAddPhoto);
+
 
             let photo = document.createElement("img");
                 photo.id = "newpicture";
@@ -489,17 +489,19 @@ const catPhoto = document.createElement("select");
 
         
 const styleValidation = function() {
-    if(!photo === "" && !titleInput === "" && !catPhoto === ""){
-        btnValidation.style.color = "#1D6154";
+    if(photo.src === "" && titleInput.value === "" && catPhoto.value === ""){
+        btnValidation.style.backgroundColor = "#A7A7A7";
     } else {
-        btnValidation.style.color = "#A7A7A7";
+        btnValidation.style.backgroundColor = "#1D6154";
     };
+   
 };
-    
+
+
 const btnValidation = document.createElement("input");
-        btnValidation.setAttribute("id", "btn-validation");
-        btnValidation.setAttribute("type", "submit");   
-        btnValidation.setAttribute("value", "Valider"); 
+        btnValidation.id = "btn-validation";
+        btnValidation.type = "submit";   
+        btnValidation.value = "Valider"; 
         btnValidation.setAttribute("onchange", "styleValidation(this)");
 
 
