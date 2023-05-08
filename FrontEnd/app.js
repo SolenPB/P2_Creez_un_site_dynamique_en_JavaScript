@@ -348,62 +348,67 @@ const iconPhoto = document.createElement("i");
 //Bouton d'ajout de photo
 const buttonAddPhoto = document.createElement("div");
     buttonAddPhoto.id = "buttonaddphoto";
-        buttonAddPhoto.style.height = "40px";
-const labelButtonAdd = document.createElement("label");
-    labelButtonAdd.id = "labelbuttonadd";
-    labelButtonAdd.textContent = "+ Ajouter photo"
-        labelButtonAdd.style.display = "flex";
-        labelButtonAdd.style.flexDirection = "column";
-        labelButtonAdd.style.justifyContent = "center";
-        labelButtonAdd.style.alignItems = "center";
-        labelButtonAdd.style.borderRadius = "60px";
-        labelButtonAdd.style.backgroundColor = "#A7A7A7";
-        labelButtonAdd.style.color = "#306685";
-        labelButtonAdd.style.height = "36px";
-        labelButtonAdd.style.marginTop = "15px";
-        labelButtonAdd.style.position = "relative";
+        buttonAddPhoto.style.height = "45px";
+const buttonAdd = document.createElement("button");
+    buttonAdd.id = "buttonadd";
+    buttonAdd.textContent = "+ Ajouter photo"
+        buttonAdd.style.display = "flex";
+        buttonAdd.style.flexDirection = "column";
+        buttonAdd.style.justifyContent = "center";
+        buttonAdd.style.alignItems = "center";
+        buttonAdd.style.borderRadius = "60px";
+        buttonAdd.style.backgroundColor = "#A7A7A7";
+        buttonAdd.style.color = "#306685";
+        buttonAdd.style.width = "173px";
+        buttonAdd.style.height = "36px";
+        buttonAdd.style.marginTop = "5px";
+        buttonAdd.style.left = "30px";
+        buttonAdd.style.position = "relative";
                
 const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
-    inputAddPhoto.accept = ".jpg, .png";
-    inputAddPhoto.required = "required";
-        inputAddPhoto.onchange = "previewPicture(this)";
+    /*inputAddPhoto.accept = ".jpg, .png";
+    inputAddPhoto.required = "required";*/
+        
         inputAddPhoto.style.height = "36px";
         inputAddPhoto.style.opacity = "0";
         inputAddPhoto.style.margin = "0";
         inputAddPhoto.style.position = "relative";
         inputAddPhoto.style.bottom = "35px";
+console.log(inputAddPhoto);
 
-            let photo = document.createElement("figure");
+            let photo = document.createElement("img");
                 photo.id = "newpicture";
                 photo.src = "";
-            let previewPicture = function (e){
-                const [picture] = e.files;
 
-                    if(picture) {
-                        photo.src = URL.createObjectURL(picture)
-                        photo.style.display = "flex";
-                        iconPhoto.style.display = "none";
-                        actionButton.style.display = "none";
-                        formatImage.style.display = "none";
-                    };
+                            photo.style.maxHeight = "180px";
+                            photo.style.objectFit = "contain";
+                            photo.style.border = "none";
+                            photo.style.display = "none";
 
+            let previewPicture = function(e){
+                const [picture] = e.files
+    
+                        if(picture) {
+                            photo.src = URL.createObjectURL(picture)
+                            photo.style.display = "flex";
+                            iconPhoto.style.display = "none";
+                            actionButton.style.display = "none";
+                            formatImage.style.display = "none";
+                        };
+            
             };
-                        photo.style.maxHeight = "180px";
-                        photo.style.objectFit = "contain";
-                        photo.style.border = "none";
-                        photo.style.display = "none";
-                        
-            buttonAddPhoto.appendChild(labelButtonAdd);
+
+            buttonAddPhoto.appendChild(buttonAdd);
             buttonAddPhoto.appendChild(inputAddPhoto);
             
 const formatImage = document.createElement("p");
     formatImage.id = "formatimage";
     formatImage.textContent = "jpg, png : 4mo max"
         formatImage.style.position = "relative";
-        formatImage.style.top = "20px";
+        formatImage.style.top = "5px";
 
 
 
@@ -557,7 +562,7 @@ modalWrapper.appendChild(formPhoto);
 formPhoto.appendChild(addPhoto);
 formPhoto.appendChild(infoPhoto);
 formPhoto.appendChild(validation);
-addPhoto.appendChild(photo);
+
 addPhoto.appendChild(iconPhoto);
 addPhoto.appendChild(buttonAddPhoto);
 addPhoto.appendChild(formatImage);
