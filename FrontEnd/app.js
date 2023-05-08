@@ -145,8 +145,6 @@ const galleryModal = document.createElement("div");
 
 
 
-
-
 //Fonction de l'importation et de la création de l'emplacement des travaux dans la modale
     function CreateSmallCard(works){
         
@@ -304,6 +302,8 @@ const deleteGallery = document.createElement("a");
 
 
 
+
+
 //Prévisualisation de la photo et intégration de sa zone d'apparition
 const formPhoto = document.createElement("form");
     formPhoto.id = "formphoto";
@@ -312,18 +312,6 @@ const formPhoto = document.createElement("form");
 
 const titleFormPhoto = document.createElement("h2");
     titleFormPhoto.id = "titleformphoto";
-
-    
-
-
-    const styleValidation = function (){
-        if(photo.src !=="" && titlePhoto.value !== "" && catPhoto.value !== "") {
-            btnValidation.style.backgroundColor = "#1D6154";
-        } else {
-            btnValidation.style.backgroundColor = "#A7A7A7";
-        };
-    };              
-                        
 
 const addPhoto = document.createElement("div");
     addPhoto.id = "newphoto";
@@ -439,6 +427,7 @@ const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
+    titleInput.setAttribute("onchange", "styleValidation()");
         //titleInput.setAttribute("onchange", "styleValidation(this)");
 
             titleInput.style.height = "50px";
@@ -467,6 +456,7 @@ const catTitle = document.createElement("label");
 const catPhoto = document.createElement("select");
     catPhoto.id = "catphoto";
     catPhoto.name = "categorie";
+    catPhoto.setAttribute("onchange", "styleValidation()")
         //catPhoto.setAttribute("onchange", styleValidation(this));
         catPhoto.style.height = "50px";
         catPhoto.style.border = "none";
@@ -504,7 +494,7 @@ const btnValidation = document.createElement("input");
         btnValidation.setAttribute("id", "btn-validation");
         btnValidation.setAttribute("type", "submit");   
         btnValidation.setAttribute("value", "Valider"); 
-        btnValidation.setAttribute("onchange", styleValidation(this));
+        btnValidation.setAttribute("onchange", "styleValidation(this)");
 
 
 btnValidation.addEventListener("click", function(e){
@@ -513,7 +503,12 @@ btnValidation.addEventListener("click", function(e){
         let formData = new FormData();
     
                 formData.append('image', document.getElementById('inputaddphoto').files[0]);
-                formData.append('title', document.getElementById('titlephoto').value);
+                
+                if(document.getElementById('titleinput').value === ""){
+                    alert("Element sans titre !");
+                } else {
+                    formData.append('title', document.getElementById('titleinput').value);
+                };
                 
         
                 if(document.getElementById('catphoto').value === "Objets"){
