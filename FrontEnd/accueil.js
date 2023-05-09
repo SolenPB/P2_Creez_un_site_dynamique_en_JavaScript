@@ -9,7 +9,7 @@ const productsArray = await reponse.json();
 
 const filters = await fetch("http://localhost:5678/api/categories/")
 .then(filters => filters.json());
-console.log(filters);
+
 //Fonction pour sauvegarder les filtres
 function SaveFilter(cat){
     localStorage.setItem("filtre", cat);
