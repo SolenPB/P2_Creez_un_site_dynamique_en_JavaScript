@@ -9,7 +9,7 @@ const productsArray = await reponse.json();
 
 const filters = await fetch("http://localhost:5678/api/categories/")
 .then(filters => filters.json());
-
+console.log(filters);
 //Fonction pour sauvegarder les filtres
 function SaveFilter(cat){
     localStorage.setItem("filtre", cat);
@@ -103,7 +103,8 @@ boutonAppart.addEventListener("click", function (e) {
 //Fonctionnalité du bouton "Hôtels & restaurants"
 
 const boutonRestaurants = document.getElementById("btn-restaurants");
-boutonRestaurants.addEventListener("click", function () {
+boutonRestaurants.addEventListener("click", function (e) {
+    e.preventDefault();
     const type = filters.map(filter => filter.name);
         for(let i = filters.length -1; i >= 0; i--){
             if(filters[i].name == "Hotels & restaurants"){
