@@ -224,10 +224,10 @@ const galleryModal = document.createElement("div");
                         })
                         .then(res => {
                             if(res.status == 204){
-                                console.log("Projet supprimé !");
+                                alert("Projet supprimé !");
                     
                             } else if(res.status == 500){
-                                console.log("Erreur lors de l'envoi");
+                                alert("Erreur lors de l'envoi");
                             };
                         })
                         .catch(err => console.log(err));
