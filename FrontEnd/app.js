@@ -186,8 +186,10 @@ const galleryModal = document.createElement("div");
                 movePicture.style.position = "relative";
                 movePicture.style.width = "17px";
                 movePicture.style.height = "17px";
-                movePicture.style.bottom = "8px";
+                movePicture.style.bottom = "10px";
                 movePicture.style.left = "35px";
+                movePicture.style.padding = "1px";
+               
 
     
         //Suppression des éléments de la modale 
@@ -202,7 +204,7 @@ const galleryModal = document.createElement("div");
                 iconDelete.style.height = "15px";
                 iconDelete.style.backgroundColor = "black";
                 iconDelete.style.color = "white";
-                iconDelete.style.paddingLeft = "3px";
+                iconDelete.style.paddingLeft = "4px";
                 iconDelete.style.paddingTop = "3px";
                 iconDelete.style.border = "none";
                 iconDelete.style.width = "17px";
