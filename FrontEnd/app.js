@@ -227,7 +227,7 @@ const galleryModal = document.createElement("div");
                                 alert("Projet supprimé !");
                     
                             } else if(res.status == 500){
-                                alert("Erreur lors de l'envoi");
+                                alert("Erreur lors de la suppression");
                             };
                         })
                         .catch(err => console.log(err));
