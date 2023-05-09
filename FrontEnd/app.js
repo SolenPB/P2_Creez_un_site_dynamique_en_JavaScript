@@ -26,7 +26,7 @@ const modal = document.createElement("aside");
             modal.style.height = "100%";
             modal.style.background = "rgba(0,0,0,0.5)";
             modal.style.boxSizing = "border-box";
-    //document.main.appendChild(modal);
+    
 
     mainModal.appendChild(modal);
 const modalWrapper = document.createElement("div");
@@ -305,6 +305,8 @@ const deleteGallery = document.createElement("a");
 
 
 //Prévisualisation de la photo et intégration de sa zone d'apparition
+
+
 const formPhoto = document.createElement("form");
     formPhoto.id = "formphoto";
     formPhoto.method = "post";
@@ -358,21 +360,18 @@ const inputAddPhoto = document.createElement("input");
     inputAddPhoto.id = "inputaddphoto";
     inputAddPhoto.type = "file";
     inputAddPhoto.name = "picture";
-    inputAddPhoto.setAttribute("onchange", "previewPicture(this)");
     inputAddPhoto.accept = ".jpg, .png";
-    
-        
-        inputAddPhoto.style.height = "36px";
-        inputAddPhoto.style.opacity = "0";
-        inputAddPhoto.style.margin = "0";
-        inputAddPhoto.style.position = "relative";
-        inputAddPhoto.style.bottom = "35px";
+        inputAddPhoto.setAttribute("onchange", "previewPicture(this)");        
+            inputAddPhoto.style.height = "36px";
+            inputAddPhoto.style.opacity = "0";
+            inputAddPhoto.style.margin = "0";
+            inputAddPhoto.style.position = "relative";
+            inputAddPhoto.style.bottom = "35px";
 
 
             let photo = document.createElement("img");
                 photo.id = "newpicture";
                 photo.src = "";
-                photo.setAttribute("onchange", "previewPicture(this)");
 
                             photo.style.maxHeight = "180px";
                             photo.style.objectFit = "contain";
@@ -392,6 +391,7 @@ const inputAddPhoto = document.createElement("input");
                         };
             
             };
+
             addPhoto.appendChild(photo);
             buttonAddPhoto.appendChild(buttonAdd);
             buttonAddPhoto.appendChild(inputAddPhoto);
@@ -427,7 +427,7 @@ const titleInput = document.createElement("input");
     titleInput.id = "titleinput";
     titleInput.type = "text";
     titleInput.name = "title";
-    titleInput.setAttribute("onchange", "styleValidation(this)");
+    titleInput.setAttribute("onchange", "styleValidation()");
         
 
             titleInput.style.height = "50px";
@@ -487,22 +487,13 @@ const catPhoto = document.createElement("select");
                     infoCat.appendChild(catTitle);
                     infoCat.appendChild(catPhoto);
 
-        
-const styleValidation = function() {
-    if(photo.src === "" && titleInput.value === "" && catPhoto.value === ""){
-        btnValidation.style.backgroundColor = "#A7A7A7";
-    } else {
-        btnValidation.style.backgroundColor = "#1D6154";
-    };
-   
-};
 
 
 const btnValidation = document.createElement("input");
         btnValidation.id = "btn-validation";
         btnValidation.type = "submit";   
         btnValidation.value = "Valider"; 
-        btnValidation.setAttribute("onchange", "styleValidation(this)");
+            btnValidation.setAttribute("onchange", "styleValidation()");
 
 
 btnValidation.addEventListener("click", function(e){
@@ -553,6 +544,19 @@ btnValidation.addEventListener("click", function(e){
                         btnValidation.style.marginTop = "20px";
 
                         
+
+const styleValidation = function() {
+    if(photo.src !== "" && titleInput.value !== "" && catPhoto.value !== ""){
+        btnValidation.style.backgroundColor = "#1D6154";
+        
+    } else {
+        btnValidation.style.backgroundColor = "#A7A7A7";
+        
+    };
+                           
+};
+                        
+styleValidation();
 
 const validation = document.createElement("div");
     validation.id = "validation";
