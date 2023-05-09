@@ -79,15 +79,17 @@ boutonObjets.addEventListener("click", function(e){
             if(filters[i].name == "Objets"){
                 filtre = type.splice(i,1);
                 SaveFilter(filtre);
-                location.reload();
+                location.reload();        
             };
         };
+        
 });
 
 //Fonctionnalité du bouton "Appartements"
 
 const boutonAppart = document.getElementById("btn-appart");
-boutonAppart.addEventListener("click", function () {
+boutonAppart.addEventListener("click", function (e) {
+    e.preventDefault();
     const type = filters.map(filter => filter.name);
         for( let i = filters.length -1; i >= 0; i--){
             if(filters[i].name == "Appartements"){

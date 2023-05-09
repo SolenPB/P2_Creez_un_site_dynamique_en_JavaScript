@@ -500,6 +500,9 @@ const btnValidation = document.createElement("input");
 
 btnValidation.addEventListener("click", function(e){
         e.preventDefault();
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
+            modal.removeAttribute('aria-modal');   
         
         let formData = new FormData();
     
