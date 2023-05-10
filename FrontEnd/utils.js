@@ -39,3 +39,5 @@ export function Filtered(filter, data) {
            }
 
 };
+
+export function Deleted(works, data)
