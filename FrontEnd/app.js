@@ -4,7 +4,7 @@ fetch("http://localhost:5678/api/works/")
 .then(worksArray => {
     for(let works of worksArray){
     CreateSmallCard(works);
-    
+    console.log(worksArray);
 }}); 
 
 
@@ -540,6 +540,7 @@ btnValidation.addEventListener("click", function(e){
                         console.log ("Erreur lors de l'envoi du formulaire");  
                     } else {
                         return res.json();
+                      
                     };
                 })
                 
