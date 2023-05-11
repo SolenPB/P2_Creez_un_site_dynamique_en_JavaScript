@@ -228,15 +228,12 @@ const galleryModal = document.createElement("div");
                         .then(res => {
                             if(res.status == 204){
                                 console.log("Projet supprimé !");
-                                const deletedPicture = document.getElementById(worksId);
-                                const parentDelete = document.getElementById(worksId).parentNode;
-                                const pictureDelete = parentDelete.parentNode;
-                                    parentDelete.removeChild(deletedPicture);
-                                    pictureDelete.removeChild(parentDelete);
-                                const imgFigure = document.getElementsByClassName("img1");
-                                const figureGallery = document.getElementsByClassName(imgFigure).parentNode;
-                                    figureGallery.removeChild(imgFigure);
-                                    
+                                    const deletedPicture = document.getElementById(worksId);
+                                    const parentDelete = document.getElementById(worksId).parentNode;
+                                    const pictureDelete = parentDelete.parentNode;
+                                        parentDelete.removeChild(deletedPicture);
+                                        pictureDelete.removeChild(parentDelete);
+                                
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
                             };
