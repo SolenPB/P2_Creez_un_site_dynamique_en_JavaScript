@@ -66,6 +66,27 @@ openModal.addEventListener("click", function(event) {
                 infoPhoto.style.display = "none";
 }); 
 
+const closeModal = document.createElement("button");
+    closeModal.id = "closemodal";
+        closeModal.style.display = "flex";
+        closeModal.style.height = "24px";
+        closeModal.style.fontSize = "24px";
+        closeModal.style.backgroundColor = "white";
+        closeModal.style.border = "none";
+        closeModal.style.paddingBottom = "5px";
+            const iconCloseModal = document.createElement("i");
+                iconCloseModal.className = "fa-solid fa-xmark";
+                    closeModal.appendChild(iconCloseModal);
+
+    closeModal.addEventListener('click', function (event) {
+            event.preventDefault();
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
+            modal.removeAttribute('aria-modal');
+                        
+    });
+    buttonsModal.appendChild(closeModal);
+
 const buttonPreModal = document.createElement("button");
     buttonPreModal.id = "premodal";
         const iconPreModal = document.createElement("i");
@@ -204,8 +225,8 @@ const galleryModal = document.createElement("div");
                         })
                         .then(res => {
                             if(res.status == 204){
-                                alert("Projet supprimé !");
-                                
+                                console.log("Projet supprimé !");
+                             
                                 
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
@@ -567,23 +588,3 @@ addPhoto.appendChild(formatImage);
 
 
 
-const closeModal = document.createElement("button");
-    closeModal.id = "closemodal";
-        closeModal.style.display = "flex";
-        closeModal.style.height = "24px";
-        closeModal.style.fontSize = "24px";
-        closeModal.style.backgroundColor = "white";
-        closeModal.style.border = "none";
-        closeModal.style.paddingBottom = "5px";
-            const iconCloseModal = document.createElement("i");
-                iconCloseModal.className = "fa-solid fa-xmark";
-                    closeModal.appendChild(iconCloseModal);
-
-    closeModal.addEventListener('click', function (event) {
-            event.preventDefault();
-            modal.style.display = "none";
-            modal.setAttribute('aria-hidden', 'true');
-            modal.removeAttribute('aria-modal');
-                        
-    });
-    buttonsModal.appendChild(closeModal);
