@@ -218,7 +218,9 @@ const galleryModal = document.createElement("div");
                     e.preventDefault();
                     const worksId = e.target.id;
                     
-                        fetch(`http://localhost:5678/api/works/${worksId}`, {
+                                
+
+                      fetch(`http://localhost:5678/api/works/${worksId}`, {
                             method: 'DELETE',
                             headers:{'accept': '*/*',
                                     'authorization': `Bearer ${sessionStorage.token}`},
@@ -226,8 +228,15 @@ const galleryModal = document.createElement("div");
                         .then(res => {
                             if(res.status == 204){
                                 console.log("Projet supprimé !");
-                             
-                                
+                                const deletedPicture = document.getElementById(worksId);
+                                const parentDelete = document.getElementById(worksId).parentNode;
+                                const pictureDelete = parentDelete.parentNode;
+                                    parentDelete.removeChild(deletedPicture);
+                                    pictureDelete.removeChild(parentDelete);
+                                const imgFigure = document.getElementsByClassName("img1");
+                                const figureGallery = document.getElementsByClassName(imgFigure).parentNode;
+                                    figureGallery.removeChild(imgFigure);
+                                    
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
                             };
