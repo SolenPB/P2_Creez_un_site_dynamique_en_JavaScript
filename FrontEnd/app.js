@@ -93,26 +93,6 @@ const buttonPreModal = document.createElement("button");
 
             buttonsModal.appendChild(buttonPreModal);
 
-const closeModal = document.createElement("button");
-    closeModal.id = "closemodal";
-        closeModal.style.display = "flex";
-        closeModal.style.height = "24px";
-        closeModal.style.fontSize = "24px";
-        closeModal.style.backgroundColor = "white";
-        closeModal.style.border = "none";
-        closeModal.style.paddingBottom = "5px";
-            const iconCloseModal = document.createElement("i");
-                iconCloseModal.className = "fa-solid fa-xmark";
-                    closeModal.appendChild(iconCloseModal);
-
-    closeModal.addEventListener('click', function (event) {
-            event.preventDefault();
-            modal.style.display = "none";
-            modal.setAttribute('aria-hidden', 'true');
-            modal.removeAttribute('aria-modal');
-                        
-    });
-    buttonsModal.appendChild(closeModal);
 
 const titleModal = document.createElement("h2");
     titleModal.id = "titlemodal"
@@ -543,7 +523,7 @@ btnValidation.addEventListener("click", function(e){
                         
                     };
                 })
-                
+                .then (formPhoto.remove())
                 .catch(err => console.log(err));
     });
 
@@ -587,3 +567,23 @@ addPhoto.appendChild(formatImage);
 
 
 
+const closeModal = document.createElement("button");
+    closeModal.id = "closemodal";
+        closeModal.style.display = "flex";
+        closeModal.style.height = "24px";
+        closeModal.style.fontSize = "24px";
+        closeModal.style.backgroundColor = "white";
+        closeModal.style.border = "none";
+        closeModal.style.paddingBottom = "5px";
+            const iconCloseModal = document.createElement("i");
+                iconCloseModal.className = "fa-solid fa-xmark";
+                    closeModal.appendChild(iconCloseModal);
+
+    closeModal.addEventListener('click', function (event) {
+            event.preventDefault();
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
+            modal.removeAttribute('aria-modal');
+                        
+    });
+    buttonsModal.appendChild(closeModal);
