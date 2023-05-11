@@ -41,17 +41,24 @@ export function Filtered(filter, data) {
 
 };
 
-/*export function Deleted(works, data) {
-        let deletedWork = worksId;
-            let worksId = data.find(obj => obj.id);
-           console.log(worksId)
-            if(works === ""){
-                
-            } else {
-                
-            };
-                let gallery = document.querySelector(".gallery");
-                let galleryChildren = document.getElementsByClassName('works1');
-                    let galleryModal = document.getElementById("gallery-modal");
-                    let modalChildren = document.getElementById("picture");
-};*/
+export function Added (works, data) { 
+        let addedWork = "";
+        if(works !== ""){
+            addedWork = data.find(obj);
+        } else {
+            addedWork = data;
+        }
+           let gallery = document.querySelector(".gallery");
+        
+           let galleryChildren = document.getElementsByClassName('work1');
+         
+           for (let i = -galleryChildren.length; i < galleryChildren.length; i++) {
+           
+            gallery.removeChild(gallery.firstChild);
+            
+           };
+           for(let i = 0; i < addedWork.length; i++){
+            CreateCard(addedWork[i]);
+           }
+
+};
