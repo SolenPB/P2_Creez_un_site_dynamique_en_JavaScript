@@ -198,7 +198,6 @@ const galleryModal = document.createElement("div");
             iconDelete.className = "fa-regular fa-trash-can";
             iconDelete.id = works.id;
             iconDelete.setAttribute("type","button");
-        
                 iconDelete.style.display = "flex";
                 iconDelete.style.position = "relative";
                 iconDelete.style.width = "15px";
