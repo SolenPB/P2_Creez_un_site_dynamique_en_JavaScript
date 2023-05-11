@@ -226,7 +226,7 @@ const galleryModal = document.createElement("div");
                         .then(res => {
                             if(res.status == 204){
                                 alert("Projet supprimé !");
-                                CreateSmallCard();
+                                
                                 
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
