@@ -3,7 +3,7 @@
 export function CreateCard (card) {
     const travailElement = document.querySelector(".gallery");
     const photoElement = document.createElement("figure");
-    photoElement.className = 'work1';
+        photoElement.className = 'work1';
 
     const imageUrlElement = document.createElement("img");
         imageUrlElement.src = card.imageUrl;
@@ -40,7 +40,17 @@ export function Filtered(filter, data) {
 
 };
 
-export function Deleted(works, data) {
-        let deleteWork = "";
-            
-};
+/*export function Deleted(works, data) {
+        let deletedWork = worksId;
+            let worksId = data.find(obj => obj.id);
+           console.log(worksId)
+            if(works === ""){
+                
+            } else {
+                
+            };
+                let gallery = document.querySelector(".gallery");
+                let galleryChildren = document.getElementsByClassName('works1');
+                    let galleryModal = document.getElementById("gallery-modal");
+                    let modalChildren = document.getElementById("picture");
+};*/

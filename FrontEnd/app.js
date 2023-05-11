@@ -1,10 +1,9 @@
-
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
     for(let works of worksArray){
     CreateSmallCard(works);
-    console.log(worksArray);
+    
 }}); 
 
 
@@ -110,7 +109,8 @@ const closeModal = document.createElement("button");
             event.preventDefault();
             modal.style.display = "none";
             modal.setAttribute('aria-hidden', 'true');
-            modal.removeAttribute('aria-modal');            
+            modal.removeAttribute('aria-modal');
+                        
     });
     buttonsModal.appendChild(closeModal);
 
@@ -226,7 +226,8 @@ const galleryModal = document.createElement("div");
                         .then(res => {
                             if(res.status == 204){
                                 alert("Projet supprimé !");
-                    
+                                CreateSmallCard();
+                                
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
                             };
@@ -540,7 +541,7 @@ btnValidation.addEventListener("click", function(e){
                         console.log ("Erreur lors de l'envoi du formulaire");  
                     } else {
                         return res.json();
-                      
+                        
                     };
                 })
                 
