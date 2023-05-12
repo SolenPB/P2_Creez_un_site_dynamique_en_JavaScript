@@ -546,13 +546,41 @@ btnValidation.addEventListener("click", function(e){
                 })
                 .then(res => {
                     if(!res.status.ok){
-                        alert("Erreur lors de l'envoi du formulaire");  
+                        console.log("Erreur lors de l'envoi du formulaire");  
                     } else {
                         return res.json();
                         
                     };
                 })
-                .then (formPhoto.remove())
+                .then (function Added (works, data) { 
+                    let addedWork = "";
+                    if(works !== ""){
+                        addedWork = data.find(obj);
+                    } else {
+                        addedWork = data;
+                    }
+                        let gallery = document.querySelector(".gallery");
+                        let galleryModal = document.getElementById("gallery-modal");
+                        let galleryChildren = document.getElementsByClassName('work1');
+                        let modalChildren = document.getElementById("photomodal");
+                     
+                       for (let i = -galleryChildren.length; i < galleryChildren.length; i++) {
+                       
+                        gallery.removeChild(gallery.firstChild);
+                        
+                       };
+                       for(let i = 0; i < addedWork.length; i++){
+                        CreateCard(addedWork[i]);
+                       }
+
+                       for(let i = 0; i < modalChildren.length; i++){
+
+                        galleryModal.removeChild(galleryModal.firstChild);
+
+                       }
+            
+            }
+            )
                 .catch(err => console.log(err));
     });
 
