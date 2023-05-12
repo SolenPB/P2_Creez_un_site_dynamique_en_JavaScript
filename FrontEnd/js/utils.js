@@ -7,8 +7,8 @@ export function CreateCard (card) {
 
     const imageUrlElement = document.createElement("img");
         imageUrlElement.src = card.imageUrl;
-        imageUrlElement.className = 'img1';
-
+        
+    
     const titleElement = document.createElement("figcaption");
         titleElement.innerText = card.title;
 

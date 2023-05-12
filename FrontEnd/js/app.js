@@ -1,3 +1,5 @@
+
+
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
@@ -211,15 +213,19 @@ const closeModal = document.createElement("button");
                 iconDelete.style.height = "17px";
                 iconDelete.style.top = "9px";
                 iconDelete.style.left = "62px";
-
+    
+    const deleteModal =  document.getElementById("modal-wrapper");
+    const deletePModal = deleteModal.parentNode;
+     const gallery = document.getElementsByClassName("gallery");
+     
 
             iconDelete.addEventListener("click", function(e){
                     e.preventDefault();
                     const worksId = e.target.id;
                     
-                                
-
-                      fetch(`http://localhost:5678/api/works/${worksId}`, {
+                    
+                   
+                   fetch(`http://localhost:5678/api/works/${worksId}`, {
                             method: 'DELETE',
                             headers:{'accept': '*/*',
                                     'authorization': `Bearer ${sessionStorage.token}`},
@@ -227,12 +233,18 @@ const closeModal = document.createElement("button");
                         .then(res => {
                             if(res.status == 204){
                                 console.log("Projet supprimé !");
-                                    const deletedPicture = document.getElementById(worksId);
+
+                                    const deletedPicture = document.getElementById(worksId); 
                                     const parentDelete = document.getElementById(worksId).parentNode;
                                     const pictureDelete = parentDelete.parentNode;
+                                    const figureDelete = pictureDelete.parentNode;
+                                    
+                                
                                         parentDelete.removeChild(deletedPicture);
                                         pictureDelete.removeChild(parentDelete);
-                                
+                                        figureDelete.removeChild(pictureDelete);
+                                    
+                                   
                             } else if(res.status == 500){
                                 alert("Erreur lors de la suppression");
                             };
@@ -249,6 +261,9 @@ const closeModal = document.createElement("button");
                 pictureModal.appendChild(movePicture);
 
         };
+
+
+
 
 const changeModal = document.createElement("div");
     changeModal.id = "change-modal";
