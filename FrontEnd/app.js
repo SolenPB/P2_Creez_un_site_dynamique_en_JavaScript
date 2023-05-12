@@ -514,7 +514,9 @@ btnValidation.addEventListener("click", function(e){
         
         let formData = new FormData();
     
-                formData.append('image', document.getElementById('inputaddphoto').files[0]);
+                
+        
+                formData.append('image', document.getElementById('inputaddphoto').files[0])
                 
                 if(document.getElementById('titleinput').value === ""){
                     alert("Element sans titre !");
@@ -544,7 +546,7 @@ btnValidation.addEventListener("click", function(e){
                 })
                 .then(res => {
                     if(!res.status.ok){
-                        console.log ("Erreur lors de l'envoi du formulaire");  
+                        alert("Erreur lors de l'envoi du formulaire");  
                     } else {
                         return res.json();
                         
@@ -557,7 +559,7 @@ btnValidation.addEventListener("click", function(e){
                         btnValidation.style.padding = "1em";
                         btnValidation.style.marginTop = "20px";
 
-                        
+   
 
 const styleValidation = function() {
     if(photo.src !== "" && titleInput.value !== "" && catPhoto.value !== ""){
@@ -568,7 +570,7 @@ const styleValidation = function() {
         
     };
                            
-};
+}; 
                         
 styleValidation();
 
