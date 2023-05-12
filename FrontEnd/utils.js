@@ -48,9 +48,10 @@ export function Added (works, data) {
         } else {
             addedWork = data;
         }
-           let gallery = document.querySelector(".gallery");
-        
-           let galleryChildren = document.getElementsByClassName('work1');
+            let gallery = document.querySelector(".gallery");
+            let galleryModal = document.getElementById("gallery-modal");
+            let galleryChildren = document.getElementsByClassName('work1');
+            let modalChildren = document.getElementById("photomodal");
          
            for (let i = -galleryChildren.length; i < galleryChildren.length; i++) {
            

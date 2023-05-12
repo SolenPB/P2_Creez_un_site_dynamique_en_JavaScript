@@ -1,5 +1,3 @@
-import { Added } from "./utils.js";
-
 fetch("http://localhost:5678/api/works/")
 .then (res => res.json())
 .then(worksArray => {
@@ -322,6 +320,7 @@ const formPhoto = document.createElement("form");
     formPhoto.id = "formphoto";
     formPhoto.method = "post";
     formPhoto.enctype = "multipart/form-data";
+    
 
 const titleFormPhoto = document.createElement("h2");
     titleFormPhoto.id = "titleformphoto";
@@ -592,6 +591,3 @@ formPhoto.appendChild(validation);
 addPhoto.appendChild(iconPhoto);
 addPhoto.appendChild(buttonAddPhoto);
 addPhoto.appendChild(formatImage);
-
-
-
