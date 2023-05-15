@@ -55,46 +55,114 @@ const styleBoutons = document.getElementsByClassName("btn-style");
     styleBoutons[i].style.width = "180px";
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
- };
-
+};
+    
 //Fonctionnalité et mise en forme du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
+            
+    boutonTous.addEventListener("click", function(e) {
+        e.preventDefault(),
             boutonTous.style.backgroundColor = "#1D6154";
             boutonTous.style.color = "white";
             boutonTous.style.border = "none";
-boutonTous.addEventListener("click", function(e) {
-    e.preventDefault(),
-    localStorage.removeItem("filtre");
-    Filtered("", productsArray);
-});
 
+            boutonRestaurants.style.backgroundColor = "white";
+            boutonRestaurants.style.color = "#1D6154";
+
+        localStorage.removeItem("filtre");
+        Filtered("", productsArray);
+});
+    boutonTous.addEventListener("mouseover", function(e){
+        boutonTous.style.backgroundColor = "#1D6154";
+        boutonTous.style.color = "white";
+        boutonTous.style.border = "none";
+})
+
+    boutonTous.addEventListener("mouseout", function(e){
+        boutonTous.style.backgroundColor = "white";
+        boutonTous.style.color = "#1D6154";
+        boutonTous.style.border = "solid", "#1D6154", "5px";
+})
 //Fonctionnalité du bouton "Objets"
 
 
 const boutonObjets = document.getElementById("btn-objets");
 boutonObjets.addEventListener("click", function(e){
     e.preventDefault();
+        boutonTous.style.backgroundColor = "white";
+        boutonTous.style.color = "#1D6154";
+        boutonTous.style.border = "solid", "#1D6154", "5px";
+
+        boutonObjets.style.backgroundColor = "#1D6154";
+        boutonObjets.style.color = "white";
+
     Filtered("Objets", productsArray);
 });
 
+    boutonObjets.addEventListener("mouseover", function(e){
+        boutonObjets.style.backgroundColor = "#1D6154";
+        boutonObjets.style.color = "white";
+        boutonObjets.style.border = "none";
+})
+
+    boutonObjets.addEventListener("mouseout", function(e){
+        boutonObjets.style.backgroundColor = "white";
+        boutonObjets.style.color = "#1D6154";
+        boutonObjets.style.border = "solid", "#1D6154", "5px";
+})
 //Fonctionnalité du bouton "Appartements"
 
 const boutonAppart = document.getElementById("btn-appart");
 boutonAppart.addEventListener("click", function (e) {
     e.preventDefault();
+        boutonObjets.style.backgroundColor = "white";
+        boutonObjets.style.color = "#1D6154";
+        boutonObjets.style.border = "solid", "#1D6154", "5px";
+
+        boutonAppart.style.backgroundColor = "#1D6154";
+        boutonAppart.style.color = "white";
+
     Filtered("Appartements", productsArray);
 });
 
+    boutonAppart.addEventListener("mouseover", function(e){
+        boutonAppart.style.backgroundColor = "#1D6154";
+        boutonAppart.style.color = "white";
+        boutonAppart.style.border = "none";
+})
+
+    boutonAppart.addEventListener("mouseout", function(e){
+        boutonAppart.style.backgroundColor = "white";
+        boutonAppart.style.color = "#1D6154";
+        boutonAppart.style.border = "solid", "#1D6154", "5px";
+})
 //Fonctionnalité du bouton "Hôtels & restaurants"
 
 const boutonRestaurants = document.getElementById("btn-restaurants");
 boutonRestaurants.addEventListener("click", function (e) {
     e.preventDefault();
+        boutonAppart.style.backgroundColor = "white";
+        boutonAppart.style.color = "#1D6154";
+        boutonAppart.style.border = "solid", "#1D6154", "5px";
+
+        boutonRestaurants.style.backgroundColor = "#1D6154";
+        boutonRestaurants.style.color = "white";
+
     Filtered("Hotels & restaurants", productsArray);
 });
 
+    boutonRestaurants.addEventListener("mouseover", function(e){
+        boutonRestaurants.style.backgroundColor = "#1D6154";
+        boutonRestaurants.style.color = "white";
+        boutonRestaurants.style.border = "none";
+})
 
+    boutonRestaurants.addEventListener("mouseout", function(e){
+        boutonRestaurants.style.backgroundColor = "white";
+        boutonRestaurants.style.color = "#1D6154";
+        boutonRestaurants.style.border = "solid", "#1D6154", "5px";
+})
 
 
 
