@@ -56,7 +56,7 @@ const styleBoutons = document.getElementsByClassName("btn-style");
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
 };
-    
+
 //Fonctionnalité et mise en forme du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
