@@ -57,6 +57,7 @@ const styleBoutons = document.getElementsByClassName("btn-style");
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
 };
 
+
 //Fonctionnalité et mise en forme du bouton "Tous"
 
 const boutonTous = document.getElementById("btn-tous");
@@ -87,9 +88,10 @@ const boutonTous = document.getElementById("btn-tous");
 const boutonObjets = document.getElementById("btn-objets");
 boutonObjets.addEventListener("click", function(e){
     e.preventDefault();
-
+   
         boutonObjets.style.backgroundColor = "#1D6154";
         boutonObjets.style.color = "white";
+        boutonObjets.remove
 
         boutonTous.style.backgroundColor = "white";
         boutonTous.style.color = "#1D6154";
@@ -103,7 +105,7 @@ boutonObjets.addEventListener("click", function(e){
 
     Filtered("Objets", productsArray);
 });
-
+    
 //Fonctionnalité du bouton "Appartements"
 
 const boutonAppart = document.getElementById("btn-appart");
@@ -139,10 +141,6 @@ boutonRestaurants.addEventListener("click", function (e) {
 
     Filtered("Hotels & restaurants", productsArray);
 });
-
-
-
-
 
 
 
