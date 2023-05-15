@@ -55,7 +55,13 @@ const styleBoutons = document.getElementsByClassName("btn-style");
     styleBoutons[i].style.width = "180px";
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
-};
+    
+    styleBoutons[i].addEventListener("mouseenter", function(){
+        styleBoutons[i].style.backgroundColor = "#1D6154";
+        styleBoutons[i].style.color = "white";
+    });
+
+ };
 
 
 //Fonctionnalité et mise en forme du bouton "Tous"
@@ -66,7 +72,6 @@ const boutonTous = document.getElementById("btn-tous");
         e.preventDefault(),
             boutonTous.style.backgroundColor = "#1D6154";
             boutonTous.style.color = "white";
-            boutonTous.style.border = "none";
 
             boutonObjets.style.backgroundColor = "white";
             boutonObjets.style.color = "#1D6154";
@@ -91,7 +96,7 @@ boutonObjets.addEventListener("click", function(e){
    
         boutonObjets.style.backgroundColor = "#1D6154";
         boutonObjets.style.color = "white";
-        boutonObjets.remove
+        
 
         boutonTous.style.backgroundColor = "white";
         boutonTous.style.color = "#1D6154";
@@ -120,7 +125,6 @@ boutonAppart.addEventListener("click", function (e) {
         
         boutonTous.style.backgroundColor = "white";
         boutonTous.style.color = "#1D6154";
-        boutonTous.style.border = "solid", "#1D6154", "5px";
 
         boutonRestaurants.style.backgroundColor = "white";
         boutonRestaurants.style.color = "#1D6154";
@@ -130,19 +134,24 @@ boutonAppart.addEventListener("click", function (e) {
 });
 
 const boutonRestaurants = document.getElementById("btn-restaurants");
+
 boutonRestaurants.addEventListener("click", function (e) {
     e.preventDefault();
+
+        boutonTous.style.backgroundColor = "white";
+        boutonTous.style.color = "#1D6154";
+
+        boutonObjets.style.backgroundColor = "white";
+        boutonObjets.style.color = "#1D6154";
+
         boutonAppart.style.backgroundColor = "white";
         boutonAppart.style.color = "#1D6154";
-        boutonAppart.style.border = "solid", "#1D6154", "5px";
-
+        
         boutonRestaurants.style.backgroundColor = "#1D6154";
         boutonRestaurants.style.color = "white";
 
     Filtered("Hotels & restaurants", productsArray);
 });
-
-
 
 
 
