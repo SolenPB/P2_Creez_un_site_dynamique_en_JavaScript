@@ -56,10 +56,10 @@ const styleBoutons = document.getElementsByClassName("btn-style");
     styleBoutons[i].style.justifyContent = "center";
     styleBoutons[i].style.border = "solid", "#1D6154", "5px";
     
-    styleBoutons[i].addEventListener("mouseenter", function(){
+    /*styleBoutons[i].addEventListener("mouseover", function(){
         styleBoutons[i].style.backgroundColor = "#1D6154";
         styleBoutons[i].style.color = "white";
-    });
+    });*/
 
  };
 
@@ -85,74 +85,119 @@ const boutonTous = document.getElementById("btn-tous");
         localStorage.removeItem("filtre");
         Filtered("", productsArray);
 });
+    boutonTous.addEventListener("mouseover", function(){
+        boutonTous.style.backgroundColor = "#1D6154";
+        boutonTous.style.color = "white";
+    })
 
-
+    boutonTous.addEventListener("mouseover", function(){
+        boutonTous.style.backgroundColor = "#1D6154";
+        boutonTous.style.color = "white";
+        boutonObjets.style.backgroundColor = "white";
+        boutonObjets.style.color = "#1D6154";
+        boutonAppart.style.backgroundColor = "white";
+        boutonAppart.style.color = "#1D6154";
+        boutonRestaurants.style.backgroundColor = "white";
+        boutonRestaurants.style.color = "#1D6154";
+    })
 //Fonctionnalité du bouton "Objets"
 
 
 const boutonObjets = document.getElementById("btn-objets");
-boutonObjets.addEventListener("click", function(e){
-    e.preventDefault();
+
+    boutonObjets.addEventListener("click", function(e){
+        e.preventDefault();
    
-        boutonObjets.style.backgroundColor = "#1D6154";
-        boutonObjets.style.color = "white";
+            boutonObjets.style.backgroundColor = "#1D6154";
+            boutonObjets.style.color = "white";
         
+            boutonTous.style.backgroundColor = "white";
+            boutonTous.style.color = "#1D6154";
+            boutonTous.style.border = "solid", "#1D6154", "5px";
 
-        boutonTous.style.backgroundColor = "white";
-        boutonTous.style.color = "#1D6154";
-        boutonTous.style.border = "solid", "#1D6154", "5px";
-
-        boutonAppart.style.backgroundColor= "white";
-        boutonAppart.style.color = "#1D6154";
+            boutonAppart.style.backgroundColor= "white";
+            boutonAppart.style.color = "#1D6154";
         
-        boutonRestaurants.style.backgroundColor = "white";
-        boutonRestaurants.style.color = "#1D6154";
+            boutonRestaurants.style.backgroundColor = "white";
+            boutonRestaurants.style.color = "#1D6154";
 
     Filtered("Objets", productsArray);
 });
+
+    boutonObjets.addEventListener("mouseover", function(){
+        boutonObjets.style.backgroundColor = "#1D6154";
+        boutonObjets.style.color = "white";
+        boutonTous.style.backgroundColor = "white";
+        boutonTous.style.color = "#1D6154";
+        boutonAppart.style.backgroundColor = "white";
+        boutonAppart.style.color = "#1D6154";
+        boutonRestaurants.style.backgroundColor = "white";
+        boutonRestaurants.style.color = "#1D6154";
+})
     
 //Fonctionnalité du bouton "Appartements"
 
 const boutonAppart = document.getElementById("btn-appart");
-boutonAppart.addEventListener("click", function (e) {
-    e.preventDefault();
 
-        boutonAppart.style.backgroundColor = "#1D6154";
-        boutonAppart.style.color = "white";
+    boutonAppart.addEventListener("click", function (e) {
+        e.preventDefault();
 
-        boutonObjets.style.backgroundColor = "white";
-        boutonObjets.style.color = "#1D6154";
+            boutonAppart.style.backgroundColor = "#1D6154";
+            boutonAppart.style.color = "white";
+
+            boutonObjets.style.backgroundColor = "white";
+            boutonObjets.style.color = "#1D6154";
         
-        boutonTous.style.backgroundColor = "white";
-        boutonTous.style.color = "#1D6154";
+            boutonTous.style.backgroundColor = "white";
+            boutonTous.style.color = "#1D6154";
 
-        boutonRestaurants.style.backgroundColor = "white";
-        boutonRestaurants.style.color = "#1D6154";
+            boutonRestaurants.style.backgroundColor = "white";
+            boutonRestaurants.style.color = "#1D6154";
        
 
     Filtered("Appartements", productsArray);
 });
 
-const boutonRestaurants = document.getElementById("btn-restaurants");
-
-boutonRestaurants.addEventListener("click", function (e) {
-    e.preventDefault();
-
+    boutonAppart.addEventListener("mouseover", function(){
+        boutonAppart.style.backgroundColor = "#1D6154";
+        boutonAppart.style.color = "white";
         boutonTous.style.backgroundColor = "white";
         boutonTous.style.color = "#1D6154";
-
         boutonObjets.style.backgroundColor = "white";
         boutonObjets.style.color = "#1D6154";
+        boutonRestaurants.style.backgroundColor = "white";
+        boutonRestaurants.style.color = "#1D6154";
+})
+const boutonRestaurants = document.getElementById("btn-restaurants");
 
-        boutonAppart.style.backgroundColor = "white";
-        boutonAppart.style.color = "#1D6154";
+    boutonRestaurants.addEventListener("click", function (e) {
+        e.preventDefault();
+
+            boutonTous.style.backgroundColor = "white";
+            boutonTous.style.color = "#1D6154";
+
+            boutonObjets.style.backgroundColor = "white";
+            boutonObjets.style.color = "#1D6154";
+
+            boutonAppart.style.backgroundColor = "white";
+            boutonAppart.style.color = "#1D6154";
         
-        boutonRestaurants.style.backgroundColor = "#1D6154";
-        boutonRestaurants.style.color = "white";
+            boutonRestaurants.style.backgroundColor = "#1D6154";
+            boutonRestaurants.style.color = "white";
 
     Filtered("Hotels & restaurants", productsArray);
 });
 
+    boutonRestaurants.addEventListener("mouseover", function(){
+        boutonRestaurants.style.backgroundColor = "#1D6154";
+        boutonRestaurants.style.color = "white";
+        boutonTous.style.backgroundColor = "white";
+        boutonTous.style.color = "#1D6154";
+        boutonObjets.style.backgroundColor = "white";
+        boutonObjets.style.color = "#1D6154";
+        boutonAppart.style.backgroundColor = "white";
+        boutonAppart.style.color = "#1D6154";
+})
 
 
 
